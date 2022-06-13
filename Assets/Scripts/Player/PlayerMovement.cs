@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float playerSpeed = 20f;
-    public float momentumDamping = 5f;
+    public float momentumDamping = 9f;
 
     private CharacterController charController;
     public Animator camAnim;
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         camAnim.SetBool("isWalking", isWalking);
     }
 
-    private void CheckForHeadbob()
+    private void checkforheadbob()
     {
         if (charController.velocity.magnitude > 0.1f)
         {
@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
             inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
             inputVector.Normalize();
             inputVector = transform.TransformDirection(inputVector);
-            movementVector = (inputVector * playerSpeed) + (Vector3.up * gravity);
 
             isWalking = true;
         }
@@ -66,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
             isWalking = false;
         }
+
+        movementVector = (inputVector * playerSpeed) + (Vector3.up * gravity);
     }
     
 }
