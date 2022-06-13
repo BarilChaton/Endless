@@ -6,8 +6,12 @@ public class Gun : MonoBehaviour
 {
     public float range = 20f;
     public float verticalRange = 20f;
+    public float fireRate;
 
+    private float nextTimeToFire;
     private BoxCollider gunTrigger;
+
+    public EnemyManager enemyManager;
     
     void Start()
     {
@@ -19,16 +23,44 @@ public class Gun : MonoBehaviour
     
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire)
+        {
+            Fire();
+        }
+    }
+
+    void Fire()
+    {
+        //Damage Enemy
+        foreach (var enemy in enemyManager.enemiesInTrigger)
+        {
+
+        }
+
+
+        //reset fire
+        nextTimeToFire = Time.time + fireRate;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //Add potential enemy to shoot
+        Enemy enemy = other.transform.GetComponent<Enemy>();
+
+        if (enemy)
+        {
+            enemyManager.AddEnemy(enemy);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         //Remove potential enemy to shoot
+        Enemy enemy = other.transform.GetComponent<Enemy>();
+
+        if (enemy)
+        {
+            enemyManager.RemoveEnemy(enemy);
+        }
     }
 }
