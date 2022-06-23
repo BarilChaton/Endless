@@ -449,6 +449,15 @@ MonoBehaviour:
   playerSpeed: 10
   momentumDamping: 5
   camAnim: {fileID: 963194229}
+  shouldJump: 1
+  gravity: -1
+  jumpKey: 32
+  jumpForce: 8
+  groundCheckCollider: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isGrounded: 0
 --- !u!114 &291770658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,8 +470,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a26419ccc9506447b4ea0d8d8f7e524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 1.5
-  smoothing: 1.5
+  playerCamera: {fileID: 963194228}
+  mouseSensitivity: 3
+  lockCursor: 1
+  mouseSmoothTime: 0.03
 --- !u!1 &597503654
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +725,7 @@ GameObject:
   - component: {fileID: 910803682}
   - component: {fileID: 910803681}
   - component: {fileID: 910803680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

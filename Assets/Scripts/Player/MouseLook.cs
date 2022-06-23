@@ -5,41 +5,45 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float sensitivity = 1.5f;
-    public float smoothing = 1.5f;
+    [SerializeField] Transform playerCamera = null;
+    [SerializeField] float mouseSensitivity = 3.5f;
 
-    private float xMousePos;
-    private float smoothedMousePos;
+    [SerializeField] bool lockCursor = true;
 
-    private float currentLookingPos;
+    float cameraPitch = 0.0f;
+    [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
+
+    Vector2 currentMouseDelta = Vector2.zero;
+    Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        
+
     }
 
     void Update()
     {
-        GetInput();
-        ModifyInput();
-        MovePlayer();
+        UpdateMouseLook();
     }
 
-    private void GetInput()
+    void UpdateMouseLook()
     {
-        xMousePos = Input.GetAxisRaw("Mouse X");
-    }
+        Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-    private void ModifyInput()
-    {
-        xMousePos *= sensitivity * smoothing;
-        smoothedMousePos = Mathf.Lerp(smoothedMousePos, xMousePos, 1f / smoothing);
-    }
+        currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
 
-    private void MovePlayer()
-    {
-        currentLookingPos += smoothedMousePos;
-        transform.localRotation = Quaternion.AngleAxis(currentLookingPos, transform.up);
+        cameraPitch -= currentMouseDelta.y * mouseSensitivity;
+
+        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
+
+        playerCamera.localEulerAngles = Vector3.right * cameraPitch;
+
+        transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
     }
 }
