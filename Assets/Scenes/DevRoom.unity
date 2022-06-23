@@ -450,13 +450,13 @@ MonoBehaviour:
   momentumDamping: 5
   camAnim: {fileID: 963194229}
   shouldJump: 1
-  gravity: -1
+  gravity: -10
   jumpKey: 32
-  jumpForce: 8
-  groundCheckCollider: {fileID: 0}
+  jumpForce: 20
+  groundCheckCollider: {fileID: 910803679}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   isGrounded: 0
 --- !u!114 &291770658
 MonoBehaviour:
