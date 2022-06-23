@@ -20,17 +20,15 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     [SerializeField] private bool shouldJump = true;
-    [SerializeField] private float gravity = 1f;
+    [SerializeField] private float gravity = -4f;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     private bool canJump;
 
     [Header("Jumping parameters")]
     [SerializeField] private float jumpForce = 8f;
+    public float verticalVelocity;
 
     [Header("Ground checking")]
-    [SerializeField] Transform groundCheckCollider;
-    [SerializeField] LayerMask groundLayer;
-    const float groundCheckRadious = 0.02f;
     [SerializeField] private bool isGrounded;
 
 
@@ -44,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     {
         GetInput();
         MovePlayer();
-        CheckGrounded();
 
         if (canJump)
         {
@@ -54,24 +51,15 @@ public class PlayerMovement : MonoBehaviour
         camAnim.SetBool("isWalking", isWalking);
     }
 
-    private void CheckGrounded()
-    {
-        bool wasGrounded = isGrounded;
-        isGrounded = false;
-
-        Collider[] colliders = Physics.OverlapSphere(groundCheckCollider.position, groundCheckRadious, groundLayer);
-
-        if (colliders.Length > 0)
-        {
-            isGrounded = true;
-        }
-    }
-
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            movementVector.y *= jumpForce;
-
+        if (charController.isGrounded && Input.GetButtonDown("Jump"))
+            verticalVelocity = MathF.Sqrt(jumpForce * 1f * gravity);
+        else if (charController.isGrounded)
+            verticalVelocity = 0f;
+        else
+            verticalVelocity += gravity * Time.fixedDeltaTime;
+        movementVector.y = verticalVelocity;
     }
 
     private void checkforheadbob()
