@@ -450,13 +450,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a861e2577429fbb4d95e31304f67c023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canSprint: 1
+  canJump: 1
+  canCrouch: 1
+  sprintKey: 304
+  jumpKey: 32
+  crouchKey: 306
   runSpeed: 6
-  gravity: 30
-  momentumDamping: 5
+  sprintSpeed: 12
+  crouchSpeed: 3
   lookSpeedX: 2
   lookSpeedY: 2
   upperLookLimit: 90
   lowerLookLimit: 90
+  jumpForce: 7
+  gravity: 30
+  crouchHeight: 0.5
+  standingHeight: 0.5
+  timeToCrouch: 0.25
+  crouchingCenter: {x: 0, y: 0.5, z: 0}
+  standingCenter: {x: 0, y: 0, z: 0}
   cameraAnimation: {fileID: 963194229}
 --- !u!4 &300124350 stripped
 Transform:
