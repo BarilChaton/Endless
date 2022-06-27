@@ -6,20 +6,23 @@ namespace Endless.Attacker
 {
     public class Attack : MonoBehaviour
     {
-        [SerializeField] float attackCooldown = 2f;
         [SerializeField] GameObject Projectile;
+        [SerializeField] float shootRateInSeconds = 2f;
+        [SerializeField] float bulletSpeed = 60f;
+        [SerializeField] bool isBomb = false;
+        [SerializeField] float bombRemain = 0f; 
         bool hasAttacked = false;
 
 
-        public void RangedAttack(int amount)
+        public void RangedAttack()
         {
             if (!hasAttacked)
             {
+                // If the weapon is not a bomb, it will destroy itself on collision
                 Rigidbody rb = Instantiate(Projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-
+                rb.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
                 hasAttacked = true;
-                Invoke(nameof(ResetAttack), attackCooldown);
+                Invoke(nameof(ResetAttack), shootRateInSeconds);
             }
         }
 

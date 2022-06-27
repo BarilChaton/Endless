@@ -27,7 +27,7 @@ namespace Endless.Control
                     // Ranged attack
                     if (DistanceToPlayer(player) > 1)
                     {
-                        GetComponent<Attack>().RangedAttack(5);
+                        GetComponent<Attack>().RangedAttack();
                     }
 
                     // Melee attack

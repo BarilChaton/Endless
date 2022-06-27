@@ -577,7 +577,7 @@ MonoBehaviour:
   range: 20
   verticalRange: 20
   fireRate: 0
-  enemyManager: {fileID: 1506950527}
+  enemyManager: {fileID: 0}
 --- !u!65 &597503657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -838,6 +838,7 @@ GameObject:
   - component: {fileID: 759031626}
   - component: {fileID: 759031625}
   - component: {fileID: 759031629}
+  - component: {fileID: 759031630}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -921,7 +922,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &759031629
 Rigidbody:
@@ -939,6 +940,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &759031630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759031624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf9d0b4f0fc1004582da5c58cdf1410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1 &764841942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,7 +1489,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1046619087
 PrefabInstance:
@@ -1997,80 +2011,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5265613537051800577, guid: cfe57d720e26ea847a0dd1fda1038888, type: 3}
   m_PrefabInstance: {fileID: 702062160}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1506950526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1506950528}
-  - component: {fileID: 1506950527}
-  - component: {fileID: 1506950530}
-  - component: {fileID: 1506950529}
-  m_Layer: 0
-  m_Name: EnemyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1506950527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506950526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91640efa0d4dc0241b1dd06479e0b404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesInTrigger: []
---- !u!4 &1506950528
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506950526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1506950529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506950526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8809ec7bb34bb4dbf9205eb9be3e10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 20
-  attackRange: 5
---- !u!114 &1506950530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506950526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb55e22dfabb4942ae16517e193507e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!1 &1532545319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,7 +2127,7 @@ GameObject:
   - component: {fileID: 1897902786}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2338,8 +2278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de5962a0f358df43ba7ca06ca5ffe76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
   Projectile: {fileID: 759031624}
+  shootRateInSeconds: 2
+  bulletSpeed: 60
+  isBomb: 0
+  bombRemain: 0
 --- !u!1 &2010763027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,7 +2571,7 @@ RectTransform:
   m_Children:
   - {fileID: 1253114068}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

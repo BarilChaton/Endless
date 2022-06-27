@@ -31,7 +31,6 @@ namespace Endless.PlayerCore
             {
                 playerDead = true;
             }
-            print("Hello2");
         }
 
         private void SetHealthBar()
