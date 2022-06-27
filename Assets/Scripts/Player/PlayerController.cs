@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool canSprint = true;
     [SerializeField] private bool canJump = true;
     [SerializeField] private bool canCrouch = true;
+    [SerializeField] private bool canUseHeadbob = true;
 
     [Header("Controls")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -34,6 +36,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 8.0f;
     [SerializeField] private float gravity = 30.0f;
 
+    [Header("Headbob parameters")]
+    [SerializeField] private float runBobSpeed = 14f;
+    [SerializeField] private float runBobAmount = 0.5f;
+    [SerializeField] private float sprintBobSpeed = 18f;
+    [SerializeField] private float sprintBobAmount = 1f;
+    [SerializeField] private float crouchBobSpeed = 8f;
+    [SerializeField] private float crouchBobAmount = 0.25f;
+    private float defaultYPos = 0;
+    private float timer;
+
     [Header("Crouch Parameters")]
     [SerializeField] private float crouchHeight = 0.5f;
     [SerializeField] private float standingHeight = 2.0f;
@@ -43,9 +55,6 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching;
     private bool duringCrouchAnimation;
 
-    [Header("Camera Animation")] // Using header to organize stuff in the Unity inspector.
-    [SerializeField] private Animator cameraAnimation;
-
     private Camera playerCamera;
     private CharacterController characterController;
 
@@ -54,12 +63,11 @@ public class PlayerController : MonoBehaviour
 
     private float rotationX = 0;
 
-    private bool isWalking;
-
     void Awake()
     {
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
+        defaultYPos = playerCamera.transform.localPosition.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -77,6 +85,9 @@ public class PlayerController : MonoBehaviour
             if (canCrouch)
                 HandleCrouch();
 
+            if (canUseHeadbob)
+                HandleHeadBob();
+
             ApplyFinalMovements();
         }
     }
@@ -88,8 +99,6 @@ public class PlayerController : MonoBehaviour
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
         moveDirection.y = moveDirectionY;
-        CheckForHeadbob();
-        cameraAnimation.SetBool("isWalking", isWalking);
     }
 
     private void HandleMouseLook()
@@ -112,15 +121,18 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CrouchStand());
     }
 
-    private void CheckForHeadbob()
+    private void HandleHeadBob()
     {
-        if (characterController.velocity.magnitude > 0.1f)
+        if (!characterController.isGrounded)
+            return;
+
+        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
         {
-            isWalking = true;
-        }
-        else
-        {
-            isWalking = false;
+            timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : IsSprinting ? sprintBobSpeed : runBobSpeed);
+            playerCamera.transform.localPosition = new Vector3(
+                playerCamera.transform.localPosition.x,
+                defaultYPos + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : IsSprinting ? sprintBobAmount : runBobAmount),
+                playerCamera.transform.localPosition.z);
         }
     }
 
