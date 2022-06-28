@@ -133,7 +133,9 @@ namespace Endless.PlayerCore
                 // Grenade stuffs
                 if (Input.GetKeyDown(KeyCode.G))
                 {
-                    GameObject.Find(GrenadeProjectile.name).GetComponent<Grenade>().ThrowGrenade(GrenadeProjectile, this.gameObject);
+                    GameObject thrownGrendade = Instantiate(GrenadeProjectile);
+                    GameObject.Find(thrownGrendade.name).GetComponent<Grenade>().ThrowGrenade(GrenadeProjectile, this.gameObject);
+                    Destroy(thrownGrendade);
                 }
             }
         }
