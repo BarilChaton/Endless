@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 6302409055994974916}
   - component: {fileID: 6302409055994974779}
   - component: {fileID: 6302409055994974778}
+  - component: {fileID: 2285282956263510876}
+  - component: {fileID: 9158734988925487174}
+  - component: {fileID: 1682584632507281186}
   m_Layer: 0
   m_Name: SpiderVerminEnemy
   m_TagString: Untagged
@@ -127,3 +130,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4abf19e7e11d34485f77a79f9233bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2285282956263510876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302409055994974919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb55e22dfabb4942ae16517e193507e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!114 &9158734988925487174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302409055994974919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de5962a0f358df43ba7ca06ca5ffe76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 0}
+  shootRateInSeconds: 2
+  bulletSpeed: 60
+  isBomb: 0
+  bombRemain: 0
+--- !u!114 &1682584632507281186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302409055994974919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8809ec7bb34bb4dbf9205eb9be3e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 20
+  attackRange: 5
