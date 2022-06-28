@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3867975751202906455}
   - component: {fileID: 3867975751202906454}
   - component: {fileID: 3867975751202906449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShotgunWallFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
