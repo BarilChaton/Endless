@@ -14,6 +14,10 @@ namespace Endless.Attacker
         public void ThrowGrenade(GameObject Projectile, GameObject Player)
         {
             Vector3 spawnPosition = Player.transform.position + new Vector3(0, 0.5f, 0);
+            Collider[] playerColliders = Player.GetComponents<Collider>();
+            Collider bulletCollider = Projectile.GetComponent<Collider>();
+
+            // Make the bullet ignore all of the player's colliders
 
             // If the weapon is not a bomb, it will destroy itself on first collision
             Rigidbody rb = Instantiate(Projectile, spawnPosition, Camera.main.transform.rotation).GetComponent<Rigidbody>();
@@ -37,22 +41,24 @@ namespace Endless.Attacker
             }
         }
 
-        /*private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter(Collision collision)
         {
             int amount = 0;
             print(collision.transform.name);
+
+
             if (collision.gameObject.CompareTag("Player"))
             {
                 // The player was hit. Hurtie wurtie shmurtie.
-                if (amount == 0) amount = damageAmount;
+/*                if (amount == 0) amount = damageAmount;
                 collision.collider.GetComponent<PlayerCombat>().TakeDamage(amount);
                 Destroy(this.gameObject);
-            }
+*/            }
             else
             {
                 Destroy(this.gameObject, 4f);
             }
             return;
-        }*/
+        }
     }
 }
