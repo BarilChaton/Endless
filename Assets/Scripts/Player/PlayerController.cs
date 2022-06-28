@@ -65,6 +65,7 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
+        [SerializeField] GameObject TempBulletImpact;
         public Animator gunAnim;
         public int currentAmmo = 20;
 
@@ -117,7 +118,8 @@ namespace Endless.PlayerCore
                         RaycastHit hit;
                         if (Physics.Raycast(ray, out hit))
                         {
-                            Debug.Log("I'm shooting at" + hit.transform.name);
+                            //Debug.Log("I'm shooting at" + hit.transform.name);
+                            Instantiate(TempBulletImpact, hit.point, transform.rotation);
                         }
                         else
                         {
