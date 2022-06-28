@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // For the Billboard Script..
+    public static PlayerController instance;
+
     public bool CanMove { get; private set; } = true;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
@@ -55,6 +58,10 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching;
     private bool duringCrouchAnimation;
 
+    [Header("Guns!!")]
+    public Animator gunAnim;
+    public int currentAmmo = 20;
+
     private Camera playerCamera;
     private CharacterController characterController;
 
@@ -65,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         defaultYPos = playerCamera.transform.localPosition.y;
@@ -78,6 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             HandleMovementInput();
             HandleMouseLook();
+            //Shooting();
 
             if(canJump)
                 HandleJump();
@@ -89,6 +98,27 @@ public class PlayerController : MonoBehaviour
                 HandleHeadBob();
 
             ApplyFinalMovements();
+
+            // Shooting..
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (currentAmmo > 0)
+                {
+                    Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        Debug.Log("I'm shooting at" + hit.transform.name);
+                    }
+                    else
+                    {
+                        Debug.Log("I'm looking at nothing");
+                    }
+                    currentAmmo--;
+                    gunAnim.SetTrigger("TriggerShooting");
+                }
+            }
         }
     }
 
@@ -143,6 +173,28 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
     }
+
+    //private void Shooting()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        if (currentAmmo > 0)
+    //        {
+    //            Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+    //            RaycastHit hit;
+    //            if (Physics.Raycast(ray, out hit))
+    //            {
+    //                Debug.Log("I'm shooting at" + hit.transform.name);
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("I'm looking at nothing");
+    //            }
+    //            currentAmmo--;
+    //            gunAnim.SetTrigger("TriggerShooting");
+    //        }
+    //    }
+    //}
 
     private IEnumerator CrouchStand()
     {
