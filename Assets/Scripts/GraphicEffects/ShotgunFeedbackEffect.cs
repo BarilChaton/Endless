@@ -8,7 +8,6 @@ public class ShotgunFeedbackEffect : MonoBehaviour
 
     void Start()
     {
-        
     }
     void Update()
     {

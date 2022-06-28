@@ -109,17 +109,16 @@ namespace Endless.PlayerCore
                     ApplyFinalMovements();
                 }
 
-                // Shooting..
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (currentAmmo > 0)
                     {
-                        Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                        Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
                         RaycastHit hit;
                         if (Physics.Raycast(ray, out hit))
                         {
                             //Debug.Log("I'm shooting at" + hit.transform.name);
-                            Instantiate(TempBulletImpact, hit.point, transform.rotation);
+                            Instantiate(TempBulletImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
                         }
                         else
                         {
@@ -191,28 +190,6 @@ namespace Endless.PlayerCore
 
             characterController.Move(moveDirection * Time.deltaTime);
         }
-
-        //private void Shooting()
-        //{
-        //    if (Input.GetMouseButtonDown(0))
-        //    {
-        //        if (currentAmmo > 0)
-        //        {
-        //            Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
-        //            RaycastHit hit;
-        //            if (Physics.Raycast(ray, out hit))
-        //            {
-        //                Debug.Log("I'm shooting at" + hit.transform.name);
-        //            }
-        //            else
-        //            {
-        //                Debug.Log("I'm looking at nothing");
-        //            }
-        //            currentAmmo--;
-        //            gunAnim.SetTrigger("TriggerShooting");
-        //        }
-        //    }
-        //}
 
         private IEnumerator CrouchStand()
         {
