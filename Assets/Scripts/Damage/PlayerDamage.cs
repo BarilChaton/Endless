@@ -12,6 +12,7 @@ namespace Endless.Damage
         private void OnCollisionEnter(Collision collision)
         {
             int amount = 0;
+            print(collision.transform.name);
             if (collision.gameObject.CompareTag("Player"))
             {
                 // The player was hit. Hurtie wurtie shmurtie.
@@ -19,9 +20,9 @@ namespace Endless.Damage
                 collision.collider.GetComponent<PlayerCombat>().TakeDamage(amount);
                 Destroy(this.gameObject);
             }
-            else if (!collision.gameObject.CompareTag("enemy"))
+            else
             {
-                Destroy(this.gameObject);
+                Destroy(this.gameObject, 4f);
             }
             return;
         }

@@ -18,7 +18,6 @@ namespace Endless.Control
             // If player is found, act aggressive
             if (player != null)
             {
-                transform.LookAt(player.transform);
                 // Attack range, therefore murder
                 if (DistanceToPlayer(player) < attackRange)
                 {
