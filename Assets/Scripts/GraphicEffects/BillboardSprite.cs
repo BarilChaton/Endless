@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Endless.PlayerCore;
 
-public class BillBoardSprite : MonoBehaviour
+public class BillboardSprite : MonoBehaviour
 {
     // This script will be handling so that the sprite object allways look at the player so they never get too thin.
 

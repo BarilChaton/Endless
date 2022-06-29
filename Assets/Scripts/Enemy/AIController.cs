@@ -8,23 +8,52 @@ namespace Endless.Control
 {
     public class AIController : MonoBehaviour
     {
-        public static void AI(GameObject self)
+        [SerializeField] float chaseDistance = 20f;
+        [SerializeField] float attackRange = 5f;
+
+        private void Update()
         {
             GameObject player = GameObject.FindWithTag("Player");
-            EnemyCore selfCore = self.transform.GetComponent<EnemyCore>();
-            float distanceToPlayer = DistanceCalc.DistanceToPlayer(player, self);
 
             // If player is found, act aggressive
-            if (player != null && distanceToPlayer < selfCore.aggressionDistance)
+            if (player != null)
             {
-                Attack.InitiateAttack(self, selfCore, distanceToPlayer);
+                // Attack range, therefore murder
+                if (DistanceToPlayer(player) < attackRange)
+                {
+                    GetComponent<Mover>().Moving(player, false);
+
+                    // Ranged attack
+                    if (DistanceToPlayer(player) > 1)
+                    {
+                        GetComponent<Attack>().RangedAttack();
+                    }
+
+                    // Melee attack
+                    else
+                    {
+                    }
+                }
+
+                // Chase range, therefore Cmerefamalam
+                else if (DistanceToPlayer(player) < chaseDistance)
+                {
+                    GetComponent<Mover>().Moving(player, true);
+                }
             }
 
             // Otherwise just kinda roam idk
             else
             {
-
+                print("Roam");
             }
+        }
+
+
+        private float DistanceToPlayer(GameObject player)
+        {
+            // Finds the distance to the object with tag Player in the Inspector
+            return Vector3.Distance(player.transform.position, transform.position);
         }
     }
 }
