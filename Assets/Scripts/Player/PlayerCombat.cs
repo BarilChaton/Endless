@@ -9,12 +9,11 @@ namespace Endless.PlayerCore
     public class PlayerCombat : MonoBehaviour
     {
         [SerializeField] int maxHp = 100;
-        [SerializeField] int maxArmour = 100;
         [SerializeField] TextMeshProUGUI playerHpText;
         public bool playerDead;
         public int playerCurrHp = 0;
-        public int playerCurrArmour = 0;
         private UiCore uiCoreGetter;
+
 
         void Start()
         {
@@ -25,7 +24,6 @@ namespace Endless.PlayerCore
             {
                 playerDead = false;
                 playerCurrHp = maxHp;
-                playerCurrArmour = 0;
                 SetHealthBar();
                 uiCoreGetter.GameStarted = true;
             }
@@ -50,10 +48,9 @@ namespace Endless.PlayerCore
             }
         }
 
-        public void PlayerTakeDamage(int amount)
+        public void TakeDamage(int amount)
         {
             playerCurrHp -= amount;
-            playerCurrHp = Mathf.Clamp(playerCurrHp, 0, maxHp);
             if (playerCurrHp <= 0)
             {
                 GetComponent<PlayerController>().PlayerDead = true;

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Endless.Attacker;
-using Endless.CooldownCore;
+
 
 namespace Endless.PlayerCore
 {
@@ -22,7 +22,7 @@ namespace Endless.PlayerCore
         [SerializeField] private bool canSprint = true;
         [SerializeField] private bool canJump = true;
         [SerializeField] private bool canCrouch = true;
-        [SerializeField] public bool canUseHeadbob = true;
+        [SerializeField] private bool canUseHeadbob = true;
 
         [Header("Controls")]
         [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -65,6 +65,9 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
+        [SerializeField] GameObject TempBulletImpact;
+        public Animator gunAnim;
+        public int currentAmmo = 20;
 
         private Camera playerCamera;
         private CharacterController characterController;
@@ -73,11 +76,7 @@ namespace Endless.PlayerCore
         private Vector2 currentInput;
 
         private float rotationX = 0;
-        public bool PlayerDead = false; /// TODO: FIX PLAYERDEAD IN ITS OWN WAY TO LESS PRESSURE UPDATE
-
-        // Hiding the cooldown amount as I only want scripts to edit the number
-        private float GrenadeCd;
-        [HideInInspector] public float GrenadeCdAmt = 3f;
+        public bool PlayerDead = false;
 
         void Awake()
         {
@@ -91,44 +90,53 @@ namespace Endless.PlayerCore
 
         void Update()
         {
-            // General movement stuff goes here
-            if (CanMove)
+            if (!PlayerDead)
             {
-                HandleMovementInput();
-                HandleMouseLook();
+                if (CanMove)
+                {
+                    HandleMovementInput();
+                    HandleMouseLook();
 
-                if (canJump)
-                    HandleJump();
+                    if (canJump)
+                        HandleJump();
 
-                if (canCrouch)
-                    HandleCrouch();
+                    if (canCrouch)
+                        HandleCrouch();
 
-                if (canUseHeadbob)
-                    HandleHeadBob();
+                    if (canUseHeadbob)
+                        HandleHeadBob();
 
-                ApplyFinalMovements();
+                    ApplyFinalMovements();
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (currentAmmo > 0)
+                    {
+                        Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+                        RaycastHit hit;
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            //Debug.Log("I'm shooting at" + hit.transform.name);
+                            Instantiate(TempBulletImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                        }
+                        else
+                        {
+                            Debug.Log("I'm looking at nothing");
+                        }
+                        currentAmmo--;
+                        gunAnim.SetTrigger("TriggerShooting");
+                    }
+                }
+
+                // Grenade stuffs
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    GameObject thrownGrendade = Instantiate(GrenadeProjectile);
+                    GameObject.Find(thrownGrendade.name).GetComponent<Grenade>().ThrowGrenade(GrenadeProjectile, this.gameObject);
+                    Destroy(thrownGrendade);
+                }
             }
-
-            // Checking for machine gun. If no, single clicks. Else, hold mouse to shoot.
-            HandleShoot();
-
-            // Grenade stuffs
-            if (Input.GetKeyDown(KeyCode.G) && GrenadeCd < Time.time)
-            {
-                ThrowGrenade();
-            }
-
-        }
-
-        private void HandleShoot()
-        {
-            GunCore currWeap = transform.Find("Current Weapon").GetComponent<GunCore>();
-            if (Input.GetMouseButton(0) && currWeap.CurrentCD < Time.time)
-            {
-                currWeap.CurrentCD = Cooldown.CdCalc(currWeap.ShotCooldown);
-                ShootGunMain(currWeap);
-            }
-
         }
 
         private void HandleMovementInput()
@@ -156,8 +164,8 @@ namespace Endless.PlayerCore
 
         private void HandleCrouch()
         {
-            if (ShouldCrouch || Input.GetKeyUp(crouchKey)) StartCoroutine(CrouchStand());
-            //if () ;
+            if (ShouldCrouch)
+                StartCoroutine(CrouchStand());
         }
 
         private void HandleHeadBob()
@@ -188,15 +196,8 @@ namespace Endless.PlayerCore
             // If anything is above the players head, the player won't be able to stand and clip through any ceiling.
             if (isCrouching && Physics.Raycast(playerCamera.transform.position, Vector3.up, 1f))
                 yield break;
-            // If not then run as usual.
 
-            // Hold key stuff m8
-            bool crouchAnimRelease = false;
-            if (duringCrouchAnimation)
-            {
-                crouchAnimRelease = true;
-                isCrouching = !isCrouching;
-            }
+            // If not then run as usual.
 
             duringCrouchAnimation = true;
 
@@ -218,28 +219,9 @@ namespace Endless.PlayerCore
             characterController.height = targetHeight;
             characterController.center = targetCenter;
 
-            if (!crouchAnimRelease) isCrouching = !isCrouching;
+            isCrouching = !isCrouching;
 
             duringCrouchAnimation = false;
-            crouchAnimRelease = false;
-        }
-
-        private void ThrowGrenade()
-        {
-            // Activate Cooldown
-            GrenadeCd = Cooldown.CdCalc(GrenadeCdAmt);
-
-            // Spawn Grenade and do its script thing
-            Vector3 spawnPosition = transform.position + new Vector3(0, 0.5f, 0);
-            GameObject thrownGrendade = Instantiate(GrenadeProjectile, spawnPosition, Camera.main.transform.rotation);
-
-            // Using grenade's script to do the rest
-            GameObject.Find(thrownGrendade.name).GetComponent<Grenade>().ThrowGrenade(thrownGrendade);
-        }
-
-        private void ShootGunMain(GunCore currWeap)
-        {
-            currWeap.ShootGun(playerCamera);
         }
     }
 }

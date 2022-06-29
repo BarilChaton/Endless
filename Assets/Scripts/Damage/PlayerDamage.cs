@@ -17,7 +17,7 @@ namespace Endless.Damage
             {
                 // The player was hit. Hurtie wurtie shmurtie.
                 if (amount == 0) amount = damageAmount;
-                collision.collider.GetComponent<PlayerCombat>().PlayerTakeDamage(amount);
+                collision.collider.GetComponent<PlayerCombat>().TakeDamage(amount);
                 Destroy(this.gameObject);
             }
             else
