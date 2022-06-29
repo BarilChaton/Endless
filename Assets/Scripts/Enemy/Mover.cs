@@ -6,20 +6,18 @@ namespace Endless.Movement
 {
     public class Mover : MonoBehaviour
     {
-        public static bool Moving(bool chase, GameObject owner, GameObject target = null, float speed = 0f)
+        [SerializeField] float speed = 10f;
+
+        public bool Moving(GameObject target, bool chase)
         {
-            Vector3 targetDest;
+            Vector3 targetDest = target.transform.position;
             float rlSpeed;
             if (!chase)
             {
                 rlSpeed = 0f;
             }
-            else
-            {
-                targetDest = new Vector3(target.transform.position.x, owner.transform.position.y, target.transform.position.z);
-                rlSpeed = speed;
-                owner.transform.position = Vector3.MoveTowards(owner.transform.position, targetDest, rlSpeed * Time.deltaTime);
-            }
+            else rlSpeed = speed;
+            transform.position = Vector3.MoveTowards(transform.position, targetDest, rlSpeed * Time.deltaTime);
             return (rlSpeed > 0f) ? true : false;
         }
     }
