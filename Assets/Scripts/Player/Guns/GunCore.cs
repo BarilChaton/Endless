@@ -20,6 +20,7 @@ namespace Endless.PlayerCore
         [SerializeField] public GameObject TempBulletImpact;
         public Animator gunAnim;
 
+
         public void ShootGun(Camera playerCamera = null)
         {
             if (playerCamera != null)
@@ -55,7 +56,7 @@ namespace Endless.PlayerCore
 
                     // Removing ammo and doing animations
                     CurrentTotalAmmo--;
-                    gunAnim.SetTrigger("TriggerShooting");
+                    gunAnim.SetTrigger("ShootTrigger");
                 }
             }
         }
