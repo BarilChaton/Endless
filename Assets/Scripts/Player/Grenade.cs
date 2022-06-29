@@ -11,16 +11,10 @@ namespace Endless.Attacker
         [SerializeField] float bombRemain = 5f;
 
 
-        public void ThrowGrenade(GameObject Projectile, GameObject Player)
+        public void ThrowGrenade(GameObject Projectile)
         {
-            Vector3 spawnPosition = Player.transform.position + new Vector3(0, 0.5f, 0);
-            Collider[] playerColliders = Player.GetComponents<Collider>();
-            Collider bulletCollider = Projectile.GetComponent<Collider>();
-
-            // Make the bullet ignore all of the player's colliders
-
             // If the weapon is not a bomb, it will destroy itself on first collision
-            Rigidbody rb = Instantiate(Projectile, spawnPosition, Camera.main.transform.rotation).GetComponent<Rigidbody>();
+            Rigidbody rb = Projectile.GetComponent<Rigidbody>();
 
             // DIRECTIONAL STUFF IS HERE MATE
             rb.AddForce(Camera.main.transform.forward * ObjectSpeed, ForceMode.Impulse);
@@ -38,22 +32,23 @@ namespace Endless.Attacker
             else
             {
                 print("Kaboom");
+                Destroy(rb);
             }
         }
 
         private void OnCollisionEnter(Collision collision)
         {
-            int amount = 0;
             print(collision.transform.name);
 
 
             if (collision.gameObject.CompareTag("Player"))
             {
                 // The player was hit. Hurtie wurtie shmurtie.
-/*                if (amount == 0) amount = damageAmount;
-                collision.collider.GetComponent<PlayerCombat>().TakeDamage(amount);
-                Destroy(this.gameObject);
-*/            }
+                /*                if (amount == 0) amount = damageAmount;
+                                collision.collider.GetComponent<PlayerCombat>().TakeDamage(amount);
+                                Destroy(this.gameObject);
+                */
+            }
             else
             {
                 Destroy(this.gameObject, 4f);
