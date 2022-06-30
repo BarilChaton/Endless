@@ -56,7 +56,7 @@ namespace Endless.PlayerCore
 
                     // Removing ammo and doing animations
                     CurrentTotalAmmo--;
-                    gunAnim.SetTrigger("ShootTrigger");
+                    gunAnim.Play("Shoot");
                 }
             }
         }
