@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Endless.Control;
+using Random = UnityEngine.Random;
+
 
 namespace Endless.PlayerCore
 {
@@ -16,8 +18,12 @@ namespace Endless.PlayerCore
         [HideInInspector] public int AmmoPerClip;
         [SerializeField] public int CurrentTotalAmmo;
         [HideInInspector] public int CurrentAmmo;
+        [Header("Gun Details")]
+        [SerializeField] public bool spreadShot;
+        [SerializeField] public float spreadShotAmount = 5f;
+        [SerializeField] public int bulletsPerShot = 1;
         [Header("Art stuff")]
-        [SerializeField] public GameObject TempBulletImpact;
+        [SerializeField] public GameObject wallHitImpact;
         public Animator gunAnim;
 
 
@@ -27,36 +33,40 @@ namespace Endless.PlayerCore
             {
                 if (CurrentTotalAmmo > 0)
                 {
-                    Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+                    Ray[] rays;
+                    if (spreadShot) rays = SpreadShotStuff(playerCamera);
+                    else rays = NotSpread(playerCamera);
 
                     // Checking if it hit anything
-                    if (Physics.Raycast(ray, out RaycastHit hit))
+                    foreach (Ray r in rays)
                     {
-                        //Debug.Log("I'm shooting at" + hit.transform.name);
-
-                        // Hitting an enemy specifically
-                        if (hit.transform.tag == "Enemy")
+                        if (Physics.Raycast(r, out RaycastHit hit))
                         {
-                            float damage = DamageAmt;
-                            hit.collider.GetComponent<EnemyCore>().TakeDamage(damage);
+                            // Hitting an enemy specifically
+                            if (hit.transform.tag == "Enemy")
+                            {
+                                float damage = DamageAmt;
+                                hit.collider.GetComponent<EnemyCore>().TakeDamage(damage);
+                                Instantiate(hit.collider.GetComponent<EnemyCore>().hurtImpact, hit.point, playerCamera.transform.rotation);
+                            }
+
+                            // Hitting anything else. TODO: Hitting decoration? Lamps? -- TBI
+                            else
+                            {
+                                Instantiate(wallHitImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                            }
                         }
 
-                        // Hitting anything else. TODO: Hitting decoration? Lamps? -- TBI
+
+                        // Hit fuckall
                         else
                         {
-                            Instantiate(TempBulletImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                            Debug.Log("I'm looking at nothing");
                         }
                     }
-
-                    // Hit fuckall
-                    else
-                    {
-                        Debug.Log("I'm looking at nothing");
-                    }
-
                     // Removing ammo and doing animations
                     CurrentTotalAmmo--;
-                    gunAnim.SetTrigger("ShootTrigger");
+                    gunAnim.Play("Shoot");
                 }
             }
         }
@@ -67,5 +77,33 @@ namespace Endless.PlayerCore
             // ratatatatatattatatata
 
         }
+
+        private Ray[] SpreadShotStuff(Camera playerCamera = null)
+        {
+
+            Vector2[] points = new Vector2[5];
+            GaussianDistribution gd = new GaussianDistribution(); // maybe send a Random state through the ctor? I don't really use Unity's random any more
+            for (int i = 0; i < bulletsPerShot; i++)
+            {
+                points[i] = new Vector2(Random.Range(0, 0.2f), Random.Range(0, 0.2f));
+            }
+
+            Ray[] rays = new Ray[points.Length];
+            for (int i = 0; i < points.Length; i++)
+            {
+                Vector3 p3d = new Vector3(points[i].x, points[i].y, Random.Range(0,0.2f));
+                rays[i] = new Ray(playerCamera.transform.position, playerCamera.transform.forward + p3d);
+            }
+            return rays;
+        }
+
+        private Ray[] NotSpread(Camera playerCamera = null)
+        {
+            Ray[] ray = new Ray[1];
+            ray[0] = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+            return ray;
+        }
+
+
     }
 }
