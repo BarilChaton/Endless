@@ -7,8 +7,11 @@ namespace Endless.Attacker
     public class Grenade : MonoBehaviour
     {
         [SerializeField] float ObjectSpeed = 60f;
+        [SerializeField] float grenadeDamage = 5f;
         [SerializeField] bool isBomb = true;
         [SerializeField] float bombRemain = 5f;
+        [HideInInspector] private float bombExplosion;
+        [SerializeField] float bombExplosionRadius = 5f;
 
 
         public void ThrowGrenade(GameObject Projectile)
@@ -25,9 +28,10 @@ namespace Endless.Attacker
             // Actual Grenade stuff goes here
             if (isBomb)
             {
-                Destroy(rb, bombRemain);
+                Invoke("Explode", bombRemain);
+
+                
                 // Kaboom explosions go here
-                // Damoog goes here
             }
             else
             {
@@ -54,6 +58,19 @@ namespace Endless.Attacker
                 Destroy(this.gameObject, 4f);
             }
             return;
+        }
+
+        private void Explode()
+        {
+            GameObject[] enemyUnits = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject unit in enemyUnits)
+            {
+                if (Vector3.Distance(unit.transform.position, this.transform.position) < bombExplosionRadius)
+                {
+                    unit.GetComponent<EnemyCore>().TakeDamage(grenadeDamage);
+                }
+            }
+            Destroy(this.gameObject);
         }
     }
 }

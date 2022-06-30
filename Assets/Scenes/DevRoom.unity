@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1026,6 +1026,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9064759574906745679, guid: 3c42971e0d36af44ab8b861246872537, type: 3}
   m_PrefabInstance: {fileID: 228529369}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &253428479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6302409055994974919, guid: 2ed340e9a09ae5d47b011a3ad0cbcda0, type: 3}
+  m_PrefabInstance: {fileID: 6302409056814187451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &253428488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253428479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc761a903481f9f4a99eabe957b96ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
+  aggressionDistance: 20
+  enemyHealth: 5
+  speed: 10
+  rangedDamage: 10
+  meleeDamage: 20
+  attackRange: 5
+  rangedAttackSpeed: 2
+  rangedAttackCd: 0
+  rangedAimTime: 0.1
+  shotReady: 0
+  meleeRange: 1
+  meleeAttackSpeed: 2
+  meleeAttackCd: 0
+  attackRangeTemp: 0
+--- !u!135 &253428489
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253428479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.32
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &267271237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9064759574906745679, guid: 3c42971e0d36af44ab8b861246872537, type: 3}
@@ -1087,6 +1132,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   - {fileID: 676134703}
+  - {fileID: 454799994}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1130,10 +1176,8 @@ MonoBehaviour:
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 0, z: 0}
   GrenadeProjectile: {fileID: 7924677915691847130, guid: 39748b0dbfbf1d940a0dc8cfb7f141b7, type: 3}
-  TempBulletImpact: {fileID: 3867975751202906448, guid: 61f167640cfa97a45b1a8534435fb9a0, type: 3}
-  gunAnim: {fileID: 1176226481}
-  currentAmmo: 20
   PlayerDead: 0
+  GrenadeCdAmt: 3
 --- !u!114 &291770658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,9 +1191,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 150
+  maxArmour: 100
   playerHpText: {fileID: 1908731390}
   playerDead: 0
   playerCurrHp: 0
+  playerCurrArmour: 0
 --- !u!4 &298811677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6900981319163884675, guid: 8e97d2bd3afbc8841a05e48557fbae11, type: 3}
@@ -1629,6 +1675,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c42971e0d36af44ab8b861246872537, type: 3}
+--- !u!1 &454799993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454799994}
+  - component: {fileID: 454799995}
+  m_Layer: 0
+  m_Name: Current Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &454799994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454799993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 291770656}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454799995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454799993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c5bfc6864eaa341a8d737b9aadabf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmt: 5
+  ShotCooldown: 1
+  CurrentCD: 0
+  MaxAmmo: 50
+  AmmoPerClip: 0
+  CurrentTotalAmmo: 50
+  CurrentAmmo: 0
+  TempBulletImpact: {fileID: 3867975751202906448, guid: 61f167640cfa97a45b1a8534435fb9a0, type: 3}
+  gunAnim: {fileID: 1176226481}
 --- !u!1001 &477791342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8550,7 +8649,8 @@ PrefabInstance:
       propertyPath: Projectile
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6302409055994974779, guid: 2ed340e9a09ae5d47b011a3ad0cbcda0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ed340e9a09ae5d47b011a3ad0cbcda0, type: 3}
 --- !u!1001 &6340637709073127178
 PrefabInstance:

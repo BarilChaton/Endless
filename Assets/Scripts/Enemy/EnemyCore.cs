@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Endless.PlayerCore;
 using Endless.Control;
 using Endless.TypeOfEnemies;
 
@@ -52,7 +51,7 @@ public class EnemyCore : MonoBehaviour
 
 
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
 
