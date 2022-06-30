@@ -4595,7 +4595,10 @@ MonoBehaviour:
   AmmoPerClip: 0
   CurrentTotalAmmo: 20
   CurrentAmmo: 0
-  TempBulletImpact: {fileID: 3867975751202906448, guid: 61f167640cfa97a45b1a8534435fb9a0, type: 3}
+  spreadShot: 1
+  spreadShotAmount: 5
+  bulletsPerShot: 5
+  wallHitImpact: {fileID: 6590009580910625051, guid: dc084ebf26097b24cbcff573948fcd4b, type: 3}
   gunAnim: {fileID: 1176226481}
 --- !u!1001 &1213832662
 PrefabInstance:
@@ -8726,6 +8729,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4430351637957344201, guid: 2ed340e9a09ae5d47b011a3ad0cbcda0, type: 3}
+      propertyPath: hurtImpact
+      value: 
+      objectReference: {fileID: 72906968420962064, guid: 794b6ab6774a1674e8e094cc2c9c2b40, type: 3}
     - target: {fileID: 6302409055994974917, guid: 2ed340e9a09ae5d47b011a3ad0cbcda0, type: 3}
       propertyPath: m_RootOrder
       value: 8
