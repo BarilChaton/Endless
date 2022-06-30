@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletDisappearance : MonoBehaviour
+public class ShotgunFeedbackEffect : MonoBehaviour
 {
-    [SerializeField] private float lifeTime;
+    public float lifeTime;
 
+    void Start()
+    {
+    }
     void Update()
     {
         Destroy(gameObject, lifeTime);

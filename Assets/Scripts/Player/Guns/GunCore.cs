@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Endless.Control;
-using Random = UnityEngine.Random;
-
 
 namespace Endless.PlayerCore
 {
@@ -19,11 +17,10 @@ namespace Endless.PlayerCore
         [SerializeField] public int CurrentTotalAmmo;
         [HideInInspector] public int CurrentAmmo;
         [Header("Gun Details")]
-        [SerializeField] public bool spreadShot;
-        [SerializeField] public float spreadShotAmount = 5f;
+        [SerializeField] public bool isShotgun;
         [SerializeField] public int bulletsPerShot = 1;
         [Header("Art stuff")]
-        [SerializeField] public GameObject wallHitImpact;
+        [SerializeField] public GameObject TempBulletImpact;
         public Animator gunAnim;
 
 
@@ -34,8 +31,8 @@ namespace Endless.PlayerCore
                 if (CurrentTotalAmmo > 0)
                 {
                     Ray[] rays;
-                    if (spreadShot) rays = SpreadShotStuff(playerCamera);
-                    else rays = NotSpread(playerCamera);
+                    if (isShotgun) rays = ShotgunStuff(playerCamera);
+                    else rays = NotShotgunStuff(playerCamera);
 
                     // Checking if it hit anything
                     foreach (Ray r in rays)
@@ -47,13 +44,12 @@ namespace Endless.PlayerCore
                             {
                                 float damage = DamageAmt;
                                 hit.collider.GetComponent<EnemyCore>().TakeDamage(damage);
-                                Instantiate(hit.collider.GetComponent<EnemyCore>().hurtImpact, hit.point, playerCamera.transform.rotation);
                             }
 
                             // Hitting anything else. TODO: Hitting decoration? Lamps? -- TBI
                             else
                             {
-                                Instantiate(wallHitImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                                Instantiate(TempBulletImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
                             }
                         }
 
@@ -78,32 +74,29 @@ namespace Endless.PlayerCore
 
         }
 
-        private Ray[] SpreadShotStuff(Camera playerCamera = null)
+        private Ray[] ShotgunStuff(Camera playerCamera = null)
         {
-
             Vector2[] points = new Vector2[5];
             GaussianDistribution gd = new GaussianDistribution(); // maybe send a Random state through the ctor? I don't really use Unity's random any more
             for (int i = 0; i < bulletsPerShot; i++)
             {
-                points[i] = new Vector2(Random.Range(0, 0.2f), Random.Range(0, 0.2f));
+                points[i] = new Vector2(gd.Next(0f, 1f, -1f, 1f), gd.Next(0f, 1f, -1f, 1f));
             }
 
             Ray[] rays = new Ray[points.Length];
             for (int i = 0; i < points.Length; i++)
             {
-                Vector3 p3d = new Vector3(points[i].x, points[i].y, Random.Range(0,0.2f));
-                rays[i] = new Ray(playerCamera.transform.position, playerCamera.transform.forward + p3d);
+                Vector3 p3d = new Vector3(points[i].x, points[i].y, 6f);
+                rays[i] = new Ray(Vector3.zero, p3d.normalized);                
             }
             return rays;
         }
 
-        private Ray[] NotSpread(Camera playerCamera = null)
+        private Ray[] NotShotgunStuff(Camera playerCamera = null)
         {
             Ray[] ray = new Ray[1];
             ray[0] = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
             return ray;
         }
-
-
     }
 }

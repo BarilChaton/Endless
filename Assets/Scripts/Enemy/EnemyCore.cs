@@ -9,7 +9,6 @@ public class EnemyCore : MonoBehaviour
     [Header("Enemy Base Information")]
     [SerializeField] public EnemyTypes.Types enemyType;
     [SerializeField] public float aggressionDistance = 20f;
-    [SerializeField] public GameObject hurtImpact;
 
     [Header("Stats")]
     [SerializeField] private float enemyHealth = 5;
