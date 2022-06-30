@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Endless.PlayerCore;
 
 public class ArmourBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Image armourBarImage;
+    private PlayerCombat player;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        armourBarImage.fillAmount = player.SetArmourBar();
     }
 }

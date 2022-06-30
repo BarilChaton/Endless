@@ -65,7 +65,7 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
-        [SerializeField] string defaultWeapon = "Shotgun";
+        [SerializeField] string activeWeapon = "Shotgun";
         private GunCore currWeap;
 
         private Camera playerCamera;
@@ -78,7 +78,7 @@ namespace Endless.PlayerCore
         public bool PlayerDead = false; /// TODO: FIX PLAYERDEAD IN ITS OWN WAY TO LESS PRESSURE UPDATE
 
         // Hiding the cooldown amount as I only want scripts to edit the number
-        private float GrenadeCd;
+        [HideInInspector] private float GrenadeCd;
         [HideInInspector] public float GrenadeCdAmt = 3f;
 
         void Awake()
@@ -89,7 +89,7 @@ namespace Endless.PlayerCore
             defaultYPos = playerCamera.transform.localPosition.y;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            currWeap = GameObject.Find(defaultWeapon).GetComponent<GunCore>();
+            currWeap = GameObject.Find(activeWeapon).GetComponent<GunCore>();
         }
 
         void Update()

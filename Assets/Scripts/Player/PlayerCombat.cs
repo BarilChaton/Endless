@@ -60,10 +60,16 @@ namespace Endless.PlayerCore
             }
         }
 
-        private string SetHealthBar()
+        public float SetHealthBar()
         {
-            int healthPerc = (playerCurrHp * 200 + maxHp) / (maxHp * 2);
-            return healthPerc.ToString();
+            float healthPerc = (playerCurrHp * 200 + maxHp) / (maxHp * 2);
+            return healthPerc;
+        }
+
+        public float SetArmourBar()
+        {
+            float healthPerc = (playerCurrArmour * 200 + maxArmour) / (maxArmour * 2);
+            return healthPerc;
         }
     }
 }
