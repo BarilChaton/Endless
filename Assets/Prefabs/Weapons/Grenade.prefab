@@ -129,5 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectSpeed: 15
+  grenadeDamage: 5
   isBomb: 1
   bombRemain: 5
+  bombExplosionRadius: 20

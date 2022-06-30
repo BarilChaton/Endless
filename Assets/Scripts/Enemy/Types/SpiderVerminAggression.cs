@@ -18,28 +18,39 @@ namespace Endless.Attacker
                 owner.attackRangeTemp = owner.attackRange * 1.25f;
                 Mover.Moving(false, self);
 
-                // Ranged attack
-                if (distanceToPlayer > owner.meleeRange && owner.rangedAttackCd < Time.time)
+                // Ranged attack. Will cancel if enemy runs inside range to instead melee smack
+                if (distanceToPlayer > owner.meleeRange)
                 {
-                    owner.rangedAttackCd = Time.time + owner.rangedAttackSpeed;
-                    owner.shotTarget = new Ray(self.transform.position, self.transform.forward);
-                    owner.shotReady = Time.time + owner.rangedAimTime;
+                    if (owner.rangedAttackCd < Time.time)
+                    {
+                        owner.rangedAttackCd = Time.time + owner.rangedAttackSpeed;
+                        owner.shotTarget = new Ray(self.transform.position, self.transform.forward);
+                        owner.shotReady = Time.time + owner.rangedAimTime;
+                    }
+                    // Actual Ranged attack
+                    if (owner.shotReady < Time.time)
+                    {
+                        Physics.Raycast(owner.shotTarget, out RaycastHit hit);
+                        if (hit.collider.tag == "Player")
+                        {
+                            hit.collider.GetComponent<PlayerCombat>().PlayerTakeDamage(owner.rangedDamage);
+                        }
+                        owner.shotReady = Time.time + owner.rangedAttackCd;
+                    }
                 }
+
                 // Melee attack
                 else
                 {
-
-                }
-
-                // Actual Ranged attack
-                if (owner.shotReady < Time.time)
-                {
-                    Physics.Raycast(owner.shotTarget, out RaycastHit hit);
-                    if (hit.collider.tag == "Player")
+                    if (distanceToPlayer <= owner.meleeRange && owner.meleeAttackCd < Time.time)
                     {
-                        hit.collider.GetComponent<PlayerCombat>().PlayerTakeDamage(owner.rangedDamage);
+                        owner.meleeAttackCd = Time.time + owner.meleeAttackSpeed;
+                        player.GetComponent<PlayerCombat>().PlayerTakeDamage(owner.meleeDamage);
                     }
-                    owner.shotReady = Time.time + owner.rangedAttackCd;
+
+                    // Resetting ranged attack CDs to avoid attack dump for running in and out of melee
+                    // No attack of opportunity for this boyyo
+                    owner.rangedAttackCd = Time.time + owner.rangedAttackSpeed;
                 }
             }
 
