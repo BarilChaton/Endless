@@ -10,12 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6302409055994974917}
   - component: {fileID: 6302409055994974918}
-  - component: {fileID: 6302409055994974916}
-  - component: {fileID: 6302409055994974779}
   - component: {fileID: 6302409055994974778}
-  - component: {fileID: 2285282956263510876}
-  - component: {fileID: 9158734988925487174}
-  - component: {fileID: 1682584632507281186}
+  - component: {fileID: 4430351637957344201}
+  - component: {fileID: 4450277685166954599}
   m_Layer: 0
   m_Name: SpiderVerminEnemy
   m_TagString: Untagged
@@ -91,34 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6302409055994974916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302409055994974919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f68e6a069c7f7e43ae7275125817cdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!58 &6302409055994974779
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302409055994974919}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3035102
 --- !u!114 &6302409055994974778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4abf19e7e11d34485f77a79f9233bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2285282956263510876
+--- !u!114 &4430351637957344201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,41 +109,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 6302409055994974919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb55e22dfabb4942ae16517e193507e, type: 3}
+  m_Script: {fileID: 11500000, guid: fc761a903481f9f4a99eabe957b96ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
+  aggressionDistance: 20
+  enemyHealth: 5
   speed: 10
---- !u!114 &9158734988925487174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302409055994974919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de5962a0f358df43ba7ca06ca5ffe76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 7091665953350139978}
-  shootRateInSeconds: 2
-  bulletSpeed: 60
-  isBomb: 0
-  bombRemain: 0
---- !u!114 &1682584632507281186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302409055994974919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8809ec7bb34bb4dbf9205eb9be3e10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 20
+  rangedDamage: 10
+  meleeDamage: 20
   attackRange: 5
+  rangedAttackSpeed: 2
+  rangedAttackCd: 0
+  rangedAimTime: 0.1
+  shotReady: 0
+  meleeRange: 1
+  meleeAttackSpeed: 2
+  meleeAttackCd: 0
+  attackRangeTemp: 0
+--- !u!135 &4450277685166954599
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302409055994974919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.32
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7091665953350139978
 GameObject:
   m_ObjectHideFlags: 0
