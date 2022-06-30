@@ -65,6 +65,8 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
+        [SerializeField] string defaultWeapon = "Shotgun";
+        private GunCore currWeap;
 
         private Camera playerCamera;
         private CharacterController characterController;
@@ -87,6 +89,7 @@ namespace Endless.PlayerCore
             defaultYPos = playerCamera.transform.localPosition.y;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            currWeap = GameObject.Find(defaultWeapon).GetComponent<GunCore>();
         }
 
         void Update()
@@ -122,13 +125,11 @@ namespace Endless.PlayerCore
 
         private void HandleShoot()
         {
-            GunCore currWeap = transform.Find("Current Weapon").GetComponent<GunCore>();
             if (Input.GetMouseButton(0) && currWeap.CurrentCD < Time.time)
             {
                 currWeap.CurrentCD = Cooldown.CdCalc(currWeap.ShotCooldown);
                 ShootGunMain(currWeap);
             }
-
         }
 
         private void HandleMovementInput()
@@ -164,7 +165,7 @@ namespace Endless.PlayerCore
         {
             if (!characterController.isGrounded)
                 return;
-
+            GunCore gunCore = currWeap.GetComponent<GunCore>();
             if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
             {
                 timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : IsSprinting ? sprintBobSpeed : runBobSpeed);
@@ -172,6 +173,13 @@ namespace Endless.PlayerCore
                     playerCamera.transform.localPosition.x,
                     defaultYPos + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : IsSprinting ? sprintBobAmount : runBobAmount),
                     playerCamera.transform.localPosition.z);
+
+                // Movement animation for gun
+                if (!gunCore.gunAnim.GetBool("RunTrigger")) gunCore.gunAnim.SetBool("RunTrigger", true);
+            }
+            else
+            {
+                gunCore.gunAnim.SetBool("RunTrigger", false);
             }
         }
 
