@@ -88,6 +88,7 @@ namespace Endless.PlayerCore
                 points[i] = new Vector2(Random.Range(-spreadShotWidth, spreadShotWidth), Random.Range(-spreadShotWidth, spreadShotWidth));
             }
             Vector3 direction = playerCamera.transform.forward;
+            Vector3 startPosition = playerCamera.transform.position - new Vector3(0, 0.3f, 0);
             Vector3 spread = Vector3.zero;
 
 
@@ -96,8 +97,8 @@ namespace Endless.PlayerCore
             {
                 spread += playerCamera.transform.up * Random.Range(-spreadShotWidth, spreadShotWidth);
                 spread += playerCamera.transform.right * Random.Range(-spreadShotWidth, spreadShotWidth);
-                direction += spread.normalized * Random.Range(0, spreadShotWidth); // Fixing the normalised aspect to make it more circular
-                rays[i] = new Ray(playerCamera.transform.position, direction);
+                direction += spread.normalized * Random.Range(-spreadShotWidth, spreadShotWidth); // Fixing the normalised aspect to make it more circular
+                rays[i] = new Ray(startPosition, direction);
             }
             return rays;
         }
