@@ -149,6 +149,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9112548298256002173}
     m_Modifications:
+    - target: {fileID: 8698778164482219544, guid: 88423c65465dc9c4b892c86efc954648, type: 3}
+      propertyPath: m_text
+      value: 80 / 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698778164482219544, guid: 88423c65465dc9c4b892c86efc954648, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698778164482219544, guid: 88423c65465dc9c4b892c86efc954648, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8698778164482219546, guid: 88423c65465dc9c4b892c86efc954648, type: 3}
       propertyPath: m_Name
       value: HpText
