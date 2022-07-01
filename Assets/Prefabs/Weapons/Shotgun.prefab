@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8133340248572439432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.246897, y: 3.246897, z: 3.246897}
   m_ConstrainProportionsScale: 0
@@ -111,13 +111,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmt: 4
-  ShotCooldown: 5
+  ShotCooldown: 1.5
   CurrentCD: 0
   MaxAmmo: 20
   AmmoPerClip: 0
   CurrentTotalAmmo: 20
   CurrentAmmo: 0
-  spreadShot: 0
+  spreadShot: 1
   spreadShotWidth: 0.3
   spreadShotNumber: 5
   wallHitImpact: {fileID: 7427031531007768715, guid: dc084ebf26097b24cbcff573948fcd4b, type: 3}
