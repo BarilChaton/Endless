@@ -61,10 +61,10 @@ namespace Endless.InterfaceCore
             }
 
             // Armour updates
-            if (player.SetArmourBar() <= 1f) armourBar.transform.localScale = Vector3.zero;
+            if (player.SetArmourBar() <= 1f) GetComponent<ArmourBar>().transform.localScale = Vector3.zero;
             else
             {
-                armourBar.transform.localScale = Vector3.one;
+                GetComponent<ArmourBar>().transform.localScale = Vector3.one;
                 ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100 %";
             }
         }
