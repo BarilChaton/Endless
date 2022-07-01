@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2461961031100620947}
   - component: {fileID: 2461961031100620948}
   - component: {fileID: 2461961031100620949}
+  - component: {fileID: 1491251267038760069}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -42,7 +43,7 @@ Camera:
   m_GameObject: {fileID: 2461961031100620950}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.31617126, g: 0.32162246, b: 0.3301887, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -84,6 +85,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2461961031100620950}
   m_Enabled: 1
+--- !u!114 &1491251267038760069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461961031100620950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc229cca82002d4c81a7b4f51881c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &2461961031354593993
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +277,7 @@ MonoBehaviour:
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 0, z: 0}
   GrenadeProjectile: {fileID: 7924677915691847130, guid: 39748b0dbfbf1d940a0dc8cfb7f141b7, type: 3}
+  defaultWeapon: Shotgun
   PlayerDead: 0
   GrenadeCdAmt: 3
 --- !u!114 &2461961031771380933
