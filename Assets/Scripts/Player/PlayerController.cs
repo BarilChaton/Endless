@@ -84,7 +84,7 @@ namespace Endless.PlayerCore
         void Awake()
         {
             instance = this;
-            playerCamera = GetComponentInChildren<Camera>();
+            playerCamera = Camera.main;
             characterController = GetComponent<CharacterController>();
             defaultYPos = playerCamera.transform.localPosition.y;
             Cursor.lockState = CursorLockMode.Locked;
