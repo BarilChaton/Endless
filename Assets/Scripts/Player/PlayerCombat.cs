@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using Endless.InterfaceCore;
+using System;
 
 namespace Endless.PlayerCore
 {
     public class PlayerCombat : MonoBehaviour
     {
-        [SerializeField] int maxHp = 100;
-        [SerializeField] int maxArmour = 100;
-        [SerializeField] TextMeshProUGUI playerHpText;
+        [SerializeField] float maxHp = 100;
+        [SerializeField] float maxArmour = 100;
         public bool playerDead;
-        public int playerCurrHp = 0;
-        public int playerCurrArmour = 0;
+        public float playerCurrHp = 0;
+        public float playerCurrArmour = 0;
         private UiCore uiCoreGetter;
 
         void Start()
@@ -30,8 +29,6 @@ namespace Endless.PlayerCore
                 uiCoreGetter.GameStarted = true;
             }
 
-            // Settings Menu Changes
-            playerHpText.fontSize = uiCoreGetter.fontSize;
         }
 
         void Update()
@@ -44,26 +41,28 @@ namespace Endless.PlayerCore
             }
 
 
-            if (playerHpText != null)
-            {
-                playerHpText.text = SetHealthBar() + " / 100";
-            }
         }
 
         public void PlayerTakeDamage(int amount)
         {
             playerCurrHp -= amount;
-            playerCurrHp = Mathf.Clamp(playerCurrHp, 0, maxHp);
+            playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
             if (playerCurrHp <= 0)
             {
                 GetComponent<PlayerController>().PlayerDead = true;
             }
         }
 
-        private string SetHealthBar()
+        public float SetHealthBar()
         {
-            int healthPerc = (playerCurrHp * 200 + maxHp) / (maxHp * 2);
-            return healthPerc.ToString();
+            float healthPerc = playerCurrHp / maxHp * 100;
+            return healthPerc;
+        }
+
+        public float SetArmourBar()
+        {
+            float armourPerc = playerCurrArmour / maxArmour * 100;
+            return armourPerc;
         }
     }
 }

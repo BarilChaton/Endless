@@ -10,7 +10,6 @@ namespace Endless.Attacker
         [SerializeField] float grenadeDamage = 5f;
         [SerializeField] bool isBomb = true;
         [SerializeField] float bombRemain = 5f;
-        [HideInInspector] private float bombExplosion;
         [SerializeField] float bombExplosionRadius = 5f;
 
 
@@ -30,45 +29,22 @@ namespace Endless.Attacker
             {
                 Invoke("Explode", bombRemain);
 
-                
+
                 // Kaboom explosions go here
             }
             else
             {
                 print("Kaboom");
-                Destroy(rb);
+                Destroy(Projectile);
             }
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            print(collision.transform.name);
-
-
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                // The player was hit. Hurtie wurtie shmurtie.
-                /*                if (amount == 0) amount = damageAmount;
-                                collision.collider.GetComponent<PlayerCombat>().TakeDamage(amount);
-                                Destroy(this.gameObject);
-                */
-            }
-            else
-            {
-                Destroy(this.gameObject, 4f);
-            }
-            return;
         }
 
         private void Explode()
         {
-            GameObject[] enemyUnits = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject unit in enemyUnits)
+            Collider[] colliders = Physics.OverlapSphere(this.transform.position, bombExplosionRadius);
+            foreach (Collider collider in colliders)
             {
-                if (Vector3.Distance(unit.transform.position, this.transform.position) < bombExplosionRadius)
-                {
-                    unit.GetComponent<EnemyCore>().TakeDamage(grenadeDamage);
-                }
+                if (collider.gameObject.CompareTag("Enemy")) collider.GetComponent<EnemyCore>().TakeDamage(grenadeDamage);
             }
             Destroy(this.gameObject);
         }
