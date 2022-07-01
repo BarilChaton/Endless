@@ -26194,6 +26194,8 @@ MonoBehaviour:
   fontSize: 36
   GameStarted: 0
   UpdateSettings: 0
+  healthBar: {fileID: 0}
+  armourBar: {fileID: 0}
 --- !u!1001 &745368523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41511,8 +41513,8 @@ MonoBehaviour:
   CurrentTotalAmmo: 20
   CurrentAmmo: 0
   spreadShot: 0
-  spreadShotAmount: 5
-  bulletsPerShot: 1
+  spreadShotWidth: 0.3
+  spreadShotNumber: 1
   wallHitImpact: {fileID: 0}
   gunAnim: {fileID: 1176226481}
 --- !u!1001 &1176724552
@@ -74043,15 +74045,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461961031771380935, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 106.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2461961031771380935, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2461961031771380935, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2461961031771380935, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: m_LocalRotation.w
