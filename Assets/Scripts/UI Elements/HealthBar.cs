@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Endless.PlayerCore;
 
 public class HealthBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Image healthBarImage;
+    private PlayerController player;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        healthBarImage.fillAmount = player.GetComponent<PlayerCombat>().SetHealthBar();
     }
 }
