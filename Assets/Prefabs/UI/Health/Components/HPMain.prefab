@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5424857989415611215}
   - component: {fileID: 6103588201577182914}
   - component: {fileID: 2214978459975072615}
+  - component: {fileID: 5174646974272082114}
   m_Layer: 5
   m_Name: HPMain
   m_TagString: Untagged
@@ -76,3 +77,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5174646974272082114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776306443120283235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df753a530bdbd604f8daae099e99c62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

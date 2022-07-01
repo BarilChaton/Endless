@@ -61,7 +61,7 @@ namespace Endless.InterfaceCore
             }
 
             // Armour updates
-            if (player.SetArmourBar() <= 1f) armourBar.transform.localScale = Vector3.zero;
+            if (player.SetArmourBar() <= 0.2) armourBar.transform.localScale = Vector3.zero;
             else
             {
                 armourBar.transform.localScale = Vector3.one;
