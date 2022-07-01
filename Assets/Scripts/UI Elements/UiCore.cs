@@ -9,7 +9,7 @@ namespace Endless.InterfaceCore
 {
     public class UiCore : MonoBehaviour
     {
-        [HideInInspector] public int fontSize = 18;
+        [HideInInspector] public int fontSizeUI = 18;
         [HideInInspector] public bool GameStarted = false;
         [HideInInspector] public bool UpdateSettings = false;
         [HideInInspector] PlayerCombat player;
@@ -32,15 +32,15 @@ namespace Endless.InterfaceCore
             try
             {
                 // Creating Health bars
-                Instantiate(healthBar, transform);
+                healthBar = Instantiate(healthBar, transform);
                 HpText = GameObject.Find("HpText").GetComponent<TextMeshProUGUI>();
-                HpText.fontSize = fontSize;
+                HpText.fontSize = fontSizeUI;
                 HpText.color = Color.white;
 
                 // Creating Armour bars
                 armourBar = Instantiate(armourBar, transform);
                 ArmourText = GameObject.Find("ArmourText").GetComponent<TextMeshProUGUI>();
-                ArmourText.fontSize = fontSize;
+                ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
             }
             catch
@@ -61,7 +61,7 @@ namespace Endless.InterfaceCore
             }
 
             // Armour updates
-            if (player.SetArmourBar() <= 0.2) armourBar.transform.localScale = Vector3.zero;
+            if (player.SetArmourBar() < 1) armourBar.transform.localScale = Vector3.zero;
             else
             {
                 armourBar.transform.localScale = Vector3.one;
