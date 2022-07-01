@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using Endless.InterfaceCore;
 
 namespace Endless.PlayerCore
@@ -10,7 +9,6 @@ namespace Endless.PlayerCore
     {
         [SerializeField] int maxHp = 100;
         [SerializeField] int maxArmour = 100;
-        [SerializeField] TextMeshProUGUI playerHpText;
         public bool playerDead;
         public int playerCurrHp = 0;
         public int playerCurrArmour = 0;
@@ -30,8 +28,6 @@ namespace Endless.PlayerCore
                 uiCoreGetter.GameStarted = true;
             }
 
-            // Settings Menu Changes
-            playerHpText.fontSize = uiCoreGetter.fontSize;
         }
 
         void Update()
@@ -44,10 +40,6 @@ namespace Endless.PlayerCore
             }
 
 
-            if (playerHpText != null)
-            {
-                playerHpText.text = SetHealthBar() + " / 100";
-            }
         }
 
         public void PlayerTakeDamage(int amount)

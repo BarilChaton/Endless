@@ -10,7 +10,6 @@ namespace Endless.Attacker
         [SerializeField] float grenadeDamage = 5f;
         [SerializeField] bool isBomb = true;
         [SerializeField] float bombRemain = 5f;
-        [HideInInspector] private float bombExplosion;
         [SerializeField] float bombExplosionRadius = 5f;
 
 
