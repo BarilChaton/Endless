@@ -14,6 +14,6 @@ public class BillBoardSprite : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(PlayerController.instance.transform.position, Vector3.up);
+        transform.LookAt(PlayerController.instance.transform.position, Vector3.up); 
     }
 }
