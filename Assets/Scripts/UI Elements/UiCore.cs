@@ -38,7 +38,7 @@ namespace Endless.InterfaceCore
                 HpText.color = Color.white;
 
                 // Creating Armour bars
-                Instantiate(armourBar, transform);
+                armourBar = Instantiate(armourBar, transform);
                 ArmourText = GameObject.Find("ArmourText").GetComponent<TextMeshProUGUI>();
                 ArmourText.fontSize = fontSize;
                 ArmourText.color = Color.blue;
@@ -57,15 +57,15 @@ namespace Endless.InterfaceCore
             // HP updates
             if (HpText != null)
             {
-                HpText.text = System.Math.Round(player.SetHealthBar(), 0) + " / 100 %";
+                HpText.text = System.Math.Round(player.SetHealthBar(), 0) + " / 100";
             }
 
             // Armour updates
-            if (player.SetArmourBar() <= 1f) GetComponent<ArmourBar>().transform.localScale = Vector3.zero;
+            if (player.SetArmourBar() <= 1f) armourBar.transform.localScale = Vector3.zero;
             else
             {
-                GetComponent<ArmourBar>().transform.localScale = Vector3.one;
-                ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100 %";
+                armourBar.transform.localScale = Vector3.one;
+                ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
             }
         }
     }
