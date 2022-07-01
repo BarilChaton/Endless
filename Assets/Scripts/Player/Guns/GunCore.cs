@@ -19,9 +19,9 @@ namespace Endless.PlayerCore
         [SerializeField] public int CurrentTotalAmmo;
         [HideInInspector] public int CurrentAmmo;
         [Header("Gun Details")]
-        [SerializeField] public bool spreadShot;
-        [SerializeField] public float spreadShotAmount = 5f;
-        [SerializeField] public int bulletsPerShot = 1;
+        [SerializeField] public bool spreadShot = true;
+        [SerializeField] public float spreadShotWidth = 0.3f;
+        [SerializeField] public int spreadShotNumber = 1;
         [Header("Art stuff")]
         [SerializeField] public GameObject wallHitImpact;
         public Animator gunAnim;
@@ -81,18 +81,23 @@ namespace Endless.PlayerCore
         private Ray[] SpreadShotStuff(Camera playerCamera = null)
         {
 
-            Vector2[] points = new Vector2[5];
+            Vector2[] points = new Vector2[spreadShotNumber];
             GaussianDistribution gd = new GaussianDistribution(); // maybe send a Random state through the ctor? I don't really use Unity's random any more
-            for (int i = 0; i < bulletsPerShot; i++)
+            for (int i = 0; i < spreadShotNumber; i++)
             {
-                points[i] = new Vector2(Random.Range(0, 0.2f), Random.Range(0, 0.2f));
+                points[i] = new Vector2(Random.Range(-spreadShotWidth, spreadShotWidth), Random.Range(-spreadShotWidth, spreadShotWidth));
             }
+            Vector3 direction = playerCamera.transform.forward;
+            Vector3 spread = Vector3.zero;
+
 
             Ray[] rays = new Ray[points.Length];
             for (int i = 0; i < points.Length; i++)
             {
-                Vector3 p3d = new Vector3(points[i].x, points[i].y, Random.Range(0,0.2f));
-                rays[i] = new Ray(playerCamera.transform.position, playerCamera.transform.forward + p3d);
+                spread += playerCamera.transform.up * Random.Range(-spreadShotWidth, spreadShotWidth);
+                spread += playerCamera.transform.right * Random.Range(-spreadShotWidth, spreadShotWidth);
+                direction += spread.normalized * Random.Range(0, spreadShotWidth); // Fixing the normalised aspect to make it more circular
+                rays[i] = new Ray(playerCamera.transform.position, direction);
             }
             return rays;
         }
