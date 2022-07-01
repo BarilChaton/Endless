@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8133340248572439432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.246897, y: 3.246897, z: 3.246897}
   m_ConstrainProportionsScale: 0
@@ -35,11 +35,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -232}
   m_SizeDelta: {x: 103, y: 80}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8133340248572439445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -110,15 +110,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c5bfc6864eaa341a8d737b9aadabf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 3
-  ShotCooldown: 1.5
+  DamageAmt: 4
+  ShotCooldown: 5
   CurrentCD: 0
   MaxAmmo: 20
   AmmoPerClip: 0
   CurrentTotalAmmo: 20
   CurrentAmmo: 0
-  spreadShot: 1
-  spreadShotWidth: 0.2
+  spreadShot: 0
+  spreadShotWidth: 0.3
   spreadShotNumber: 5
   wallHitImpact: {fileID: 7427031531007768715, guid: dc084ebf26097b24cbcff573948fcd4b, type: 3}
   gunAnim: {fileID: 8133340248572439444}
