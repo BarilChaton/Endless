@@ -88,7 +88,7 @@ namespace Endless.PlayerCore
                 points[i] = new Vector2(Random.Range(-spreadShotWidth, spreadShotWidth), Random.Range(-spreadShotWidth, spreadShotWidth));
             }
             Vector3 direction = playerCamera.transform.forward;
-            Vector3 startPosition = playerCamera.transform.position - new Vector3(0, 0.3f, 0);
+            Vector3 startPosition = playerCamera.transform.position - new Vector3(0, 0.2f, 0);
             Vector3 spread = Vector3.zero;
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Endless.PlayerCore;
 
 namespace Endless.Attacker
 {
@@ -17,15 +18,16 @@ namespace Endless.Attacker
         {
             // If the weapon is not a bomb, it will destroy itself on first collision
             Rigidbody rb = Projectile.GetComponent<Rigidbody>();
+            Grenade thisGr = Projectile.GetComponent<Grenade>();
 
             // DIRECTIONAL STUFF IS HERE MATE
             rb.AddForce(Camera.main.transform.forward * ObjectSpeed, ForceMode.Impulse);
 
             // Adding rigidbody values
-            rb.useGravity = isBomb ? true : false;
+            rb.useGravity = thisGr.isBomb ? true : false;
 
             // Actual Grenade stuff goes here
-            if (isBomb)
+            if (thisGr.isBomb)
             {
                 Invoke("Explode", bombRemain);
 
@@ -45,6 +47,7 @@ namespace Endless.Attacker
             foreach (Collider collider in colliders)
             {
                 if (collider.gameObject.CompareTag("Enemy")) collider.GetComponent<EnemyCore>().TakeDamage(grenadeDamage);
+                else if (collider.gameObject.CompareTag("Player")) collider.GetComponent<PlayerCombat>().PlayerTakeDamage(grenadeDamage);
             }
             Destroy(this.gameObject);
         }

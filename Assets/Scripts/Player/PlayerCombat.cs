@@ -43,7 +43,7 @@ namespace Endless.PlayerCore
 
         }
 
-        public void PlayerTakeDamage(int amount)
+        public void PlayerTakeDamage(float amount)
         {
             playerCurrHp -= amount;
             playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
