@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Endless.InterfaceCore;
+using System;
 
 namespace Endless.PlayerCore
 {
     public class PlayerCombat : MonoBehaviour
     {
-        [SerializeField] int maxHp = 100;
-        [SerializeField] int maxArmour = 100;
+        [SerializeField] float maxHp = 100;
+        [SerializeField] float maxArmour = 100;
         public bool playerDead;
-        public int playerCurrHp = 0;
-        public int playerCurrArmour = 0;
+        public float playerCurrHp = 0;
+        public float playerCurrArmour = 0;
         private UiCore uiCoreGetter;
 
         void Start()
@@ -45,7 +46,7 @@ namespace Endless.PlayerCore
         public void PlayerTakeDamage(int amount)
         {
             playerCurrHp -= amount;
-            playerCurrHp = Mathf.Clamp(playerCurrHp, 0, maxHp);
+            playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
             if (playerCurrHp <= 0)
             {
                 GetComponent<PlayerController>().PlayerDead = true;
@@ -54,14 +55,14 @@ namespace Endless.PlayerCore
 
         public float SetHealthBar()
         {
-            float healthPerc = (playerCurrHp * 200 + maxHp) / (maxHp * 2);
+            float healthPerc = playerCurrHp / maxHp * 100;
             return healthPerc;
         }
 
         public float SetArmourBar()
         {
-            float healthPerc = (playerCurrArmour * 200 + maxArmour) / (maxArmour * 2);
-            return healthPerc;
+            float armourPerc = playerCurrArmour / maxArmour * 100;
+            return armourPerc;
         }
     }
 }
