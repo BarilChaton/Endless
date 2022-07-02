@@ -57,7 +57,6 @@ namespace Endless.PlayerCore
                             }
                         }
 
-
                         // Hit fuckall
                         else
                         {
@@ -95,10 +94,11 @@ namespace Endless.PlayerCore
             Ray[] rays = new Ray[points.Length];
             for (int i = 0; i < points.Length; i++)
             {
-                spread += playerCamera.transform.up * Random.Range(-spreadShotWidth, spreadShotWidth);
+                spread += (playerCamera.transform.up - new Vector3(0, 0.2f, 0)) * Random.Range(-spreadShotWidth, spreadShotWidth);
                 spread += playerCamera.transform.right * Random.Range(-spreadShotWidth, spreadShotWidth);
                 direction += spread.normalized * Random.Range(-spreadShotWidth, spreadShotWidth); // Fixing the normalised aspect to make it more circular
                 rays[i] = new Ray(startPosition, direction);
+                Debug.DrawRay(startPosition, direction, Color.red, 25f);
             }
             return rays;
         }

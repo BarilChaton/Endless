@@ -208,7 +208,6 @@ namespace Endless.PlayerCore
         {
             if (!characterController.isGrounded)
                 return;
-            GunCore gunCore = currWeap.GetComponent<GunCore>();
             if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
             {
                 timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : IsSprinting ? sprintBobSpeed : runBobSpeed);
@@ -218,11 +217,14 @@ namespace Endless.PlayerCore
                     playerCamera.transform.localPosition.z);
 
                 // Movement animation for gun
-                if (!gunCore.gunAnim.GetBool("RunTrigger")) gunCore.gunAnim.SetBool("RunTrigger", true);
+                try { if (!currWeap.gunAnim.GetBool("RunTrigger")) currWeap.gunAnim.SetBool("RunTrigger", true); }
+                catch { print("No animation exists for running"); }
             }
             else
             {
-                gunCore.gunAnim.SetBool("RunTrigger", false);
+                try { currWeap.gunAnim.SetBool("RunTrigger", false); }
+                catch { print("No animation exists for running"); }
+                playerCamera.transform.localPosition = new Vector3(playerCamera.transform.localPosition.x, defaultYPos, playerCamera.transform.localPosition.z);
             }
         }
 
