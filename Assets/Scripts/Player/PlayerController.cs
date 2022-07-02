@@ -174,7 +174,6 @@ namespace Endless.PlayerCore
             currWeap = GetComponent<WeaponSwapper>().currentGun.GetComponent<GunCore>();
             if (Input.GetMouseButton(0) && currWeap.CurrentCD < Time.time)
             {
-                print("Got this far");
                 currWeap.CurrentCD = Cooldown.CdCalc(currWeap.ShotCooldown);
                 currWeap.ShootGun(playerCamera);
             }
@@ -230,7 +229,6 @@ namespace Endless.PlayerCore
                     playerCamera.transform.localPosition.z);
 
                 // Movement animation for gun
-                print(currWeap.gunAnim.name);
                 try { if (!currWeap.gunAnim.GetBool("RunTrigger")) currWeap.gunAnim.SetBool("RunTrigger", true); }
                 catch { print("No animation exists for running"); }
             }
