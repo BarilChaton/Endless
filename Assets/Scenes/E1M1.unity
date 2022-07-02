@@ -28610,7 +28610,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -81271,6 +81271,10 @@ PrefabInstance:
     - target: {fileID: 2461961031771380933, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: playerHpText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461961031771380933, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
+      propertyPath: playerCurrArmour
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: interactionDistance
