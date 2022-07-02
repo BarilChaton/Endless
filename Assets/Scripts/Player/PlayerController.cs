@@ -73,7 +73,7 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
-        [SerializeField] string defaultWeapon = "Pistol";
+        [SerializeField] string activeWeapon = "Shotgun";
         private GunCore currWeap;
 
         private Camera playerCamera;
@@ -97,7 +97,7 @@ namespace Endless.PlayerCore
             defaultYPos = playerCamera.transform.localPosition.y;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            currWeap = GameObject.Find(defaultWeapon).GetComponent<GunCore>();
+            currWeap = GameObject.Find(activeWeapon).GetComponent<GunCore>();
         }
 
         void Update()
