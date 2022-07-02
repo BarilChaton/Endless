@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bridge01 : MonoBehaviour
+public class ActivateMovingObject : MonoBehaviour
 {
     public bool startMoving = false;
     [SerializeField] private Vector3 target;
