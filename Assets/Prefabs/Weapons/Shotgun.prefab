@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmt: 4
-  ShotCooldown: 1.5
+  ShotCooldown: 0.8
   CurrentCD: 0
   MaxAmmo: 20
   AmmoPerClip: 0
@@ -119,6 +119,6 @@ MonoBehaviour:
   CurrentAmmo: 0
   spreadShot: 1
   spreadShotWidth: 0.3
-  spreadShotNumber: 5
+  spreadShotNumber: 10
   wallHitImpact: {fileID: 7427031531007768715, guid: dc084ebf26097b24cbcff573948fcd4b, type: 3}
   gunAnim: {fileID: 8133340248572439444}
