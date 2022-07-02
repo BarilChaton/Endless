@@ -109,17 +109,17 @@ TextureImporter:
         serializedVersion: 2
         x: 6
         y: 7
-        width: 78
-        height: 80
+        width: 79
+        height: 111
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac82f4554c8e1554d994ed2ef83363ca
-      internalID: -479856072
+      spriteID: 5c2cd671a12ffe243b19425d3e1da5ec
+      internalID: 612102175
       vertices: []
       indices: 
       edges: []
@@ -131,16 +131,16 @@ TextureImporter:
         x: 100
         y: 7
         width: 79
-        height: 104
+        height: 111
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dcd445797bed214cbf9d90b267bfcf6
-      internalID: 1416060988
+      spriteID: 469662ef3be030b41873abd2a437239c
+      internalID: -416652424
       vertices: []
       indices: 
       edges: []
@@ -152,16 +152,16 @@ TextureImporter:
         x: 193
         y: 7
         width: 79
-        height: 93
+        height: 111
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1121c98c4cc269e4780a46d5ec5105b0
-      internalID: 1299507220
+      spriteID: ef8b529a0cce7004cb6ad2c4b2676650
+      internalID: 2061071873
       vertices: []
       indices: 
       edges: []
@@ -172,17 +172,17 @@ TextureImporter:
         serializedVersion: 2
         x: 291
         y: 7
-        width: 74
+        width: 79
         height: 111
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4cfbdbc9fd34d499328c52624b18fb
-      internalID: 285874257
+      spriteID: 38ffb68276ca8f54f8b181ea8bd91fa5
+      internalID: 1096516283
       vertices: []
       indices: 
       edges: []
@@ -190,7 +190,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ef5be78191cae714c91a248732aa2861
     internalID: 0
     vertices: []
     indices: 
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pistol_0: -479856072
-      Pistol_1: 1416060988
-      Pistol_2: 1299507220
-      Pistol_3: 285874257
+      Pistol_0: 612102175
+      Pistol_1: -416652424
+      Pistol_2: 2061071873
+      Pistol_3: 1096516283
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
