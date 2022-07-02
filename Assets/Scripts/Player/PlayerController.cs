@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Endless.Attacker;
 using Endless.CooldownCore;
+using Endless.GunSwap;
 
 namespace Endless.PlayerCore
 {
@@ -73,8 +74,7 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
-        [SerializeField] string activeWeapon = "Shotgun";
-        private GunCore currWeap;
+        [SerializeField] public GunCore currWeap;
 
         private Camera playerCamera;
         private CharacterController characterController;
@@ -97,11 +97,12 @@ namespace Endless.PlayerCore
             defaultYPos = playerCamera.transform.localPosition.y;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            currWeap = GameObject.Find(activeWeapon).GetComponent<GunCore>();
+            currWeap = GetComponent<WeaponSwapper>().defaultGun.GetComponent<GunCore>();
         }
 
         void Update()
         {
+            currWeap = GetComponent<WeaponSwapper>().currentGun.GetComponent<GunCore>();
             // General movement stuff goes here
             if (CanMove)
             {
@@ -135,6 +136,8 @@ namespace Endless.PlayerCore
                 ThrowGrenade();
             }
 
+            // Weapon  stuff
+            HandleWeaponSwap();
         }
 
         private void HandleInteractionCheck()
@@ -168,10 +171,20 @@ namespace Endless.PlayerCore
 
         private void HandleShoot()
         {
+            currWeap = GetComponent<WeaponSwapper>().currentGun.GetComponent<GunCore>();
             if (Input.GetMouseButton(0) && currWeap.CurrentCD < Time.time)
             {
+                print("Got this far");
                 currWeap.CurrentCD = Cooldown.CdCalc(currWeap.ShotCooldown);
-                ShootGunMain(currWeap);
+                currWeap.ShootGun(playerCamera);
+            }
+        }
+
+        private void HandleWeaponSwap()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                GetComponent<WeaponSwapper>().GunSwap(1);
             }
         }
 
@@ -217,6 +230,7 @@ namespace Endless.PlayerCore
                     playerCamera.transform.localPosition.z);
 
                 // Movement animation for gun
+                print(currWeap.gunAnim.name);
                 try { if (!currWeap.gunAnim.GetBool("RunTrigger")) currWeap.gunAnim.SetBool("RunTrigger", true); }
                 catch { print("No animation exists for running"); }
             }

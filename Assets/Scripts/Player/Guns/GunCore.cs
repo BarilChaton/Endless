@@ -24,8 +24,12 @@ namespace Endless.PlayerCore
         [SerializeField] public int spreadShotNumber = 1;
         [Header("Art stuff")]
         [SerializeField] public GameObject wallHitImpact;
-        public Animator gunAnim;
+        [SerializeField] public Animator gunAnim;
 
+        private void Start()
+        {
+            CurrentCD = 0;
+        }
 
         public void ShootGun(Camera playerCamera = null)
         {
