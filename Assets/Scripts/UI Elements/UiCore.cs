@@ -24,6 +24,7 @@ namespace Endless.InterfaceCore
         [SerializeField] GameObject armourBar;
         TextMeshProUGUI ArmourText;
 
+
         private void Start()
         {
             player = GameObject.Find("Player").GetComponent<PlayerCombat>();
@@ -32,13 +33,13 @@ namespace Endless.InterfaceCore
             {
                 // Creating Health bars
                 healthBar = Instantiate(healthBar, transform);
-                HpText = healthBar.GetComponentInChildren<TextMeshProUGUI>();
+                HpText = GameObject.Find("HpText").GetComponent<TextMeshProUGUI>();
                 HpText.fontSize = fontSizeUI;
                 HpText.color = Color.white;
 
                 // Creating Armour bars
                 armourBar = Instantiate(armourBar, transform);
-                ArmourText = armourBar.GetComponentInChildren<TextMeshProUGUI>();
+                ArmourText = GameObject.Find("ArmourText").GetComponent<TextMeshProUGUI>();
                 ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
             }
@@ -60,10 +61,10 @@ namespace Endless.InterfaceCore
             }
 
             // Armour updates
-            if (player.SetArmourBar() < 1) armourBar.SetActive(false);
+            if (player.SetArmourBar() < 1) armourBar.transform.localScale = Vector3.zero;
             else
             {
-                armourBar.SetActive(true);
+                armourBar.transform.localScale = Vector3.one;
                 ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
             }
         }

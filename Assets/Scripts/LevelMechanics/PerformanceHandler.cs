@@ -21,7 +21,7 @@ public class PerformanceHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider player)
     {
-        if (levelPart1.activeInHierarchy)
+        if (levelPart1.active)
         {
             levelPart1.SetActive(false);
             levelPart2.SetActive(true);
