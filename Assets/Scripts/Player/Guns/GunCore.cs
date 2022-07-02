@@ -15,17 +15,23 @@ namespace Endless.PlayerCore
         [HideInInspector] public float CurrentCD;
         [Header("Ammunation")]
         [SerializeField] public int MaxAmmo;
-        [HideInInspector] public int AmmoPerClip;
         [SerializeField] public int CurrentTotalAmmo;
+        // Future stuff maybe
         [HideInInspector] public int CurrentAmmo;
+        [HideInInspector] public int AmmoPerClip;
         [Header("Gun Details")]
         [SerializeField] public bool spreadShot = true;
         [SerializeField] public float spreadShotWidth = 0.3f;
         [SerializeField] public int spreadShotNumber = 1;
         [Header("Art stuff")]
         [SerializeField] public GameObject wallHitImpact;
-        public Animator gunAnim;
+        [SerializeField] public Animator gunAnim;
 
+        private void Awake()
+        {
+            CurrentCD = 0;
+            CurrentTotalAmmo = MaxAmmo;
+        }
 
         public void ShootGun(Camera playerCamera = null)
         {
@@ -56,7 +62,6 @@ namespace Endless.PlayerCore
                                 Instantiate(wallHitImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
                             }
                         }
-
 
                         // Hit fuckall
                         else
@@ -95,10 +100,11 @@ namespace Endless.PlayerCore
             Ray[] rays = new Ray[points.Length];
             for (int i = 0; i < points.Length; i++)
             {
-                spread += playerCamera.transform.up * Random.Range(-spreadShotWidth, spreadShotWidth);
+                spread += (playerCamera.transform.up - new Vector3(0, 0.2f, 0)) * Random.Range(-spreadShotWidth, spreadShotWidth);
                 spread += playerCamera.transform.right * Random.Range(-spreadShotWidth, spreadShotWidth);
                 direction += spread.normalized * Random.Range(-spreadShotWidth, spreadShotWidth); // Fixing the normalised aspect to make it more circular
                 rays[i] = new Ray(startPosition, direction);
+                Debug.DrawRay(startPosition, direction, Color.red, 25f);
             }
             return rays;
         }

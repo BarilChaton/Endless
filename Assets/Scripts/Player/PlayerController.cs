@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Endless.Attacker;
 using Endless.CooldownCore;
+using Endless.GunSwap;
 
 namespace Endless.PlayerCore
 {
@@ -73,8 +74,7 @@ namespace Endless.PlayerCore
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
-        [SerializeField] string activeWeapon = "Shotgun";
-        private GunCore currWeap;
+        [SerializeField] public GunCore currWeap;
 
         private Camera playerCamera;
         private CharacterController characterController;
@@ -97,11 +97,12 @@ namespace Endless.PlayerCore
             defaultYPos = playerCamera.transform.localPosition.y;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            currWeap = GameObject.Find(activeWeapon).GetComponent<GunCore>();
+            currWeap = GetComponent<WeaponSwapper>().defaultGun.GetComponent<GunCore>();
         }
 
         void Update()
         {
+            currWeap = GetComponent<WeaponSwapper>().currentGun.GetComponent<GunCore>();
             // General movement stuff goes here
             if (CanMove)
             {
@@ -135,6 +136,8 @@ namespace Endless.PlayerCore
                 ThrowGrenade();
             }
 
+            // Weapon  stuff
+            HandleWeaponSwap();
         }
 
         private void HandleInteractionCheck()
@@ -168,10 +171,19 @@ namespace Endless.PlayerCore
 
         private void HandleShoot()
         {
+            currWeap = GetComponent<WeaponSwapper>().currentGun.GetComponent<GunCore>();
             if (Input.GetMouseButton(0) && currWeap.CurrentCD < Time.time)
             {
                 currWeap.CurrentCD = Cooldown.CdCalc(currWeap.ShotCooldown);
-                ShootGunMain(currWeap);
+                currWeap.ShootGun(playerCamera);
+            }
+        }
+
+        private void HandleWeaponSwap()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                GetComponent<WeaponSwapper>().GunSwap(1);
             }
         }
 
@@ -208,7 +220,6 @@ namespace Endless.PlayerCore
         {
             if (!characterController.isGrounded)
                 return;
-            GunCore gunCore = currWeap.GetComponent<GunCore>();
             if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
             {
                 timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : IsSprinting ? sprintBobSpeed : runBobSpeed);
@@ -218,11 +229,14 @@ namespace Endless.PlayerCore
                     playerCamera.transform.localPosition.z);
 
                 // Movement animation for gun
-                if (!gunCore.gunAnim.GetBool("RunTrigger")) gunCore.gunAnim.SetBool("RunTrigger", true);
+                try { if (!currWeap.gunAnim.GetBool("RunTrigger")) currWeap.gunAnim.SetBool("RunTrigger", true); }
+                catch { print("No animation exists for running"); }
             }
             else
             {
-                gunCore.gunAnim.SetBool("RunTrigger", false);
+                try { currWeap.gunAnim.SetBool("RunTrigger", false); }
+                catch { print("No animation exists for running"); }
+                playerCamera.transform.localPosition = new Vector3(playerCamera.transform.localPosition.x, defaultYPos, playerCamera.transform.localPosition.z);
             }
         }
 
