@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lift : MonoBehaviour
+public class Elavator : MonoBehaviour
 {
     // 2.81 seems to be the sweet spot for this one. Will have to recalculate if you want another floor.
     [SerializeField] private Vector3 floorDistance = new Vector3(0, 2.18f, 0);
