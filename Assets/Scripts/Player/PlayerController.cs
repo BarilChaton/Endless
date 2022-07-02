@@ -23,11 +23,13 @@ namespace Endless.PlayerCore
         [SerializeField] private bool canJump = true;
         [SerializeField] private bool canCrouch = true;
         [SerializeField] public bool canUseHeadbob = true;
+        [SerializeField] private bool canInteract = true;
 
         [Header("Controls")]
         [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
         [SerializeField] private KeyCode jumpKey = KeyCode.Space;
         [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+        [SerializeField] private KeyCode interactKey = KeyCode.E;
 
         [Header("Movement Parameters")] // Using header to organize stuff in the Unity inspector.
         [SerializeField] private float runSpeed = 3.0f;
@@ -62,6 +64,12 @@ namespace Endless.PlayerCore
         [SerializeField] private Vector3 standingCenter = new Vector3(0, 0, 0);
         private bool isCrouching;
         private bool duringCrouchAnimation;
+
+        [Header("Interaction")]
+        [SerializeField] private Vector3 interactionRayPoint = default;
+        [SerializeField] private float interactionDistance = default;
+        [SerializeField] LayerMask interactionLayer = default;
+        private Interactable currentInteractable;
 
         [Header("Guns!!")]
         [SerializeField] GameObject GrenadeProjectile;
@@ -109,6 +117,12 @@ namespace Endless.PlayerCore
                 if (canUseHeadbob)
                     HandleHeadBob();
 
+                if (canInteract)
+                {
+                    HandleInteractionCheck();
+                    HandleInteractionInput();
+                }
+
                 ApplyFinalMovements();
             }
 
@@ -121,6 +135,35 @@ namespace Endless.PlayerCore
                 ThrowGrenade();
             }
 
+        }
+
+        private void HandleInteractionCheck()
+        {
+            if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+            {
+                if (hit.collider.gameObject.layer == 11 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
+                {
+                    hit.collider.TryGetComponent(out currentInteractable);
+
+                    if (currentInteractable)
+                    {
+                        currentInteractable.OnFocus();
+                    }
+                }
+                else if (currentInteractable)
+                {
+                    currentInteractable.OnLooseFocus();
+                    currentInteractable = null;
+                }
+            }
+        }
+
+        private void HandleInteractionInput()
+        {
+            if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
+            {
+                currentInteractable.OnInteract();
+            }
         }
 
         private void HandleShoot()

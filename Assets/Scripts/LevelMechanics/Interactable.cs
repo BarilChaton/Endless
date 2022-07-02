@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
-    public GameObject theBridge;
-    void Start()
+    public virtual void Awake()
     {
-
+        gameObject.layer = 11;
     }
-    void Update()
-    {
-
-    }
-
-    public void Raise()
-    {
-        theBridge.GetComponent<Bridge01>().RaiseBridge();
-        print("bob");
-    }
+    public abstract void OnInteract();
+    public abstract void OnFocus();
+    public abstract void OnLooseFocus();
 }
