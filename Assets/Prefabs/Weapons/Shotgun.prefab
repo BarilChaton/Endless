@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8133340248572439432
+--- !u!1 &2067697991378533781
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8133340248572439435}
-  - component: {fileID: 8133340248572439445}
-  - component: {fileID: 8133340248572439434}
-  - component: {fileID: 8133340248572439444}
-  - component: {fileID: 8133340248572439447}
+  - component: {fileID: 2067697991378533782}
+  - component: {fileID: 2067697991378533768}
+  - component: {fileID: 2067697991378533783}
+  - component: {fileID: 2067697991378533769}
+  - component: {fileID: 2067697991378533770}
+  - component: {fileID: 7813355591289595478}
   m_Layer: 5
   m_Name: Shotgun
   m_TagString: Untagged
@@ -26,10 +27,10 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133340248572439432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 2067697991378533781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.246897, y: 3.246897, z: 3.246897}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,15 +47,15 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133340248572439432}
+  m_GameObject: {fileID: 2067697991378533781}
   m_CullTransparentMesh: 1
---- !u!114 &8133340248572439434
+--- !u!114 &2067697991378533783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133340248572439432}
+  m_GameObject: {fileID: 2067697991378533781}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -78,14 +79,14 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &8133340248572439444
+--- !u!95 &2067697991378533769
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133340248572439432}
+  m_GameObject: {fileID: 2067697991378533781}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b3d5fd9c31b4aec4fbcbdddf11d26f45, type: 2}
@@ -98,13 +99,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8133340248572439447
+--- !u!114 &2067697991378533770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133340248572439432}
+  m_GameObject: {fileID: 2067697991378533781}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15c5bfc6864eaa341a8d737b9aadabf4, type: 3}
@@ -112,13 +113,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmt: 4
   ShotCooldown: 1.5
-  CurrentCD: 42.9358
+  CurrentCD: 0
   MaxAmmo: 20
   AmmoPerClip: 0
   CurrentTotalAmmo: 16
   CurrentAmmo: 0
   spreadShot: 1
-  spreadShotWidth: 0.2
+  spreadShotWidth: 0.15
   spreadShotNumber: 10
   wallHitImpact: {fileID: 7427031531007768715, guid: dc084ebf26097b24cbcff573948fcd4b, type: 3}
-  gunAnim: {fileID: 8133340248572439444}
+  gunAnim: {fileID: 2067697991378533769}
+--- !u!223 &7813355591289595478
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067697991378533781}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0

@@ -12,8 +12,7 @@ public class Button : Interactable
 
     public override void OnInteract()
     {
-
-        affectedObject.GetComponent<Bridge01>().startMoving = true;
+        affectedObject.GetComponent<ActivateMovingObject>().startMoving = true;
     }
 
     public override void OnLooseFocus()
