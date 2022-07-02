@@ -67056,23 +67056,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6916546586410236393, guid: 1343a6b3f1b70e4438ee258647abc7b3, type: 3}
   m_PrefabInstance: {fileID: 1504804730}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1506353794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2461961031100620950, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-  m_PrefabInstance: {fileID: 2461961032029064679}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1506353799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506353794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5120954dbe495489263d812ce4677f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1506375352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83621,26 +83604,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
   m_PrefabInstance: {fileID: 2461961032029064679}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1856542305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856542295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c48cb21ce60e5f46925d9ece6b174ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxInInventory: 5
-  defaultGun: {fileID: 1691324613749481705, guid: d3e608a245229244ca4e7a9c0dab3a02, type: 3}
-  gunsInMap:
-  - {fileID: 8133340248572439432, guid: f16825f25cf3a814aad14ce34b49d711, type: 3}
-  weaponChoice: 0
-  currTotalGuns: 0
-  gunsInInventory: []
-  currentGun: {fileID: 0}
 --- !u!1001 &1857348884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95063,38 +95026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2461961031771380933, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: playerHpText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380933, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: playerCurrArmour
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: activeWeapon
-      value: Pistol
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: defaultWeapon
-      value: Pistol
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: interactionDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: interactionRayPoint.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: interactionRayPoint.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461961031771380934, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-      propertyPath: interactionLayer.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
     - target: {fileID: 2461961031771380935, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -95143,8 +95074,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1491251267038760069, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
 --- !u!1001 &3825288376609131747
 PrefabInstance:

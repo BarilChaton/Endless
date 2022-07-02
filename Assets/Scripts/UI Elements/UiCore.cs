@@ -1,8 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Endless.PlayerCore;
 using TMPro;
-using Endless.GunSwap;
-using System.Collections.Generic;
 
 namespace Endless.InterfaceCore
 {
@@ -11,9 +12,7 @@ namespace Endless.InterfaceCore
         [HideInInspector] public int fontSizeUI = 18;
         [HideInInspector] public bool GameStarted = false;
         [HideInInspector] public bool UpdateSettings = false;
-        [HideInInspector] PlayerCombat playerStats;
-        [HideInInspector] WeaponSwapper playerGun;
-        [HideInInspector] GameObject player;
+        [HideInInspector] PlayerCombat player;
 
         [Header("Health")]
         [SerializeField] GameObject healthBar;
@@ -25,27 +24,23 @@ namespace Endless.InterfaceCore
         [SerializeField] GameObject armourBar;
         TextMeshProUGUI ArmourText;
 
-        private void Awake()
+        private void Start()
         {
-            player = GameObject.Find("Player");
-            playerStats = player.GetComponent<PlayerCombat>();
-            playerGun = player.GetComponent<WeaponSwapper>();
+            player = GameObject.Find("Player").GetComponent<PlayerCombat>();
 
             try
             {
                 // Creating Health bars
                 healthBar = Instantiate(healthBar, transform);
-                HpText = GameObject.Find("HpText").GetComponent<TextMeshProUGUI>();
+                HpText = healthBar.GetComponentInChildren<TextMeshProUGUI>();
                 HpText.fontSize = fontSizeUI;
                 HpText.color = Color.white;
 
                 // Creating Armour bars
                 armourBar = Instantiate(armourBar, transform);
-                ArmourText = GameObject.Find("ArmourText").GetComponent<TextMeshProUGUI>();
+                ArmourText = armourBar.GetComponentInChildren<TextMeshProUGUI>();
                 ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
-
-                // Creating Gun
             }
             catch
             {
@@ -61,21 +56,16 @@ namespace Endless.InterfaceCore
             // HP updates
             if (HpText != null)
             {
-                HpText.text = System.Math.Round(playerStats.SetHealthBar(), 0) + " / 100";
+                HpText.text = System.Math.Round(player.SetHealthBar(), 0) + " / 100";
             }
 
             // Armour updates
-            if (playerStats.SetArmourBar() < 1) armourBar.transform.localScale = Vector3.zero;
+            if (player.SetArmourBar() < 1) armourBar.SetActive(false);
             else
             {
-                armourBar.transform.localScale = Vector3.one;
-                ArmourText.text = System.Math.Round(playerStats.SetArmourBar(), 0) + " / 100";
+                armourBar.SetActive(true);
+                ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
             }
-        }
-
-        public static void WeaponActivator(string gunName)
-        {
-
         }
     }
 }

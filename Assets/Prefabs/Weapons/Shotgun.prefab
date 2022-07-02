@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2067697991378533782}
-  - component: {fileID: 2067697991378533768}
+  - component: {fileID: 8133340248572439435}
   - component: {fileID: 2067697991378533783}
   - component: {fileID: 2067697991378533769}
   - component: {fileID: 2067697991378533770}
   - component: {fileID: 7813355591289595478}
+  - component: {fileID: 8133340248572439445}
   m_Layer: 5
   m_Name: Shotgun
   m_TagString: Untagged
@@ -41,14 +41,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 103, y: 80}
   m_Pivot: {x: 0.5, y: 0}
---- !u!222 &8133340248572439445
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067697991378533781}
-  m_CullTransparentMesh: 1
 --- !u!114 &2067697991378533783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,9 +107,9 @@ MonoBehaviour:
   ShotCooldown: 1.5
   CurrentCD: 0
   MaxAmmo: 20
-  AmmoPerClip: 0
   CurrentTotalAmmo: 16
   CurrentAmmo: 0
+  AmmoPerClip: 0
   spreadShot: 1
   spreadShotWidth: 0.15
   spreadShotNumber: 10
@@ -144,3 +136,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!222 &8133340248572439445
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067697991378533781}
+  m_CullTransparentMesh: 1
