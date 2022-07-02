@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Endless.PlayerCore;
 using TMPro;
+using Endless.GunSwap;
+using System.Collections.Generic;
 
 namespace Endless.InterfaceCore
 {
@@ -12,7 +11,9 @@ namespace Endless.InterfaceCore
         [HideInInspector] public int fontSizeUI = 18;
         [HideInInspector] public bool GameStarted = false;
         [HideInInspector] public bool UpdateSettings = false;
-        [HideInInspector] PlayerCombat player;
+        [HideInInspector] PlayerCombat playerStats;
+        [HideInInspector] WeaponSwapper playerGun;
+        [HideInInspector] GameObject player;
 
         [Header("Health")]
         [SerializeField] GameObject healthBar;
@@ -24,10 +25,11 @@ namespace Endless.InterfaceCore
         [SerializeField] GameObject armourBar;
         TextMeshProUGUI ArmourText;
 
-
-        private void Start()
+        private void Awake()
         {
-            player = GameObject.Find("Player").GetComponent<PlayerCombat>();
+            player = GameObject.Find("Player");
+            playerStats = player.GetComponent<PlayerCombat>();
+            playerGun = player.GetComponent<WeaponSwapper>();
 
             try
             {
@@ -42,6 +44,8 @@ namespace Endless.InterfaceCore
                 ArmourText = GameObject.Find("ArmourText").GetComponent<TextMeshProUGUI>();
                 ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
+
+                // Creating Gun
             }
             catch
             {
@@ -57,16 +61,21 @@ namespace Endless.InterfaceCore
             // HP updates
             if (HpText != null)
             {
-                HpText.text = System.Math.Round(player.SetHealthBar(), 0) + " / 100";
+                HpText.text = System.Math.Round(playerStats.SetHealthBar(), 0) + " / 100";
             }
 
             // Armour updates
-            if (player.SetArmourBar() < 1) armourBar.transform.localScale = Vector3.zero;
+            if (playerStats.SetArmourBar() < 1) armourBar.transform.localScale = Vector3.zero;
             else
             {
                 armourBar.transform.localScale = Vector3.one;
-                ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
+                ArmourText.text = System.Math.Round(playerStats.SetArmourBar(), 0) + " / 100";
             }
+        }
+
+        public static void WeaponActivator(string gunName)
+        {
+
         }
     }
 }
