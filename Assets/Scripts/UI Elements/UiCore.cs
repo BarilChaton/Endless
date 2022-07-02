@@ -22,9 +22,7 @@ namespace Endless.InterfaceCore
 
         [Header("Armour")]
         [SerializeField] GameObject armourBar;
-        private Vector3 armourSizeSave;
         TextMeshProUGUI ArmourText;
-
 
         private void Start()
         {
