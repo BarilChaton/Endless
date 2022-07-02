@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2461961031100620947}
   - component: {fileID: 2461961031100620948}
   - component: {fileID: 2461961031100620949}
-  - component: {fileID: 1491251267038760069}
+  - component: {fileID: 1506353799}
+  - component: {fileID: 7035534046602598723}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -85,7 +86,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2461961031100620950}
   m_Enabled: 1
---- !u!114 &1491251267038760069
+--- !u!114 &1506353799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,12 +95,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2461961031100620950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc229cca82002d4c81a7b4f51881c46, type: 3}
+  m_Script: {fileID: 11500000, guid: be5120954dbe495489263d812ce4677f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableLayerMask:
-    serializedVersion: 2
-    m_Bits: 2048
+--- !u!114 &7035534046602598723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461961031100620950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5120954dbe495489263d812ce4677f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2461961031354593993
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +205,7 @@ GameObject:
   - component: {fileID: 2461961031771380984}
   - component: {fileID: 2461961031771380934}
   - component: {fileID: 2461961031771380933}
+  - component: {fileID: 1856542305}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -253,9 +264,11 @@ MonoBehaviour:
   canJump: 1
   canCrouch: 1
   canUseHeadbob: 1
+  canInteract: 1
   sprintKey: 304
   jumpKey: 32
   crouchKey: 306
+  interactKey: 101
   runSpeed: 10
   sprintSpeed: 20
   crouchSpeed: 6
@@ -276,8 +289,13 @@ MonoBehaviour:
   timeToCrouch: 0.25
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 0, z: 0}
+  interactionRayPoint: {x: 0.5, y: 0.5, z: 0}
+  interactionDistance: 2
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   GrenadeProjectile: {fileID: 7924677915691847130, guid: 39748b0dbfbf1d940a0dc8cfb7f141b7, type: 3}
-  defaultWeapon: Shotgun
+  currWeap: {fileID: 0}
   PlayerDead: 0
   GrenadeCdAmt: 3
 --- !u!114 &2461961031771380933
@@ -294,7 +312,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 150
   maxArmour: 100
-  playerHpText: {fileID: 0}
   playerDead: 0
   playerCurrHp: 100
-  playerCurrArmour: 0
+  playerCurrArmour: 100
+--- !u!114 &1856542305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461961031771380985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c48cb21ce60e5f46925d9ece6b174ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxInInventory: 5
+  defaultGun: {fileID: 1691324613749481705, guid: d3e608a245229244ca4e7a9c0dab3a02, type: 3}
+  gunsInMap:
+  - {fileID: 2067697991378533781, guid: f16825f25cf3a814aad14ce34b49d711, type: 3}
+  weaponChoice: 0
+  currTotalGuns: 0
+  gunsInInventory: []
+  currentGun: {fileID: 0}
