@@ -15,9 +15,10 @@ namespace Endless.PlayerCore
         [HideInInspector] public float CurrentCD;
         [Header("Ammunation")]
         [SerializeField] public int MaxAmmo;
-        [HideInInspector] public int AmmoPerClip;
         [SerializeField] public int CurrentTotalAmmo;
+        // Future stuff maybe
         [HideInInspector] public int CurrentAmmo;
+        [HideInInspector] public int AmmoPerClip;
         [Header("Gun Details")]
         [SerializeField] public bool spreadShot = true;
         [SerializeField] public float spreadShotWidth = 0.3f;
@@ -26,9 +27,10 @@ namespace Endless.PlayerCore
         [SerializeField] public GameObject wallHitImpact;
         [SerializeField] public Animator gunAnim;
 
-        private void Start()
+        private void Awake()
         {
             CurrentCD = 0;
+            CurrentTotalAmmo = MaxAmmo;
         }
 
         public void ShootGun(Camera playerCamera = null)
