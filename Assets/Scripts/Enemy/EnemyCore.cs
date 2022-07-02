@@ -38,7 +38,7 @@ public class EnemyCore : MonoBehaviour
 
     void Update()
     {
-        AIController.AI(this.gameObject);
+        AIController.AI(gameObject);
     }
 
     public void TakeDamage(float damage)

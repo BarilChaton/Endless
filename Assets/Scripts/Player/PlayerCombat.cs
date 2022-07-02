@@ -26,9 +26,9 @@ namespace Endless.PlayerCore
                 playerCurrHp = maxHp;
                 playerCurrArmour = 0;
                 SetHealthBar();
+                GetComponent<PlayerController>().gameObject.SetActive(true);
                 uiCoreGetter.GameStarted = true;
             }
-
         }
 
         void Update()
@@ -39,17 +39,22 @@ namespace Endless.PlayerCore
                 Start();
                 uiCoreGetter.UpdateSettings = false;
             }
-
-
         }
 
         public void PlayerTakeDamage(float amount)
         {
             playerCurrHp -= amount;
             playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
+
+            // Player Dead stuffs!
             if (playerCurrHp <= 0)
             {
-                GetComponent<PlayerController>().PlayerDead = true;
+                Camera.main.transform.parent = null;
+                GetComponent<PlayerController>().gameObject.SetActive(false);
+                foreach (Transform child in GameObject.Find("UI Canvas").transform)
+                {
+                    Destroy(child.gameObject);
+                }
             }
         }
 
