@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8386595451401222053}
   - component: {fileID: 1971885443507508289}
   - component: {fileID: 7775590670090264643}
-  - component: {fileID: 8566431774144197518}
+  - component: {fileID: -4453115715231673077}
   m_Layer: 0
   m_Name: Wall03ConsoleB
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8566431774144197518
-MeshCollider:
+--- !u!65 &-4453115715231673077
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000005, y: 0.01, z: 10.000002}
+  m_Center: {x: 0, y: 0, z: 0}
