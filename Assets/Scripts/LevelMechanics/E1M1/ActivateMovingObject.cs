@@ -20,13 +20,4 @@ public class ActivateMovingObject : MonoBehaviour
             startMoving = false;
         }
     }
-
-    //public void RaiseBridge()
-    //{
-    //    if (startMoving)
-    //    {
-    //        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
-    //        startMoving = false;
-    //    }
-    //}
 }

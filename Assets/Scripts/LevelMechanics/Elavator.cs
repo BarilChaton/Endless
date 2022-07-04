@@ -62,7 +62,10 @@ public class Elavator : MonoBehaviour
         if (isMoving) return;
 
         // Starting return timer
-        Invoke("StartMoveDown", returnTimer);
+        if (returnTimer != 0)
+        {
+            Invoke("StartMoveDown", returnTimer);
+        }
 
         // movement starts, up or down (up here), and add/remove a floor
         isMoving = true;

@@ -1,0 +1,2212 @@
+fileFormatVersion: 2
+guid: 6c3e555c2d02b8a4ca7087c4b64f6e15
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DerangedSoldier_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1141
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9c231c34bebb24c8c257ee5a77c375
+      internalID: 1314486562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1140
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e134ccd17a88408428ed6edbd23a5373
+      internalID: 498563662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_2
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1140
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a689b3c1377dd4b9218807bc18daa2
+      internalID: -1972881431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_3
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1140
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937247fdfc8d41240896416f0446fb92
+      internalID: 1598047226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_4
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1140
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e2580438025424b85aef89320ebfc2
+      internalID: 585655950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1141
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e0ed48f3124f24caa3b0f472528ecb
+      internalID: -1089763923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_6
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1140
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a143d8823926694d9b27ddfbcd7e4c4
+      internalID: 1949284406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_7
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1137
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c070e623a4a1e4c83ce6e4101ce1de
+      internalID: -2125994905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1046
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872899089b76f8c478f53896ccc547ef
+      internalID: 675649774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_9
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1049
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ecf70e638d85c2459250b2bab1ffdf0
+      internalID: -513949451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_10
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1053
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1fa17c4a9207e7428d9615827da7032
+      internalID: -348559152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_11
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1055
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a10725b4a712ac49902e278ade8e1d0
+      internalID: 1822074520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_12
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1050
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fd1056907801f43a742ab17cd90df1
+      internalID: -1695146035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_13
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1047
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473081f16e2c63045aee669f01c8a042
+      internalID: -1501924061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_14
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1048
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e642c94b5cabdb4090f435591755423
+      internalID: 571551401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_15
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1048
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d3a718985a5ba4fb9d6f5d8eee4bab
+      internalID: 730564963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_16
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 955
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019fdb7d0233ab14885b8e4555710a79
+      internalID: -1592547571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_17
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 954
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044762d4b3fccfb4faa44233bf9873cf
+      internalID: -2001691349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_18
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 958
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d63e5cb60facf04a94e43c47bab26b7
+      internalID: 108915338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_19
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 959
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af32e2304398e2e4690cf2dd152a71ad
+      internalID: 446702633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_20
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 959
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9d372fe485f5a4aa02e39ac63461df
+      internalID: 1645664161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_21
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 960
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3569e01e4f11143a5be4816c5d2150
+      internalID: -2145635888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_22
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 958
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de44e2833a2adc345b9cf39c2e86162e
+      internalID: -355209783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_23
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 955
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85833acbfbb1444690334c66b28e394
+      internalID: -1230397115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_24
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 862
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5883851ced34cb647a095272d0e52cb5
+      internalID: -988416599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_25
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 861
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47838ef4b2f132644abe6e467970932d
+      internalID: 729112428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_26
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 860
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ddc37df5b1b834bb0c8ed02652906a
+      internalID: -1125388108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_27
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 863
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a99937fc351c8447acb074b5bf5a4cc
+      internalID: -130349546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_28
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 862
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9825784e2e70deb40923f7aabd40f794
+      internalID: 698596900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_29
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 863
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63da296b3799330499f84184560eb05f
+      internalID: -2002580779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_30
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 863
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cf4b6dee5591d4f87e723ae6728e41
+      internalID: -44773198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_31
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 862
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd90c370e3bba641bc893b0c49c0ead
+      internalID: -945279978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_32
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 760
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5dd499f44ff2b4d8492a6b7dbc3815
+      internalID: 159173236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_33
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 762
+        width: 65
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3507e35f1fcc8834ea9d7ec3eafe0bd0
+      internalID: -711855858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_34
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 764
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56745befdf67b6a4987cd5642081e4af
+      internalID: -451166877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_35
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 766
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53944fba0d210514796be8f340dd1b94
+      internalID: -973176522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_36
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 767
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a014fab6852f614292a2c31073b9735
+      internalID: 669504482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_37
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 766
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4999dacd664a1d74894d59c98735a82c
+      internalID: -614413054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_38
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 764
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6aa9ef88a8a7b44abbf5b3f271b39e
+      internalID: -1872261293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_39
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 763
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea566956188488642bf10287015f1b9f
+      internalID: 786353173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 659
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3885676d36b7e9c43b69b010213a1e50
+      internalID: 1746418825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_41
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 656
+        width: 66
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe05c84fb0d403d4cb9f66b17552373d
+      internalID: -621538317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_42
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 663
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74104f0142982bc40b7c1513b69f023a
+      internalID: 1660418508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_43
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 666
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a6e5f8ba1157a42aacdcb2118d2a3c
+      internalID: 1302366586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_44
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 666
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f42a38f9e34c540a580ce37a45c066
+      internalID: -221450347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_45
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 668
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3192b525e83fb554fac37336930e11bd
+      internalID: -846017221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_46
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 668
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68135efd97a43fd4999fc1806082a95e
+      internalID: 549545772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_47
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 668
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27301748aaa284a4e994a6c96b7746dd
+      internalID: 1911218384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 558
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15385621d540278449a8f5471ba60c5b
+      internalID: 1963885557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_49
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 557
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e6f8550bfb02e43bfbbfd1314eff31
+      internalID: 707691214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_50
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 555
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2868845b7a9144396b08d19c39d228
+      internalID: -2075388798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_51
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 556
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915affbaa42ff86469380016b471c94b
+      internalID: 1149500314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_52
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 557
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d70a74ad3e5bf428395d7b4bcd5612
+      internalID: 1338754634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_53
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 557
+        width: 53
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25efe0be795dbc43aabaf39b6a8d3b0
+      internalID: -58958471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_54
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 558
+        width: 49
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bea72549d0bc340b59c1bbb8334100
+      internalID: -1786172870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_55
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 560
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804957efe4f7ea34ab8c0184cf696fdc
+      internalID: -326793800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_56
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 457
+        width: 64
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9e6db37b9d0c04292482331a8bd16c
+      internalID: -1375526717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_57
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 456
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8b0eff2804cce4288a5ec18d769bd7
+      internalID: -381224709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_58
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 460
+        width: 51
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4865d6cc73fcc4f8007afbb6a92944
+      internalID: 1899540201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_59
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 459
+        width: 54
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66b1530fc827d54fa0aba374db7bc29
+      internalID: 1076055191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_60
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 460
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c116232725895df449b6219ccbef196c
+      internalID: 92855734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_61
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 459
+        width: 70
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019c7ef155a13254f95ac9b25ad0045f
+      internalID: -29472285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_62
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 460
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded7306dda57d124a89d0c0354f6b7e9
+      internalID: -1898387069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_63
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 462
+        width: 53
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aca23a87f32c004f8af08225edd8996
+      internalID: 1823186838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_64
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 364
+        width: 54
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d0af3be05f836438a56cc25a2ea89a
+      internalID: 514335376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_65
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 364
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f25180191f66c4aac073eb7ee4d256
+      internalID: 890073536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_66
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 366
+        width: 57
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6694ed0158561c4cbedb9044bc18c50
+      internalID: 1518275013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_67
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 369
+        width: 58
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1b2b959d52eaf4da7d79ebcd35416f
+      internalID: -977563863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_68
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 371
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f711597e1e50e409d04afe94c5b155
+      internalID: 1930818005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_69
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 370
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36f85f0508984443898790c723f9a64
+      internalID: 1553875518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_70
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 367
+        width: 61
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b6668148b18fa4d80da81c2c3a65c0
+      internalID: -1219117360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_71
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 366
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77748c2515aa8924582246480d3f9a66
+      internalID: 29411579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_72
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 273
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7567d3c302c9d47acb6c0614cc5a7a
+      internalID: 995006690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_73
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 277
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4340ceeb45bb4f146b78e80791c91fc8
+      internalID: 1609200599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_74
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 276
+        width: 56
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628031407dd798a4d883f59022b28bb0
+      internalID: 1929246186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_75
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 275
+        width: 55
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6796217200c8ccd4caef9a3fb8a1b0b7
+      internalID: -1802215863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_76
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 277
+        width: 52
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2750dfcb06a464429b11e1d8ba787c1
+      internalID: -1157687491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_77
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 275
+        width: 46
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dab0619e1e577440a06d2a538584ee6
+      internalID: 458638168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_78
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 271
+        width: 59
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a06ed648f8994345931cdfbda5553a0
+      internalID: 937184972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_79
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 273
+        width: 57
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d9d0bea77d62b4db1e4f1c4728b952
+      internalID: 862251939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_80
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 178
+        width: 64
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1cb1c368cbf520428e47b871cd4fa91
+      internalID: 978869554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_81
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 179
+        width: 67
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c962c2a5b790d4eb7bce797a6c8391
+      internalID: 1133095165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_82
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 180
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926482569efc485409926971498431bc
+      internalID: 1430807736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_83
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 182
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c5bf0bec45af34890c1c74697c0c9a
+      internalID: -60942653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_84
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 183
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ce8f90cb196e94fbcdfc8cead52507
+      internalID: -204265474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_85
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 184
+        width: 64
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544d3457587320d4ca6765ab37e46c82
+      internalID: 395878731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_86
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 186
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ba05a0302c0b449b1e1104b7001b70
+      internalID: -1248288172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_87
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 182
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63d963e77359ca45ae7b055ac323214
+      internalID: 53845811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_88
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 77
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a53f8896455b0b418845bfc78cc8da8
+      internalID: 574653924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_89
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 78
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c31c8918fa72848b0f5aedbc390d12
+      internalID: 132753416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_90
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 75
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645a719761832244da47cb284e9bc4e7
+      internalID: -937062027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_91
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 76
+        width: 61
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b38bf8487d9e4a44915e55f254d7f6b
+      internalID: -932706048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_92
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 82
+        width: 62
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a619ace685417cb48ab1288df5fb09d5
+      internalID: 440694733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_93
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 84
+        width: 70
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3cfa6c4e642a242a6d083c479df98e
+      internalID: -711109071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DerangedSoldier_94
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 81
+        width: 70
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7fb9b44055e224d9105e1fe7d709ba
+      internalID: 1575556786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3849a362c9ce4094890e94f719e5ec19
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DerangedSoldier_33: -711855858
+      DerangedSoldier_72: 995006690
+      DerangedSoldier_17: -2001691349
+      DerangedSoldier_7: -2125994905
+      DerangedSoldier_73: 1609200599
+      DerangedSoldier_51: 1149500314
+      DerangedSoldier_83: -60942653
+      DerangedSoldier_75: -1802215863
+      DerangedSoldier_69: 1553875518
+      DerangedSoldier_4: 585655950
+      DerangedSoldier_70: -1219117360
+      DerangedSoldier_1: 498563662
+      DerangedSoldier_68: 1930818005
+      DerangedSoldier_19: 446702633
+      DerangedSoldier_22: -355209783
+      DerangedSoldier_38: -1872261293
+      DerangedSoldier_52: 1338754634
+      DerangedSoldier_53: -58958471
+      DerangedSoldier_13: -1501924061
+      DerangedSoldier_42: 1660418508
+      DerangedSoldier_50: -2075388798
+      DerangedSoldier_2: -1972881431
+      DerangedSoldier_74: 1929246186
+      DerangedSoldier_71: 29411579
+      DerangedSoldier_82: 1430807736
+      DerangedSoldier_62: -1898387069
+      DerangedSoldier_54: -1786172870
+      DerangedSoldier_66: 1518275013
+      DerangedSoldier_39: 786353173
+      DerangedSoldier_67: -977563863
+      DerangedSoldier_63: 1823186838
+      DerangedSoldier_55: -326793800
+      DerangedSoldier_92: 440694733
+      DerangedSoldier_36: 669504482
+      DerangedSoldier_41: -621538317
+      DerangedSoldier_48: 1963885557
+      DerangedSoldier_25: 729112428
+      DerangedSoldier_56: -1375526717
+      DerangedSoldier_18: 108915338
+      DerangedSoldier_20: 1645664161
+      DerangedSoldier_11: 1822074520
+      DerangedSoldier_45: -846017221
+      DerangedSoldier_78: 937184972
+      DerangedSoldier_37: -614413054
+      DerangedSoldier_85: 395878731
+      DerangedSoldier_35: -973176522
+      DerangedSoldier_32: 159173236
+      DerangedSoldier_89: 132753416
+      DerangedSoldier_43: 1302366586
+      DerangedSoldier_87: 53845811
+      DerangedSoldier_59: 1076055191
+      DerangedSoldier_24: -988416599
+      DerangedSoldier_9: -513949451
+      DerangedSoldier_15: 730564963
+      DerangedSoldier_26: -1125388108
+      DerangedSoldier_91: -932706048
+      DerangedSoldier_12: -1695146035
+      DerangedSoldier_79: 862251939
+      DerangedSoldier_30: -44773198
+      DerangedSoldier_65: 890073536
+      DerangedSoldier_46: 549545772
+      DerangedSoldier_34: -451166877
+      DerangedSoldier_94: 1575556786
+      DerangedSoldier_40: 1746418825
+      DerangedSoldier_57: -381224709
+      DerangedSoldier_58: 1899540201
+      DerangedSoldier_64: 514335376
+      DerangedSoldier_88: 574653924
+      DerangedSoldier_16: -1592547571
+      DerangedSoldier_80: 978869554
+      DerangedSoldier_6: 1949284406
+      DerangedSoldier_77: 458638168
+      DerangedSoldier_8: 675649774
+      DerangedSoldier_0: 1314486562
+      DerangedSoldier_44: -221450347
+      DerangedSoldier_47: 1911218384
+      DerangedSoldier_23: -1230397115
+      DerangedSoldier_90: -937062027
+      DerangedSoldier_14: 571551401
+      DerangedSoldier_61: -29472285
+      DerangedSoldier_21: -2145635888
+      DerangedSoldier_3: 1598047226
+      DerangedSoldier_31: -945279978
+      DerangedSoldier_76: -1157687491
+      DerangedSoldier_49: 707691214
+      DerangedSoldier_29: -2002580779
+      DerangedSoldier_10: -348559152
+      DerangedSoldier_84: -204265474
+      DerangedSoldier_86: -1248288172
+      DerangedSoldier_81: 1133095165
+      DerangedSoldier_5: -1089763923
+      DerangedSoldier_28: 698596900
+      DerangedSoldier_27: -130349546
+      DerangedSoldier_93: -711109071
+      DerangedSoldier_60: 92855734
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

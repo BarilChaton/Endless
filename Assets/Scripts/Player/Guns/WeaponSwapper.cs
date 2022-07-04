@@ -24,7 +24,7 @@ namespace Endless.GunSwap
             gunsInInventory.Add(defaultGun);
             gunsInInventory.Add(gunsInMap[1]);
 
-            LoadGuns(); 
+            LoadGuns();
             ActiveGun();
             currentGun = gunsInInventory[0];
         }
