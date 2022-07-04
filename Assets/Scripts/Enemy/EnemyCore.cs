@@ -34,8 +34,9 @@ public class EnemyCore : MonoBehaviour
 
     [Header("EnemyAnimations")]
     [HideInInspector] public Animator spriteAnim;
-    private AngleToPlayer angleToPlayer;
+    private EnemySpriteLook enemySpriteLook;
     private AIController aiController;
+    private Rigidbody rb;
 
     [Header("AI controls")]
     public float radius = 20f;
@@ -49,27 +50,37 @@ public class EnemyCore : MonoBehaviour
     {
         enabled = true;
         spriteAnim = GetComponentInChildren<Animator>();
-        angleToPlayer = gameObject.AddComponent<AngleToPlayer>();
-        aiController = gameObject.AddComponent<AIController>();
+        enemySpriteLook = GetComponentInChildren<EnemySpriteLook>();
+
+        if (!TryGetComponent(out aiController))
+            aiController = gameObject.AddComponent<AIController>();
+
+        if (!TryGetComponent(out rb))
+            rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+
         attackRangeTemp = attackRange;
     }
 
     void Update()
     {
-        // beginning of update set the animation to rotational index.
-        try
-        {
-            spriteAnim.SetFloat("spriteRot", angleToPlayer.lastIndex);
-        }
-        catch { }
         aiController.AI();
     }
 
     public void TakeDamage(float damage)
     {
+        // Take damage
         enemyHealth -= damage;
+
+        // Animation attempt
         try { spriteAnim.SetTrigger("IsHit"); }
         catch { }
+
+        // Look at Player
+        enemySpriteLook.StareAtPlayer(true);
+
+        // Death stuff
         if (enemyHealth <= 0) DeathAction();
     }
 

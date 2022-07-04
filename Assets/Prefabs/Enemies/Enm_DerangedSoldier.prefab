@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 201254138153175890}
   - component: {fileID: 201254138153175894}
   - component: {fileID: 7266379066773473675}
-  - component: {fileID: 149929418}
   m_Layer: 0
   m_Name: Enm_DerangedSoldier
   m_TagString: Enemy
@@ -66,7 +65,7 @@ MonoBehaviour:
   spriteAnim: {fileID: 0}
   radius: 20
   angle: 40
-  player: {fileID: 0}
+  player: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
   canSeePlayer: 0
 --- !u!136 &7266379066773473675
 CapsuleCollider:
@@ -82,22 +81,6 @@ CapsuleCollider:
   m_Height: 1.7467823
   m_Direction: 1
   m_Center: {x: 0, y: 0.0018588305, z: -0.107951164}
---- !u!54 &149929418
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201254138153175889}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &201254138900608402
 GameObject:
   m_ObjectHideFlags: 0
