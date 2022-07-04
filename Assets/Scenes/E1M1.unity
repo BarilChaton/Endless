@@ -63393,10 +63393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b383160b77185429aa56729ba167ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: {x: 121.1058, y: -6.499992, z: 9.999973}
-  target: {x: 121.1058, y: 1.500008, z: 9.999973}
+  floorDistance: {x: 0, y: 2.18, z: 0}
   speed: 5
-  setTime: 2
+  returnTimer: 10
+  activationTimer: 0
+  floor: 0
+  maxFloor: 1
+  moveTransform: {fileID: 1425468691}
 --- !u!54 &1425468695
 Rigidbody:
   m_ObjectHideFlags: 0
