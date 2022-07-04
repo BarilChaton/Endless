@@ -5,6 +5,7 @@ using UnityEngine;
 public class Button : Interactable
 {
     public GameObject affectedObject;
+    public GameObject affectedObject2;
     public override void OnFocus()
     {
 
@@ -13,6 +14,7 @@ public class Button : Interactable
     public override void OnInteract()
     {
         affectedObject.GetComponent<ActivateMovingObject>().startMoving = true;
+        affectedObject2.SetActive(false);
     }
 
     public override void OnLooseFocus()
