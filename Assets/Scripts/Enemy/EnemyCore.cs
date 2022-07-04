@@ -31,28 +31,38 @@ public class EnemyCore : MonoBehaviour
 
     [HideInInspector] public float attackRangeTemp;
 
+    [Header("EnemyAnimations")]
+    private Animator spriteAnim;
+    private AngleToPlayer angleToPlayer;
+
     private void Awake()
     {
+        spriteAnim = GetComponentInChildren<Animator>();
+        angleToPlayer = GetComponent<AngleToPlayer>();
         attackRangeTemp = attackRange;
     }
 
     void Update()
     {
-        AIController.AI(gameObject);
+        // beginning of update set the animation to rotational index.
+        spriteAnim.SetFloat("spriteRot", angleToPlayer.lastIndex);
+
+        AIController.AI(this.gameObject);
     }
 
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
+        spriteAnim.SetTrigger("IsHit");
         if (enemyHealth <= 0) DeathAction();
     }
 
     private void DeathAction()
     {
+        spriteAnim.SetBool("Dead", true);
 
 
-
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
 
