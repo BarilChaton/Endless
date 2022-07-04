@@ -49,11 +49,20 @@ namespace Endless.PlayerCore
                         if (Physics.Raycast(r, out RaycastHit hit))
                         {
                             // Hitting an enemy specifically
-                            if (hit.transform.tag == "Enemy")
+                            if (hit.transform.CompareTag("Enemy"))
                             {
+                                // vars
+                                EnemyCore enemy = hit.collider.GetComponent<EnemyCore>();
                                 float damage = DamageAmt;
-                                hit.collider.GetComponent<EnemyCore>().TakeDamage(damage);
-                                Instantiate(hit.collider.GetComponent<EnemyCore>().hurtImpact, hit.point, playerCamera.transform.rotation);
+
+                                // Damoog
+                                enemy.TakeDamage(damage);
+
+                                // impact if exist
+                                if (enemy.hurtImpact != null)
+                                {
+                                    Instantiate(enemy.hurtImpact, hit.point, playerCamera.transform.rotation);
+                                }
                             }
 
                             // Hitting anything else. TODO: Hitting decoration? Lamps? -- TBI

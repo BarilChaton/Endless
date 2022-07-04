@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Endless.Control;
 using Endless.TypeOfEnemies;
+using Endless.Movement;
 
 public class EnemyCore : MonoBehaviour
 {
     [Header("Enemy Base Information")]
     [SerializeField] public EnemyTypes.Types enemyType;
     [SerializeField] public float aggressionDistance = 20f;
-    [SerializeField] public GameObject hurtImpact;
+    [SerializeField] public GameObject hurtImpact = null;
 
     [Header("Stats")]
     [SerializeField] private float enemyHealth = 5;
@@ -32,37 +33,51 @@ public class EnemyCore : MonoBehaviour
     [HideInInspector] public float attackRangeTemp;
 
     [Header("EnemyAnimations")]
-    private Animator spriteAnim;
+    [HideInInspector] public Animator spriteAnim;
     private AngleToPlayer angleToPlayer;
+    private AIController aiController;
+
+    [Header("AI controls")]
+    public float radius = 20f;
+    [Range(0, 360)]
+    public float angle = 40f;
+    public GameObject player;
+
+    [HideInInspector] public bool canSeePlayer;
 
     private void Awake()
     {
+        enabled = true;
         spriteAnim = GetComponentInChildren<Animator>();
-        angleToPlayer = GetComponent<AngleToPlayer>();
+        angleToPlayer = gameObject.AddComponent<AngleToPlayer>();
+        aiController = gameObject.AddComponent<AIController>();
         attackRangeTemp = attackRange;
     }
 
     void Update()
     {
         // beginning of update set the animation to rotational index.
-        spriteAnim.SetFloat("spriteRot", angleToPlayer.lastIndex);
-
-        AIController.AI(this.gameObject);
+        try
+        {
+            spriteAnim.SetFloat("spriteRot", angleToPlayer.lastIndex);
+        }
+        catch { }
+        aiController.AI();
     }
 
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
-        spriteAnim.SetTrigger("IsHit");
+        try { spriteAnim.SetTrigger("IsHit"); }
+        catch { }
         if (enemyHealth <= 0) DeathAction();
     }
 
     private void DeathAction()
     {
-        spriteAnim.SetBool("Dead", true);
-
-
-        //Destroy(gameObject);
+        try { spriteAnim.SetBool("Dead", true); }
+        catch { Destroy(gameObject); }
+        finally { enabled = false; }
     }
 }
 
