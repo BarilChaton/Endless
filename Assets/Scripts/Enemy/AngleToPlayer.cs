@@ -72,10 +72,10 @@ public class AngleToPlayer : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
+/*        Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, transform.forward);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, targetPos);
+        Gizmos.DrawLine(transform.position, targetPos);*/
     }
 }

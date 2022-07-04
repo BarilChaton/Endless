@@ -1,29 +1,25 @@
 using Endless.PlayerCore;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpriteLook : MonoBehaviour
 {
-    private Transform target;
+    [SerializeField] private Transform target;
+    private EnemyCore core;
     public bool canLookVertically;
+
 
     void Start()
     {
         target = FindObjectOfType<PlayerController>().transform;
+        core = transform.parent.GetComponent<EnemyCore>();
     }
     void Update()
     {
-        if (canLookVertically)
-        {
-            transform.LookAt(target);
-        }
-        else
-        {
-            Vector3 modifiedTarget = target.position;
-            modifiedTarget.y = transform.position.y;
+        Vector3 modifiedTarget = new(target.position.x, transform.position.y, target.position.z);
 
-            transform.LookAt(modifiedTarget);
-        }
+        /// FIX ME PLEAAAAAAAAAAAAAAAAAASE thanks
+        if (core.canSeePlayer) transform.parent.LookAt(canLookVertically ? target.position : modifiedTarget);
+
+        transform.LookAt(canLookVertically ? target.position : modifiedTarget);
     }
 }
