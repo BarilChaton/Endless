@@ -16,6 +16,7 @@ namespace Endless.Control
             target = FindObjectOfType<PlayerController>().transform;
             controller = transform.parent.GetComponent<AIController>();
             StartCoroutine(StareRoutine());
+            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         void OnEnable()
@@ -44,7 +45,7 @@ namespace Endless.Control
             Vector3 modifiedTarget = new(target.position.x, transform.position.y, target.position.z);
 
             if (controller.canSeeTarget || gotHit) transform.parent.LookAt(canLookVertically ? target.position : modifiedTarget);
-            else transform.LookAt(canLookVertically ? target.position : modifiedTarget);
+            transform.forward = new Vector3(-Camera.main.transform.forward.x, transform.forward.y, -Camera.main.transform.forward.z);
         }
     }
 }

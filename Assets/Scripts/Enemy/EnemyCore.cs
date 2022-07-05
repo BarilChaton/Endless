@@ -105,6 +105,8 @@ public class EnemyCore : MonoBehaviour
                 continue;
             Destroy(t);
         }
+        gameObject.layer = default;
+        GetComponentInChildren<Transform>().gameObject.layer = default;
         ActDead();
         enabled = false;
     }

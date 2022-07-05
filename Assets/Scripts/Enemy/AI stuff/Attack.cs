@@ -89,6 +89,7 @@ namespace Endless.Attacker
                         if (target != hit.collider.gameObject)
                         {
                             target = hit.collider.gameObject;
+                            GetComponentInChildren<EnemySpriteLook>().target = hit.collider.gameObject.transform;
                             hit.collider.gameObject.GetComponent<Attack>().target = gameObject;
                             hit.collider.gameObject.GetComponentInChildren<EnemySpriteLook>().target = gameObject.transform;
                         }

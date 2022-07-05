@@ -35,7 +35,7 @@ namespace Endless.Control
 
             core = gameObject.GetComponent<EnemyCore>();
             player = core.player;
-            radius = core.radius;
+            radius = core.aggressionDistance;
             angle = core.angle;
 
             StartCoroutine(FOVRoutine());
@@ -82,7 +82,23 @@ namespace Endless.Control
 
             if (rangeChecks.Length != 0)
             {
-                Transform target = (attack.target == player) ? rangeChecks[0].transform : attack.target.transform;
+                Transform allyTarget = attack.target.transform;
+
+                // Initial hostile target does not exist. Choose another enemy.
+                if (allyTarget.gameObject.layer == default && rangeChecks.Length >= 2)
+                {
+                    // If new target is self, then.. don't? lol
+                    allyTarget = (rangeChecks[0].gameObject == this.gameObject) ?
+                        rangeChecks[1].transform : rangeChecks[0].transform;
+
+                    attack.target = allyTarget.gameObject;
+                    attack.GetComponentInChildren<EnemySpriteLook>().target = allyTarget;
+                }
+                else if (rangeChecks.Length == 1) attack.target = player;
+
+                // Set target position
+                Transform target = (attack.target == player) ?
+                    rangeChecks[0].transform : allyTarget;
                 Vector3 directionToTarget = (target.position - transform.position).normalized;
 
                 if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
@@ -93,6 +109,11 @@ namespace Endless.Control
                     else canSeeTarget = false;
                 }
                 else canSeeTarget = false;
+            }
+            else if (attack.target != player)
+            {
+                attack.target = player;
+                canSeeTarget = false;
             }
             else if (canSeeTarget) canSeeTarget = false;
         }
