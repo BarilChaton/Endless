@@ -43,6 +43,17 @@ namespace Endless.PlayerCore
 
         public void PlayerTakeDamage(float amount)
         {
+            // Armour goes first, obviously
+            if (playerCurrArmour > 0)
+            {
+                playerCurrArmour -= amount;
+                if (playerCurrArmour < 0)
+                {
+                    amount = -playerCurrArmour;
+                    playerCurrArmour = 0;
+                }
+            }
+            // Then, health
             playerCurrHp -= amount;
             playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
 
