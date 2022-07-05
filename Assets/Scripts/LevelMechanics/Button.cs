@@ -6,6 +6,7 @@ public class Button : Interactable
 {
     public GameObject affectedObject;
     public GameObject affectedObject2;
+    public GameObject affectedObject3;
     public override void OnFocus()
     {
 
@@ -15,6 +16,7 @@ public class Button : Interactable
     {
         affectedObject.GetComponent<ActivateMovingObject>().startMoving = true;
         affectedObject2.SetActive(false);
+        affectedObject3.SetActive(true);
     }
 
     public override void OnLooseFocus()

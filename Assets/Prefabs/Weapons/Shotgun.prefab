@@ -103,11 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c5bfc6864eaa341a8d737b9aadabf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 4
-  ShotCooldown: 1.5
+  DamageAmt: 6
+  ShotCooldown: 0.9
   CurrentCD: 0
   MaxAmmo: 20
-  CurrentTotalAmmo: 16
+  CurrentTotalAmmo: 12
   CurrentAmmo: 0
   AmmoPerClip: 0
   spreadShot: 1

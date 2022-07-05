@@ -111,10 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmt: 8
-  ShotCooldown: 0.7
+  ShotCooldown: 0.4
   CurrentCD: 45.393734
-  MaxAmmo: 50
-  CurrentTotalAmmo: 36
+  MaxAmmo: 100
+  CurrentTotalAmmo: 24
   CurrentAmmo: 0
   AmmoPerClip: 0
   spreadShot: 0
