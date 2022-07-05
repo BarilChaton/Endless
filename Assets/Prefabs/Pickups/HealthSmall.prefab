@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 779129150494889990}
   - component: {fileID: 779129150494889984}
   - component: {fileID: 779129150494889985}
+  - component: {fileID: -8191243300790663048}
   m_Layer: 0
   m_Name: HealthSmall
   m_TagString: Untagged
@@ -114,3 +115,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4abf19e7e11d34485f77a79f9233bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8191243300790663048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779129150494889989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c531bf451051e99429d998d19d3a3377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPercentageBased: 0
+  amount: 100
+  gravityEffectTime: 0

@@ -8,8 +8,8 @@ namespace Endless.PlayerCore
 {
     public class PlayerCombat : MonoBehaviour
     {
-        [SerializeField] float maxHp = 100;
-        [SerializeField] float maxArmour = 100;
+        public static float maxHp = 100;
+        public static float maxArmour = 100;
         public bool playerDead;
         public float playerCurrHp = 0;
         public float playerCurrArmour = 0;
@@ -41,10 +41,30 @@ namespace Endless.PlayerCore
             }
         }
 
+        public void PlayerGetArmour(float amount)
+        {
+            playerCurrArmour = Mathf.Clamp(playerCurrArmour + amount, 0, maxArmour);
+        }
+
+        public void PlayerHealed(float amount)
+        {
+            playerCurrHp = Mathf.Clamp(playerCurrHp + amount, 0, maxHp);
+        }
+
         public void PlayerTakeDamage(float amount)
         {
-            playerCurrHp -= amount;
-            playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
+            // Armour goes first, obviously
+            if (playerCurrArmour > 0)
+            {
+                playerCurrArmour -= amount;
+                if (playerCurrArmour < 0)
+                {
+                    amount = -playerCurrArmour;
+                    playerCurrArmour = 0;
+                }
+            }
+            // Then, health
+            playerCurrHp = Mathf.Clamp(playerCurrHp - amount, 0f, maxHp);
 
             // Player Dead stuffs!
             if (playerCurrHp <= 0)
