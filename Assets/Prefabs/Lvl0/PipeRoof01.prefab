@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2742646951690175524}
   - component: {fileID: 4885493943293978630}
   - component: {fileID: 4232736845926661355}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PipeRoof01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209621047018409048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RoomChanger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5219224306468160511}
   - component: {fileID: 2531551306581652661}
   - component: {fileID: 1313659181944461563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FloorChanger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 5646574057733614701}
   - component: {fileID: 5449220401512281554}
   - component: {fileID: 8683679428764452902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallChanger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 6340637708129630250}
   - component: {fileID: 6340637708129630229}
   - component: {fileID: 6340637708129630228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallChanger01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 6340637708415360289}
   - component: {fileID: 6340637708415360288}
   - component: {fileID: 6340637708415360291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FloorChanger01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

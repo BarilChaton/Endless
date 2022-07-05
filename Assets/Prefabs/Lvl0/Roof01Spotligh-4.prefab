@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8068694689797117475}
   - component: {fileID: 8068694689797117474}
   - component: {fileID: 6356328739286266970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Roof01Spotligh-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694689826709473}
   - component: {fileID: 8068694689826709474}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694689902402664}
   - component: {fileID: 8068694689902402665}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694690034194461}
   - component: {fileID: 8068694690034194462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694690100839556}
   - component: {fileID: 8068694690100839557}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694690217500544}
   - component: {fileID: 8068694690217500545}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694690435822840}
   - component: {fileID: 8068694690435822841}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694690566757763}
   - component: {fileID: 8068694690566757764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8068694691570155024}
   - component: {fileID: 8068694691570155025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
