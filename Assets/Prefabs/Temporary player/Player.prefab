@@ -257,7 +257,7 @@ MonoBehaviour:
   crouchKey: 306
   interactKey: 101
   runSpeed: 10
-  sprintSpeed: 20
+  sprintSpeed: 15
   crouchSpeed: 6
   lookSpeedX: 2
   lookSpeedY: 2

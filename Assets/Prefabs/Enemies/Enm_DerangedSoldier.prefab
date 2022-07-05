@@ -50,10 +50,10 @@ MonoBehaviour:
   aggressionDistance: 20
   hurtImpact: {fileID: 0}
   enemyHealth: 20
-  speed: 10
+  speed: 7
   rangedDamage: 10
   meleeDamage: 20
-  attackRange: 5
+  attackRange: 10
   rangedAttackSpeed: 2
   rangedAttackCd: 0
   rangedAimTime: 0.1
@@ -199,5 +199,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ea01f8180a1ee42bf9991dc747c73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   canLookVertically: 0
