@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 201254138153175890}
   - component: {fileID: 201254138153175894}
   - component: {fileID: 7266379066773473675}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Enm_DerangedSoldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -46,27 +46,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc761a903481f9f4a99eabe957b96ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
+  enemyType: 2
   aggressionDistance: 20
   hurtImpact: {fileID: 0}
   enemyHealth: 20
+  maxHealth: 50
+  armour: 0
   speed: 7
   rangedDamage: 10
-  meleeDamage: 20
   attackRange: 10
   rangedAttackSpeed: 2
-  rangedAttackCd: 0
   rangedAimTime: 0.1
+  rangedAttackCd: 0
   shotReady: 0
+  meleeDamage: 20
   meleeRange: 1
   meleeAttackSpeed: 2
   meleeAttackCd: 0
   attackRangeTemp: 0
   spriteAnim: {fileID: 0}
   radius: 20
-  angle: 40
-  player: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
-  canSeePlayer: 0
+  angle: 67
+  player: {fileID: 0}
+  canSeeTarget: 0
+  showVisionInfo: 0
+  showDebugInfo: 0
 --- !u!136 &7266379066773473675
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,7 +97,7 @@ GameObject:
   - component: {fileID: 201254138900608404}
   - component: {fileID: 201254138900608406}
   - component: {fileID: 201254138900608407}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: EnemySprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -199,4 +203,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ea01f8180a1ee42bf9991dc747c73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   canLookVertically: 0

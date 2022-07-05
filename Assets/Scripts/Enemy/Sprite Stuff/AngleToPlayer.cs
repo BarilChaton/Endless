@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AngleToPlayer : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
     private Vector3 targetPos;
     private Vector3 targetDir;
 
@@ -18,9 +18,21 @@ public class AngleToPlayer : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>().transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        StartCoroutine(AngleRoutine());
     }
 
-    void Update()
+    private IEnumerator AngleRoutine()
+    {
+        WaitForSeconds wait = new(0.1f);
+
+        while (true)
+        {
+            yield return wait;
+            AngleChecker();
+        }
+    }
+
+    void AngleChecker()
     {
         // Get target position and direction
         targetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
@@ -72,10 +84,10 @@ public class AngleToPlayer : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-/*        Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position, transform.forward);
+        /*        Gizmos.color = Color.green;
+                Gizmos.DrawRay(transform.position, transform.forward);
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, targetPos);*/
+                Gizmos.color = Color.blue;
+                Gizmos.DrawLine(transform.position, targetPos);*/
     }
 }

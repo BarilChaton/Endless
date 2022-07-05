@@ -8,8 +8,9 @@ namespace Endless.Control
 {
     public class AIController : MonoBehaviour
     {
-        public LayerMask targetMask;
+        public LayerMask playerMask;
         public LayerMask obstructionMask;
+        public LayerMask allyMask;
         private Attack attack;
 
         [HideInInspector] private float radius = 20f;
@@ -18,21 +19,23 @@ namespace Endless.Control
         [HideInInspector] public GameObject player;
         [HideInInspector] Animator spriteAnim;
         [HideInInspector] AngleToPlayer angleToPlayer;
+        [HideInInspector] private EnemyCore core;
 
-        public bool canSeePlayer;
+        public bool canSeeTarget;
 
-        private void Start()
+        private void Awake()
         {
             spriteAnim = GetComponentInChildren<Animator>();
             if (!TryGetComponent(out attack)) attack = gameObject.AddComponent<Attack>();
             if (!TryGetComponent(out angleToPlayer)) angleToPlayer = gameObject.AddComponent<AngleToPlayer>();
 
-            targetMask = LayerMask.GetMask("Player");
+            playerMask = LayerMask.GetMask("Player");
+            allyMask = LayerMask.GetMask("Enemies");
             obstructionMask = LayerMask.GetMask("Walls", "Ground");
 
-            EnemyCore core = gameObject.GetComponent<EnemyCore>();
+            core = gameObject.GetComponent<EnemyCore>();
             player = core.player;
-            radius = core.radius;
+            radius = core.aggressionDistance;
             angle = core.angle;
 
             StartCoroutine(FOVRoutine());
@@ -41,7 +44,7 @@ namespace Endless.Control
         public void AI()
         {
             // If player is found, act aggressive
-            if (canSeePlayer)
+            if (canSeeTarget)
             {
                 attack.InitiateAggress();
             }
@@ -54,37 +57,65 @@ namespace Endless.Control
             }
         }
 
+        private void OnEnable()
+        {
+            StartCoroutine(FOVRoutine());
+        }
+
         private IEnumerator FOVRoutine()
         {
-            WaitForSeconds wait = new(0.2f);
+            WaitForSeconds wait = new(0.1f);
 
             while (true)
             {
                 yield return wait;
-                FieldOfViewCheck(); 
+                FieldOfViewCheck();
                 RotationCheck();
             }
         }
 
         private void FieldOfViewCheck()
         {
-            Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+            Collider[] rangeChecks = (attack.target == player) ?
+                Physics.OverlapSphere(transform.position, radius, playerMask) :
+                Physics.OverlapSphere(transform.position, radius, allyMask);
 
             if (rangeChecks.Length != 0)
             {
-                Transform target = rangeChecks[0].transform;
+                Transform allyTarget = attack.target.transform;
+
+                // Initial hostile target does not exist. Choose another enemy.
+                if (allyTarget.gameObject.layer == default && rangeChecks.Length >= 2)
+                {
+                    // If new target is self, then.. don't? lol
+                    allyTarget = (rangeChecks[0].gameObject == this.gameObject) ?
+                        rangeChecks[1].transform : rangeChecks[0].transform;
+
+                    attack.target = allyTarget.gameObject;
+                    attack.GetComponentInChildren<EnemySpriteLook>().target = allyTarget;
+                }
+                else if (rangeChecks.Length == 1) attack.target = player;
+
+                // Set target position
+                Transform target = (attack.target == player) ?
+                    rangeChecks[0].transform : allyTarget;
                 Vector3 directionToTarget = (target.position - transform.position).normalized;
 
                 if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
                 {
                     float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)) canSeePlayer = true;
-                    else canSeePlayer = false;
+                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)) canSeeTarget = true;
+                    else canSeeTarget = false;
                 }
-                else canSeePlayer = false;
+                else canSeeTarget = false;
             }
-            else if (canSeePlayer) canSeePlayer = false;
+            else if (attack.target != player)
+            {
+                attack.target = player;
+                canSeeTarget = false;
+            }
+            else if (canSeeTarget) canSeeTarget = false;
         }
 
         private void RotationCheck()
