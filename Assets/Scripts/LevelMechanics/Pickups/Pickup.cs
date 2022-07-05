@@ -18,7 +18,7 @@ namespace Endless.Pickup
             sphereColl.radius = 0.25f;
             sphereColl.isTrigger = true;
             rb.useGravity = true;
-            rb.freezeRotation = true;
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 }
