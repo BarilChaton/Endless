@@ -41,6 +41,16 @@ namespace Endless.PlayerCore
             }
         }
 
+        public void PlayerGetArmour(float amount)
+        {
+            playerCurrArmour = Mathf.Clamp(playerCurrArmour + amount, 0, maxArmour);
+        }
+
+        public void PlayerHealed(float amount)
+        {
+            playerCurrHp = Mathf.Clamp(playerCurrHp + amount, 0, maxHp);
+        }
+
         public void PlayerTakeDamage(float amount)
         {
             // Armour goes first, obviously
@@ -54,8 +64,7 @@ namespace Endless.PlayerCore
                 }
             }
             // Then, health
-            playerCurrHp -= amount;
-            playerCurrHp = Mathf.Clamp(playerCurrHp, 0f, maxHp);
+            playerCurrHp = Mathf.Clamp(playerCurrHp - amount, 0f, maxHp);
 
             // Player Dead stuffs!
             if (playerCurrHp <= 0)

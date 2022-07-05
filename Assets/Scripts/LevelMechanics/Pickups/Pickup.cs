@@ -2,25 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+namespace Endless.Pickup
 {
-    private Rigidbody rb;
-    private SphereCollider sphereColl;
-
-    private void Awake()
+    public class Pickup : MonoBehaviour
     {
-        if (!TryGetComponent(out rb))
-            rb = gameObject.AddComponent<Rigidbody>();
-        if (!TryGetComponent(out sphereColl))
-            sphereColl = gameObject.AddComponent<SphereCollider>();
-        sphereColl.radius = 0.25f;
-        sphereColl.isTrigger = true;
-        rb.useGravity = true;
-        rb.freezeRotation = true;
-    }
+        private Rigidbody rb;
+        private SphereCollider sphereColl;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
+        private void Awake()
+        {
+            if (!TryGetComponent(out rb))
+                rb = gameObject.AddComponent<Rigidbody>();
+            if (!TryGetComponent(out sphereColl))
+                sphereColl = gameObject.AddComponent<SphereCollider>();
+            sphereColl.radius = 0.25f;
+            sphereColl.isTrigger = true;
+            rb.useGravity = true;
+            rb.freezeRotation = true;
+        }
     }
 }
