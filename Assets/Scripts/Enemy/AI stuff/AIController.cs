@@ -76,14 +76,13 @@ namespace Endless.Control
 
         private void FieldOfViewCheck()
         {
-            Debug.Log("Start of FoVCheck: " + attack.target.name);
-            Collider[] rangeChecks = (attack.target = player) ?
+            Collider[] rangeChecks = (attack.target == player) ?
                 Physics.OverlapSphere(transform.position, radius, playerMask) :
                 Physics.OverlapSphere(transform.position, radius, allyMask);
 
             if (rangeChecks.Length != 0)
             {
-                Transform target = (attack.target = player) ? rangeChecks[0].transform : attack.target.transform;
+                Transform target = (attack.target == player) ? rangeChecks[0].transform : attack.target.transform;
                 Vector3 directionToTarget = (target.position - transform.position).normalized;
 
                 if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
@@ -96,8 +95,6 @@ namespace Endless.Control
                 else canSeeTarget = false;
             }
             else if (canSeeTarget) canSeeTarget = false;
-
-            Debug.Log("End of FoVCheck: " + attack.target.name);
         }
 
         private void RotationCheck()

@@ -12,7 +12,7 @@ namespace Endless.Attacker
         public GameObject target;
         private EnemyCore owner;
 
-        public void Start()
+        public void Awake()
         {
             target = FindObjectOfType<PlayerController>().gameObject;
             owner = transform.GetComponent<EnemyCore>();
@@ -21,7 +21,6 @@ namespace Endless.Attacker
 
         public void InitiateAggress()
         {
-            Debug.Log("Start of aggression: " + target.name);
             switch (type)
             {
                 case EnemyTypes.Types.Base:
@@ -57,7 +56,6 @@ namespace Endless.Attacker
 
         private void BasicRangedAttack()
         {
-            Debug.Log("Start of Attack: " + target.name);
             float distanceToTarget = DistanceCalc.DistanceToPlayer(target, gameObject);
 
             // Time to shoot m8
@@ -100,7 +98,6 @@ namespace Endless.Attacker
                     try { owner.spriteAnim.Play("AttackRanged"); }
                     catch { Debug.Log("No shoot anim"); }
                     owner.shotReady = Time.time + owner.rangedAttackCd;
-                    Debug.Log("End of Attack: " + target.name);
                 }
             }
 
