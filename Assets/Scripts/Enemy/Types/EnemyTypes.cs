@@ -6,15 +6,12 @@ namespace Endless.TypeOfEnemies
 {
     public class EnemyTypes : MonoBehaviour
     {
-        public enum Types 
-        { 
-            SpiderVermin, 
-            Peasant,
-
-        
-        
-        
-        
+        public enum Types
+        {
+            Base,
+            BasicMelee,
+            BasicRanged,
+            BasicMeleeAndRanged
         };
     }
 }

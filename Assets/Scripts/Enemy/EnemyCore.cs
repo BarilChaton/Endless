@@ -1,50 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Endless.Control;
 using Endless.TypeOfEnemies;
-using Endless.Movement;
 
 public class EnemyCore : MonoBehaviour
 {
-    [Header("Enemy Base Information")]
+    // Actual base stuff
     [SerializeField] public EnemyTypes.Types enemyType;
     [SerializeField] public float aggressionDistance = 20f;
     [SerializeField] public GameObject hurtImpact = null;
 
-    [Header("Stats")]
-    [SerializeField] private float enemyHealth = 5;
-    [SerializeField] public float speed = 10f;
-    [SerializeField] public int rangedDamage = 10;
-    [SerializeField] public int meleeDamage = 20;
+    // Base stuff
+    public float enemyHealth = 5;
+    public float maxHealth = 5;
+    [SerializeField] private float armour = 0;
+    public float speed = 10f;
 
-    [Header("Attacking")]
-    [SerializeField] public float attackRange = 5f;
-    [SerializeField] public float rangedAttackSpeed = 2f;
-    [HideInInspector] public float rangedAttackCd;
-    [SerializeField] public float rangedAimTime = 0.1f;
-    [HideInInspector] public float shotReady;
+    // Ranged stuff
+    public int rangedDamage = 10;
+    public float attackRange = 5f;
+    public float rangedAttackSpeed = 2f;
+    public float rangedAimTime = 0.1f;
+    public float rangedAttackCd;
+    public float shotReady;
     [HideInInspector] public Ray shotTarget;
 
-    [SerializeField] public float meleeRange = 1f;
-    [SerializeField] public float meleeAttackSpeed = 2f;
+    // Melee stuff
+    public int meleeDamage = 20;
+    public float meleeRange = 1f;
+    public float meleeAttackSpeed = 2f;
     [HideInInspector] public float meleeAttackCd;
-
     [HideInInspector] public float attackRangeTemp;
 
-    [Header("EnemyAnimations")]
-    [HideInInspector] public Animator spriteAnim;
+    // Variables created
+    public Animator spriteAnim;
     private EnemySpriteLook enemySpriteLook;
     private AIController aiController;
     private Rigidbody rb;
 
-    [Header("AI controls")]
+    // Debug information
     public float radius = 20f;
     [Range(0, 360)]
     public float angle = 40f;
     public GameObject player;
 
-    [HideInInspector] public bool canSeePlayer;
+    [HideInInspector] public bool canSeeTarget;
+
+
+    public bool showVisionInfo;
+    public bool showDebugInfo;
 
     private void Awake()
     {
@@ -60,35 +63,50 @@ public class EnemyCore : MonoBehaviour
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
+        enemyHealth = maxHealth;
+
         attackRangeTemp = attackRange;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         aiController.AI();
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool isHeal = false)
     {
         // Take damage
-        enemyHealth -= damage;
+        float result = armour - damage;
+        if (!isHeal) enemyHealth += Mathf.Clamp(result, -damage, 0f);
 
         // Animation attempt
         try { spriteAnim.SetTrigger("IsHit"); }
         catch { }
 
-        // Look at Player
-        enemySpriteLook.StareAtPlayer(true);
+        // Look at who hit them
+        enemySpriteLook.StareAtShooter(true);
 
         // Death stuff
         if (enemyHealth <= 0) DeathAction();
     }
 
-    private void DeathAction()
+    public void ActDead()
     {
         try { spriteAnim.SetBool("Dead", true); }
         catch { Destroy(gameObject); }
-        finally { enabled = false; }
+    }
+
+    private void DeathAction()
+    {
+        Component[] components = GetComponents<Component>();
+        foreach (Component t in components)
+        {
+            if (t is EnemyCore || t is Transform)
+                continue;
+            Destroy(t);
+        }
+        ActDead();
+        enabled = false;
     }
 }
 

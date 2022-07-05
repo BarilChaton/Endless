@@ -6,7 +6,7 @@ namespace Endless.Control
 {
     public class EnemySpriteLook : MonoBehaviour
     {
-        private Transform target;
+        public Transform target;
         private AIController controller;
 
         public bool canLookVertically;
@@ -18,6 +18,16 @@ namespace Endless.Control
             StartCoroutine(StareRoutine());
         }
 
+        void OnEnable()
+        {
+            if (transform.GetComponentInParent<EnemyCore>().enemyHealth <= 0)
+            {
+                transform.GetComponentInParent<EnemyCore>().ActDead();
+            }
+            else
+                StartCoroutine(StareRoutine());
+        }
+
         private IEnumerator StareRoutine()
         {
             WaitForSeconds wait = new(0.1f);
@@ -25,15 +35,15 @@ namespace Endless.Control
             while (true)
             {
                 yield return wait;
-                StareAtPlayer();
+                StareAtShooter();
             }
         }
 
-        public void StareAtPlayer(bool gotHit = false)
+        public void StareAtShooter(bool gotHit = false)
         {
             Vector3 modifiedTarget = new(target.position.x, transform.position.y, target.position.z);
 
-            if (controller.canSeePlayer || gotHit) transform.parent.LookAt(canLookVertically ? target.position : modifiedTarget);
+            if (controller.canSeeTarget || gotHit) transform.parent.LookAt(canLookVertically ? target.position : modifiedTarget);
             else transform.LookAt(canLookVertically ? target.position : modifiedTarget);
         }
     }
