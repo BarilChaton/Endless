@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6775713280044359159}
   - component: {fileID: 6775713280044359158}
   - component: {fileID: 6775713280044359161}
+  - component: {fileID: 1764508581365793916}
   m_Layer: 0
   m_Name: ArmorSmall
   m_TagString: Untagged
@@ -97,3 +98,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4abf19e7e11d34485f77a79f9233bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1764508581365793916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775713280044359157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b225914b06391af4e8645bfd3d20f8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPercentageBased: 0
+  amount: 100
+  gravityEffectTime: 0

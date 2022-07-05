@@ -8,8 +8,8 @@ namespace Endless.PlayerCore
 {
     public class PlayerCombat : MonoBehaviour
     {
-        [SerializeField] float maxHp = 100;
-        [SerializeField] float maxArmour = 100;
+        public static float maxHp = 100;
+        public static float maxArmour = 100;
         public bool playerDead;
         public float playerCurrHp = 0;
         public float playerCurrArmour = 0;
