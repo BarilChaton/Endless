@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,18 +102,1162 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bulker_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 663
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4badaeafb07f74e82f2a8eac792505
+      internalID: -701577594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 663
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e60cee92482dcc439bea1c3780818de
+      internalID: -627790023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 662
+        width: 83
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d6a0f5f92a93941b1f5026412d6c52
+      internalID: 1002694222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_3
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 660
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9af293843c1ecd418c9c155adeaabc9
+      internalID: 274185036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 659
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5e308b66debd042a875a5215900dd6
+      internalID: 1797637456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 583
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a17b89f5d0d464fb9b1f933b97b8a7
+      internalID: 524321019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 583
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e6b132eae0b9541a89a41f021b7416
+      internalID: 949915453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 582
+        width: 68
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28c720385e40b54dad0aed5d930ccf8
+      internalID: 1246801730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_8
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 580
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9628dae8acc01224da31922650b5d556
+      internalID: -2077038941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_9
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 578
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7850c5e28fd0594478446b1c155583f5
+      internalID: -1415747823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_10
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 507
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9139328f8ebe0f44986ae436750a913f
+      internalID: 702456855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_11
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 505
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4202e04a5c58d584490d589e88187909
+      internalID: -1738720707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_12
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 505
+        width: 84
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756a6c3ae79467e4f98a886a1f85932e
+      internalID: -707445561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_13
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 500
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c02b2444b16cfd4cb4f3bb681e990d1
+      internalID: 2093605725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_14
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 501
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c414803a7e48d1c4c948d53f844f9ab7
+      internalID: 752819535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_15
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 425
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0771317117b36b24c9844f6a8b1b4084
+      internalID: 1235961765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_16
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 432
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f305151b380243740a24453dcba0ae1e
+      internalID: 1208035628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_17
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 431
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519a934da412b3445b8525dbbafbc755
+      internalID: -244499575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_18
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 429
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbc744ec6cfbdb45ac688bd6e811d75
+      internalID: 892022201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_19
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 423
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb61b4b3c377dbb4e8ce52ac8601c3d4
+      internalID: 1904560957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 352
+        width: 86
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec860d9ec885f242be6bba3e2d0ac6f
+      internalID: -1318160394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_21
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 353
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09482de54fb02fa479cb5a8e698bfdba
+      internalID: 673646833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 354
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8db57ddf386064ab9cdc9f33365542
+      internalID: -314374831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_23
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 350
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59774c57d43a4d64da807adf40143505
+      internalID: -1415476855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_24
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 349
+        width: 82
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a16c401b8dd6ec43bfd55495ad96ef3
+      internalID: -1751079034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_25
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 348
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de841062e59cb6c4780e4fedb9dd65f6
+      internalID: 1575950695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_26
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 344
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc608ad0f40ab646aed58355b1c0788
+      internalID: 1325316856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_27
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 272
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2e7f96ce262d9438631e2b4156a387
+      internalID: 1862808786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_28
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 275
+        width: 84
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c974dc6732577f34a92fe9e70aea690d
+      internalID: 1908039653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_29
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 274
+        width: 92
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e117e028f3978c54cb54afbabe1a1419
+      internalID: -1054715154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_30
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 275
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d2acb3d5004d1468876b92d48cc30b
+      internalID: 6822785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_31
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 271
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875796983afbb2447a6e096ae316871f
+      internalID: 1635651142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_32
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 268
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cd9bab6b4e9fe4bb346ef21395975e
+      internalID: -1934780646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_33
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 265
+        width: 91
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84e3070b8b780644a215b66ef0acf7d
+      internalID: 684469219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_34
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 197
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac49fa69e3d40734e959f9510bcf06a5
+      internalID: 575347226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_35
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 199
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c86b7832655dd4ebc65c36ba98029d
+      internalID: -411292973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_36
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 195
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe278d3c62bc734f8c6732dfe1d3c00
+      internalID: 611732113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_37
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 193
+        width: 73
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb761a8fd8116d44baed13aec9ebf7ed
+      internalID: 415519925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_38
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 192
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfdb9ba148d832848ba393b120887cb8
+      internalID: 1808343065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_39
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 190
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e10ed7f2be96f54d89290626337e301
+      internalID: -2092787654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_40
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 189
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82758d612d55fb45ba132780d9028de
+      internalID: -1217017133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_41
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 105
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0299c745e643c419c6570224ec9472
+      internalID: -697378590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_42
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 104
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305f4028166d66b4590f6c7a0dfde5ad
+      internalID: 1034300815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_43
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 102
+        width: 75
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b9234c4fd428f4796e5f06d0990fc9
+      internalID: -1318010827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_44
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 100
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4b4859b7eda254396dffeabe39b696
+      internalID: -186261715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_45
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 99
+        width: 49
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf04cca81e7ac8419893bb7e0bbd7b6
+      internalID: -545943052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_46
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 23
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904abd78d0458be418a992d9c245d308
+      internalID: 1921417705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_47
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 24
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710bd91305e8e2141a90bf087ef1a3c8
+      internalID: -1238556703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_48
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 21
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb081bb92406b64db22c678d3c1a042
+      internalID: -757006919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_49
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 20
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89f963345a31f242bd0b9ddb6e4fefd
+      internalID: 1771703959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_50
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 23
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77dcb8fe2da50b45bb4a2d67eaf4a6c
+      internalID: -99079580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bulker_51
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 23
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f18d5a95c55554ab6aaa5252d34278
+      internalID: -1851746933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 669bd0cc287d45141927718d6727b040
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bulker_5: 524321019
+      Bulker_34: 575347226
+      Bulker_45: -545943052
+      Bulker_7: 1246801730
+      Bulker_49: 1771703959
+      Bulker_43: -1318010827
+      Bulker_3: 274185036
+      Bulker_16: 1208035628
+      Bulker_21: 673646833
+      Bulker_22: -314374831
+      Bulker_1: -627790023
+      Bulker_32: -1934780646
+      Bulker_41: -697378590
+      Bulker_33: 684469219
+      Bulker_51: -1851746933
+      Bulker_10: 702456855
+      Bulker_31: 1635651142
+      Bulker_8: -2077038941
+      Bulker_2: 1002694222
+      Bulker_23: -1415476855
+      Bulker_12: -707445561
+      Bulker_46: 1921417705
+      Bulker_25: 1575950695
+      Bulker_4: 1797637456
+      Bulker_36: 611732113
+      Bulker_37: 415519925
+      Bulker_40: -1217017133
+      Bulker_30: 6822785
+      Bulker_6: 949915453
+      Bulker_47: -1238556703
+      Bulker_38: 1808343065
+      Bulker_14: 752819535
+      Bulker_27: 1862808786
+      Bulker_39: -2092787654
+      Bulker_11: -1738720707
+      Bulker_19: 1904560957
+      Bulker_13: 2093605725
+      Bulker_26: 1325316856
+      Bulker_18: 892022201
+      Bulker_42: 1034300815
+      Bulker_28: 1908039653
+      Bulker_24: -1751079034
+      Bulker_17: -244499575
+      Bulker_15: 1235961765
+      Bulker_20: -1318160394
+      Bulker_35: -411292973
+      Bulker_50: -99079580
+      Bulker_29: -1054715154
+      Bulker_9: -1415747823
+      Bulker_44: -186261715
+      Bulker_0: -701577594
+      Bulker_48: -757006919
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
