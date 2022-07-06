@@ -11,6 +11,7 @@ namespace Endless.Attacker
         private EnemyTypes.Types type;
         public GameObject target;
         private EnemyCore owner;
+        private bool logprinter = false;
 
         public void Awake()
         {
@@ -24,11 +25,16 @@ namespace Endless.Attacker
             switch (type)
             {
                 case EnemyTypes.Types.Base:
-                    Debug.Log(owner.name + "I can't do anything because I'm basic. (lol)");
+                    if (!logprinter) Debug.Log(owner.name + "I can't do anything because I'm basic. (lol)");
+                    logprinter = true;
                     break;
 
                 case EnemyTypes.Types.BasicRanged:
                     BasicRangedAttack();
+                    break;
+
+                case EnemyTypes.Types.BasicMelee:
+                    BasicMeleeAttack();
                     break;
 
                 case EnemyTypes.Types.BasicMeleeAndRanged:
@@ -137,7 +143,6 @@ namespace Endless.Attacker
             // Within range of anger but not to hit
             else if (distanceToTarget < owner.aggressionDistance)
             {
-                owner.attackRangeTemp = owner.attackRange;
                 Mover.Moving(true, gameObject, target, owner.speed);
             }
         }
