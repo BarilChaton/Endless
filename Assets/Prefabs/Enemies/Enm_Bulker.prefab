@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8275299245464529798}
   - component: {fileID: 8275299245464529793}
+  - component: {fileID: 4056243476369366959}
   m_Layer: 30
   m_Name: Enm_Bulker
   m_TagString: Enemy
@@ -51,7 +52,7 @@ MonoBehaviour:
   enemyHealth: 5
   maxHealth: 50
   armour: 2
-  speed: 9
+  speed: 7
   rangedDamage: 10
   attackRange: 10
   rangedAttackSpeed: 2
@@ -71,6 +72,20 @@ MonoBehaviour:
   canSeeTarget: 0
   showVisionInfo: 1
   showDebugInfo: 0
+--- !u!136 &4056243476369366959
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8275299245464529799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49737063
+  m_Height: 1.4075315
+  m_Direction: 1
+  m_Center: {x: 9.200484e-12, y: -0.07819569, z: -0.0026293695}
 --- !u!1 &8275299246117900214
 GameObject:
   m_ObjectHideFlags: 0

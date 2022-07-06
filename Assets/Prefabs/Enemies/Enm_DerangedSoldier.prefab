@@ -50,9 +50,9 @@ MonoBehaviour:
   aggressionDistance: 20
   hurtImpact: {fileID: 0}
   enemyHealth: 20
-  maxHealth: 50
+  maxHealth: 25
   armour: 0
-  speed: 7
+  speed: 5
   rangedDamage: 5
   attackRange: 10
   rangedAttackSpeed: 2

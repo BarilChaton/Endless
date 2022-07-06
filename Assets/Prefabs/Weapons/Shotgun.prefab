@@ -106,7 +106,7 @@ MonoBehaviour:
   DamageAmt: 6
   ShotCooldown: 0.9
   CurrentCD: 0
-  MaxAmmo: 20
+  MaxAmmo: 50
   CurrentTotalAmmo: 12
   CurrentAmmo: 0
   AmmoPerClip: 0
