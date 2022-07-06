@@ -59,9 +59,10 @@ namespace Endless.PlayerCore
                 playerCurrArmour -= amount;
                 if (playerCurrArmour < 0)
                 {
-                    amount = -playerCurrArmour;
+                    amount = playerCurrArmour;
                     playerCurrArmour = 0;
                 }
+                else amount = 0;
             }
             // Then, health
             playerCurrHp = Mathf.Clamp(playerCurrHp - amount, 0f, maxHp);

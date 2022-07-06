@@ -60,6 +60,9 @@ public class EnemyCore : MonoBehaviour
 
         if (!TryGetComponent(out rb))
             rb = gameObject.AddComponent<Rigidbody>();
+
+        if (!TryGetComponent(out CapsuleCollider _))
+            gameObject.AddComponent<CapsuleCollider>();
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
