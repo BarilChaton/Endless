@@ -9,7 +9,7 @@ namespace Endless.Pickup
         [SerializeField] private float amount;
         [SerializeField]
         [Range(0, 25)]
-        [Tooltip("Amount of time gravity affects this before freezing. (This is so it drops to the floor).\n0 means Gravity ALWAYS affects it.")]
+        [Tooltip("Amount of time gravity affects this before freezing. (This is so it drops to the floor).\n0.01 means Gravity ALWAYS affects it.")]
         private float gravityEffectTime = 0;
         private PickupCore pickup;
 
@@ -24,7 +24,10 @@ namespace Endless.Pickup
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out PlayerCombat effectee))
+            {
                 effectee.PlayerHealed(isPercentageBased ? (amount / 100 * PlayerCombat.maxHp) : amount);
+                Destroy(gameObject);
+            }
         }
     }
 }
