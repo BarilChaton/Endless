@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4928597317261939723}
   - component: {fileID: 4928597317261939722}
-  - component: {fileID: 4928597317261939724}
   - component: {fileID: 4928597317261939725}
   m_Layer: 0
   m_Name: AmmoSmall
@@ -86,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4928597317261939724
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4928597317261939721}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.16
 --- !u!114 &4928597317261939725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4abf19e7e11d34485f77a79f9233bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useYPosition: 0
