@@ -11,11 +11,14 @@ namespace Endless.Attacker
         private EnemyTypes.Types type;
         public GameObject target;
         private EnemyCore owner;
+        private AIController ownerAi;
+        private bool logprinter = false;
 
         public void Awake()
         {
             target = FindObjectOfType<PlayerController>().gameObject;
             owner = transform.GetComponent<EnemyCore>();
+            ownerAi = transform.GetComponent<AIController>();
             type = owner.enemyType;
         }
 
@@ -24,11 +27,16 @@ namespace Endless.Attacker
             switch (type)
             {
                 case EnemyTypes.Types.Base:
-                    Debug.Log(owner.name + "I can't do anything because I'm basic. (lol)");
+                    if (!logprinter) Debug.Log(owner.name + "I can't do anything because I'm basic. (lol)");
+                    logprinter = true;
                     break;
 
                 case EnemyTypes.Types.BasicRanged:
                     BasicRangedAttack();
+                    break;
+
+                case EnemyTypes.Types.BasicMelee:
+                    BasicMeleeAttack();
                     break;
 
                 case EnemyTypes.Types.BasicMeleeAndRanged:
@@ -96,8 +104,7 @@ namespace Endless.Attacker
                     }
 
                     // Animation stuff goes here
-                    try { owner.spriteAnim.Play("AttackRanged"); }
-                    catch { Debug.Log("No shoot anim"); }
+                    owner.spriteAnim.Play("AttackRanged");
                     owner.shotReady = Time.time + owner.rangedAttackCd;
                 }
             }
@@ -108,18 +115,22 @@ namespace Endless.Attacker
                 owner.attackRangeTemp = owner.attackRange;
                 Mover.Moving(true, gameObject, target, owner.speed);
             }
+
+            else if (ownerAi.wasHit)
+            {
+                Mover.Moving(true, gameObject, target, owner.speed);
+            }
         }
 
         private void BasicMeleeAttack()
         {
             // Distance calc + stare at target
             float distanceToTarget = DistanceCalc.DistanceToPlayer(target, gameObject);
-            transform.TransformDirection(target.transform.position);
 
             // If within range
             if (distanceToTarget <= owner.meleeRange)
             {
-                // Sorting out movement
+                transform.TransformDirection(target.transform.position);
                 Mover.Moving(false, gameObject);
 
                 // The attack
@@ -131,15 +142,18 @@ namespace Endless.Attacker
                     else if (target.CompareTag("Enemy")) target.GetComponent<EnemyCore>().TakeDamage(owner.meleeDamage);
 
                     // animation
-                    try { owner.spriteAnim.Play("MeleeAttack"); }
-                    catch { Debug.Log("No melee anim"); }
+                    owner.spriteAnim.Play("MeleeAttack");
                 }
             }
 
             // Within range of anger but not to hit
             else if (distanceToTarget < owner.aggressionDistance)
             {
-                owner.attackRangeTemp = owner.attackRange;
+                Mover.Moving(true, gameObject, target, owner.speed);
+            }
+
+            else if (ownerAi.wasHit)
+            {
                 Mover.Moving(true, gameObject, target, owner.speed);
             }
         }

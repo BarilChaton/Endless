@@ -19,7 +19,7 @@ namespace Endless.Pickup
             // acts as a ground thing
             if (!TryGetComponent(out sphereColl))
                 sphereColl = gameObject.AddComponent<SphereCollider>();
-            boxColl.size = new Vector3(0.1f, 0.5f, 0.1f);
+            boxColl.size = new Vector3(0.1f, 0.1f, 0.1f);
             boxColl.center = new Vector3(0, -0.2f, 0);
 
             // To hit to get the buff

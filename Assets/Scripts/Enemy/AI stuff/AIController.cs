@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Endless.Movement;
 using Endless.Attacker;
+using System;
+using System.Linq;
 
 namespace Endless.Control
 {
@@ -21,7 +23,8 @@ namespace Endless.Control
         [HideInInspector] AngleToPlayer angleToPlayer;
         [HideInInspector] private EnemyCore core;
 
-        public bool canSeeTarget;
+        public bool canSeeTarget = false;
+        public bool wasHit = false;
 
         private void Awake()
         {
@@ -44,7 +47,7 @@ namespace Endless.Control
         public void AI()
         {
             // If player is found, act aggressive
-            if (canSeeTarget)
+            if (canSeeTarget || wasHit)
             {
                 attack.InitiateAggress();
             }
@@ -76,9 +79,16 @@ namespace Endless.Control
 
         private void FieldOfViewCheck()
         {
-            Collider[] rangeChecks = (attack.target == player) ?
+            // Area in front of unit
+            Collider[] frontChecks = (attack.target == player) ?
                 Physics.OverlapSphere(transform.position, radius, playerMask) :
                 Physics.OverlapSphere(transform.position, radius, allyMask);
+            // Area around unit
+            Collider[] meleeChecks = (attack.target == player) ? 
+                Physics.OverlapSphere(transform.position, core.meleeRange, playerMask) :
+                Physics.OverlapSphere(transform.position, core.meleeRange, allyMask);
+
+            Collider[] rangeChecks = frontChecks.Concat(meleeChecks).ToArray();
 
             if (rangeChecks.Length != 0)
             {

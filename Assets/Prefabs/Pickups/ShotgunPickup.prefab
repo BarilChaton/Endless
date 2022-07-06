@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6179814339066578910}
   - component: {fileID: 7122756208946237343}
   - component: {fileID: 8799986578330697345}
+  - component: {fileID: 685250303}
   m_Layer: 0
   m_Name: ShotgunPickup
   m_TagString: Untagged
@@ -98,3 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useYPosition: 0
+--- !u!114 &685250303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512097807625961708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a6a3248e49a88438f2c76af2829fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletAmount: 2
+  gravityEffectTime: 0
+  gunPrefab: {fileID: 2067697991378533781, guid: f16825f25cf3a814aad14ce34b49d711, type: 3}

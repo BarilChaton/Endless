@@ -15,6 +15,7 @@ public class EnemyCoreEditor : Editor
         Vector3 viewAngle02 = DirectionFromAngle(fov.transform.eulerAngles.y, fov.angle / 2);
 
         Handles.color = Color.yellow;
+        Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.meleeRange);
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngle01 * fov.radius);
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngle02 * fov.radius);
 
@@ -109,6 +110,7 @@ public class EnemyCoreEditor : Editor
     {
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Ranged Information", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("attackRange"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("rangedDamage"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("rangedAttackSpeed"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("rangedAimTime"));

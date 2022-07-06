@@ -23,7 +23,7 @@ namespace Endless.Pickup
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out PlayerCombat effectee))
+            if (other.TryGetComponent(out PlayerCombat effectee) && PlayerCombat.maxArmour > effectee.GetComponent<PlayerCombat>().playerCurrArmour)
             {
                 effectee.PlayerGetArmour(isPercentageBased ? (amount / 100 * PlayerCombat.maxArmour) : amount);
                 Destroy(gameObject);

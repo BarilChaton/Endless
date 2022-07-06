@@ -1,6 +1,8 @@
 using UnityEngine;
 using Endless.Control;
+using Endless.Attacker;
 using Endless.TypeOfEnemies;
+using Endless.Movement;
 
 public class EnemyCore : MonoBehaviour
 {
@@ -26,7 +28,7 @@ public class EnemyCore : MonoBehaviour
 
     // Melee stuff
     public int meleeDamage = 20;
-    public float meleeRange = 1f;
+    public float meleeRange = 1.5f;
     public float meleeAttackSpeed = 2f;
     [HideInInspector] public float meleeAttackCd;
     [HideInInspector] public float attackRangeTemp;
@@ -42,6 +44,7 @@ public class EnemyCore : MonoBehaviour
     [Range(0, 360)]
     public float angle = 40f;
     public GameObject player;
+    public GameObject target;
 
     [HideInInspector] public bool canSeeTarget;
 
@@ -69,6 +72,8 @@ public class EnemyCore : MonoBehaviour
         enemyHealth = maxHealth;
 
         attackRangeTemp = attackRange;
+
+        target = GetComponent<Attack>().target;
     }
 
     void FixedUpdate()
@@ -86,8 +91,14 @@ public class EnemyCore : MonoBehaviour
         try { spriteAnim.SetTrigger("IsHit"); }
         catch { }
 
-        // Look at who hit them
+        // Look at who hit them and run towards if outside range
         enemySpriteLook.StareAtShooter(true);
+        if (DistanceCalc.DistanceToPlayer(target, gameObject) > aggressionDistance)
+        {
+            aiController.wasHit = true;
+            Mover.Moving(true, gameObject, target, speed);
+        }
+
 
         // Death stuff
         if (enemyHealth <= 0) DeathAction();

@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2461961031354593992
 Transform:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 2461961031771380934}
   - component: {fileID: 2461961031771380933}
   - component: {fileID: 1856542305}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -297,11 +297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2292eada6fe194685a90a390021431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 150
-  maxArmour: 100
   playerDead: 0
-  playerCurrHp: 100
-  playerCurrArmour: 100
+  playerCurrHp: 0
+  playerCurrArmour: 0
 --- !u!114 &1856542305
 MonoBehaviour:
   m_ObjectHideFlags: 0
