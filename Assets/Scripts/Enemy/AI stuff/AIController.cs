@@ -4,6 +4,7 @@ using UnityEngine;
 using Endless.Movement;
 using Endless.Attacker;
 using System;
+using System.Linq;
 
 namespace Endless.Control
 {
@@ -78,15 +79,16 @@ namespace Endless.Control
 
         private void FieldOfViewCheck()
         {
-            Collider[] rangeChecks = (attack.target == player) ?
+            // Area in front of unit
+            Collider[] frontChecks = (attack.target == player) ?
                 Physics.OverlapSphere(transform.position, radius, playerMask) :
                 Physics.OverlapSphere(transform.position, radius, allyMask);
-            Collider[] meleeAnger = (attack.target == player) ? 
+            // Area around unit
+            Collider[] meleeChecks = (attack.target == player) ? 
                 Physics.OverlapSphere(transform.position, core.meleeRange, playerMask) :
                 Physics.OverlapSphere(transform.position, core.meleeRange, allyMask);
 
-            Array.Resize(ref rangeChecks, rangeChecks.Length + meleeAnger.Length);
-            Array.Copy(meleeAnger, 0, rangeChecks, rangeChecks.Length, meleeAnger.Length);
+            Collider[] rangeChecks = frontChecks.Concat(meleeChecks).ToArray();
 
             if (rangeChecks.Length != 0)
             {
