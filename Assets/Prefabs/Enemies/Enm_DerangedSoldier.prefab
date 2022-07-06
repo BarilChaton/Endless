@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc761a903481f9f4a99eabe957b96ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 2
+  enemyType: 1
   aggressionDistance: 20
   hurtImpact: {fileID: 0}
   enemyHealth: 20
@@ -60,7 +60,7 @@ MonoBehaviour:
   rangedAttackCd: 0
   shotReady: 0
   meleeDamage: 20
-  meleeRange: 1
+  meleeRange: 1.5
   meleeAttackSpeed: 2
   meleeAttackCd: 0
   attackRangeTemp: 0
@@ -68,6 +68,7 @@ MonoBehaviour:
   radius: 20
   angle: 67
   player: {fileID: 0}
+  target: {fileID: 0}
   canSeeTarget: 0
   showVisionInfo: 0
   showDebugInfo: 0

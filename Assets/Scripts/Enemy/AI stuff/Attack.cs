@@ -11,12 +11,14 @@ namespace Endless.Attacker
         private EnemyTypes.Types type;
         public GameObject target;
         private EnemyCore owner;
+        private AIController ownerAi;
         private bool logprinter = false;
 
         public void Awake()
         {
             target = FindObjectOfType<PlayerController>().gameObject;
             owner = transform.GetComponent<EnemyCore>();
+            ownerAi = transform.GetComponent<AIController>();
             type = owner.enemyType;
         }
 
@@ -113,18 +115,22 @@ namespace Endless.Attacker
                 owner.attackRangeTemp = owner.attackRange;
                 Mover.Moving(true, gameObject, target, owner.speed);
             }
+
+            else if (ownerAi.wasHit)
+            {
+                Mover.Moving(true, gameObject, target, owner.speed);
+            }
         }
 
         private void BasicMeleeAttack()
         {
             // Distance calc + stare at target
             float distanceToTarget = DistanceCalc.DistanceToPlayer(target, gameObject);
-            transform.TransformDirection(target.transform.position);
 
             // If within range
             if (distanceToTarget <= owner.meleeRange)
             {
-                // Sorting out movement
+                transform.TransformDirection(target.transform.position);
                 Mover.Moving(false, gameObject);
 
                 // The attack
@@ -142,6 +148,11 @@ namespace Endless.Attacker
 
             // Within range of anger but not to hit
             else if (distanceToTarget < owner.aggressionDistance)
+            {
+                Mover.Moving(true, gameObject, target, owner.speed);
+            }
+
+            else if (ownerAi.wasHit)
             {
                 Mover.Moving(true, gameObject, target, owner.speed);
             }

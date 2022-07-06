@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Endless.Movement;
 using Endless.Attacker;
+using System;
 
 namespace Endless.Control
 {
@@ -22,6 +23,7 @@ namespace Endless.Control
         [HideInInspector] private EnemyCore core;
 
         public bool canSeeTarget = false;
+        public bool wasHit = false;
 
         private void Awake()
         {
@@ -44,7 +46,7 @@ namespace Endless.Control
         public void AI()
         {
             // If player is found, act aggressive
-            if (canSeeTarget)
+            if (canSeeTarget || wasHit)
             {
                 attack.InitiateAggress();
             }
@@ -79,6 +81,12 @@ namespace Endless.Control
             Collider[] rangeChecks = (attack.target == player) ?
                 Physics.OverlapSphere(transform.position, radius, playerMask) :
                 Physics.OverlapSphere(transform.position, radius, allyMask);
+            Collider[] meleeAnger = (attack.target == player) ? 
+                Physics.OverlapSphere(transform.position, core.meleeRange, playerMask) :
+                Physics.OverlapSphere(transform.position, core.meleeRange, allyMask);
+
+            Array.Resize(ref rangeChecks, rangeChecks.Length + meleeAnger.Length);
+            Array.Copy(meleeAnger, 0, rangeChecks, rangeChecks.Length, meleeAnger.Length);
 
             if (rangeChecks.Length != 0)
             {
