@@ -112,5 +112,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPercentageBased: 0
-  amount: 100
+  amount: 25
   gravityEffectTime: 0
