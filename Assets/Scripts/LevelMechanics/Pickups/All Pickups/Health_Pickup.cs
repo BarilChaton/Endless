@@ -23,7 +23,7 @@ namespace Endless.Pickup
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out PlayerCombat effectee))
+            if (other.TryGetComponent(out PlayerCombat effectee) && PlayerCombat.maxHp > effectee.GetComponent<PlayerCombat>().playerCurrHp)
             {
                 effectee.PlayerHealed(isPercentageBased ? (amount / 100 * PlayerCombat.maxHp) : amount);
                 Destroy(gameObject);

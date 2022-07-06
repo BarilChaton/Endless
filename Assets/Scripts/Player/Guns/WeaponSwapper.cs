@@ -8,7 +8,7 @@ namespace Endless.GunSwap
     {
         [SerializeField] int maxInInventory = 5;
         [SerializeField] public GameObject defaultGun;
-        [SerializeField] List<GameObject> gunsInMap;
+        [SerializeField] public List<GameObject> gunsInMap;
 
         [HideInInspector] public int weaponChoice = 0;
         [HideInInspector] public int currTotalGuns = 1;
@@ -22,7 +22,6 @@ namespace Endless.GunSwap
 
             gunsInMap.Insert(0, defaultGun);
             gunsInInventory.Add(defaultGun);
-            gunsInInventory.Add(gunsInMap[1]);
 
             LoadGuns();
             ActiveGun();
@@ -67,21 +66,33 @@ namespace Endless.GunSwap
             }
         }
 
-        private void AddGunToInventory(int pos, string gunToAdd)
+        public void AddGunToInventory(string gunToAdd, int bullets, int pos = 0)
         {
-            GameObject gunAdder = gunsInMap.Find(x => x.name == gunToAdd);
-            if (gunAdder != null)
+            GameObject gunAdder = gunsInInventory.Find(x => x.name.Contains(gunToAdd));
+            if (gunAdder == null)
             {
-                if (currTotalGuns > maxInInventory)
+                gunAdder = gunsInMap.Find(x => x.name == gunToAdd);
+                if (pos == 0 && currTotalGuns < maxInInventory)
                 {
-                    gunsInInventory[pos] = gunAdder;
+                    gunsInInventory.Add(gunAdder);
+                    pos = currTotalGuns;
                 }
-                else
+
+                if (gunAdder != null)
                 {
-                    gunsInInventory[pos] = Instantiate(gunAdder, GameObject.Find("UI Canvas").transform);
-                    gunsInInventory[currTotalGuns] = gunAdder;
-                    currTotalGuns++;
+                    if (currTotalGuns < maxInInventory) currTotalGuns++;
+                    gunsInInventory[pos] = Instantiate(gunsInInventory[pos], GameObject.Find("UI Canvas").transform);
                 }
+                weaponChoice = pos;
+                GunSwap(0);
+                gunsInInventory[pos].GetComponent<GunCore>().CurrentTotalAmmo = bullets;
+            }
+            else
+            {
+                pos = gunsInInventory.IndexOf(gunAdder);
+                GunCore thisGun = gunsInInventory[pos].GetComponent<GunCore>();
+                thisGun.CurrentTotalAmmo += bullets;
+                if (thisGun.CurrentTotalAmmo > thisGun.MaxAmmo) thisGun.CurrentTotalAmmo = thisGun.MaxAmmo;
             }
         }
     }

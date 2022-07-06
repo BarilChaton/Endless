@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc761a903481f9f4a99eabe957b96ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 1
+  enemyType: 2
   aggressionDistance: 20
   hurtImpact: {fileID: 0}
   enemyHealth: 20
