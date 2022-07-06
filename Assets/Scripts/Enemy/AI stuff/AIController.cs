@@ -21,7 +21,7 @@ namespace Endless.Control
         [HideInInspector] AngleToPlayer angleToPlayer;
         [HideInInspector] private EnemyCore core;
 
-        public bool canSeeTarget;
+        public bool canSeeTarget = false;
 
         private void Awake()
         {

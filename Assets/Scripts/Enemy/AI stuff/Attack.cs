@@ -96,8 +96,7 @@ namespace Endless.Attacker
                     }
 
                     // Animation stuff goes here
-                    try { owner.spriteAnim.Play("AttackRanged"); }
-                    catch { Debug.Log("No shoot anim"); }
+                    owner.spriteAnim.Play("AttackRanged");
                     owner.shotReady = Time.time + owner.rangedAttackCd;
                 }
             }
@@ -131,8 +130,7 @@ namespace Endless.Attacker
                     else if (target.CompareTag("Enemy")) target.GetComponent<EnemyCore>().TakeDamage(owner.meleeDamage);
 
                     // animation
-                    try { owner.spriteAnim.Play("MeleeAttack"); }
-                    catch { Debug.Log("No melee anim"); }
+                    owner.spriteAnim.Play("MeleeAttack");
                 }
             }
 
