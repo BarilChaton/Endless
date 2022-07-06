@@ -53,7 +53,7 @@ MonoBehaviour:
   maxHealth: 50
   armour: 0
   speed: 7
-  rangedDamage: 10
+  rangedDamage: 5
   attackRange: 10
   rangedAttackSpeed: 2
   rangedAimTime: 0.1
