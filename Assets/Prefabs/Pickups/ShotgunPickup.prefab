@@ -111,6 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a6a3248e49a88438f2c76af2829fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletAmount: 2
+  bulletAmount: 5
   gravityEffectTime: 0
   gunPrefab: {fileID: 2067697991378533781, guid: f16825f25cf3a814aad14ce34b49d711, type: 3}
