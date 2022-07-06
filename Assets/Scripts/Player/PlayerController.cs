@@ -21,6 +21,7 @@ namespace Endless.PlayerCore
         [Header("Functional Options")]
         [SerializeField] private bool canSprint = true;
         [SerializeField] private bool canJump = true;
+        [SerializeField] private bool canUseFlashlight = true;
         [SerializeField] private bool canCrouch = true;
         [SerializeField] public bool canUseHeadbob = true;
         [SerializeField] private bool canInteract = true;
@@ -30,6 +31,7 @@ namespace Endless.PlayerCore
         [SerializeField] private KeyCode jumpKey = KeyCode.Space;
         [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
         [SerializeField] private KeyCode interactKey = KeyCode.E;
+        [SerializeField] private KeyCode flashLightKey = KeyCode.F;
 
         [Header("Movement Parameters")] // Using header to organize stuff in the Unity inspector.
         [SerializeField] private float runSpeed = 3.0f;
@@ -75,6 +77,9 @@ namespace Endless.PlayerCore
         [SerializeField] GameObject GrenadeProjectile;
         [SerializeField] public GunCore currWeap;
 
+        [Header("Flashlight")]
+        [SerializeField] GameObject flashLight;
+
         private Camera playerCamera;
         private CharacterController characterController;
 
@@ -116,6 +121,9 @@ namespace Endless.PlayerCore
 
                 if (canUseHeadbob)
                     HandleHeadBob();
+
+                if (canUseFlashlight)
+                    HandleFlashlight();
 
                 if (canInteract)
                 {
@@ -236,6 +244,24 @@ namespace Endless.PlayerCore
                 try { currWeap.gunAnim.SetBool("RunTrigger", false); }
                 catch { print("No animation exists for running"); }
                 playerCamera.transform.localPosition = new Vector3(playerCamera.transform.localPosition.x, defaultYPos, playerCamera.transform.localPosition.z);
+            }
+        }
+
+        private void HandleFlashlight()
+        {
+            if (!flashLight.activeInHierarchy)
+            {
+                if (Input.GetKeyUp(flashLightKey))
+                {
+                    flashLight.SetActive(true);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyUp(flashLightKey))
+                {
+                    flashLight.SetActive(false);
+                }
             }
         }
 
