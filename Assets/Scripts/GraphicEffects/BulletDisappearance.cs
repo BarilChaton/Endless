@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletDisappearance : MonoBehaviour
 {
     [SerializeField] private float lifeTime;
+    [SerializeField] LayerMask layer;
 
     void Update()
     {
