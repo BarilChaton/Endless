@@ -7,6 +7,7 @@ public class DoorController : Interactable
 {
     private bool startOpening = false;
     private bool startClosing = false;
+    public bool isUnlocked = true;
     public bool canBeInteractedWith = true;
     public Vector3 target;
     public Vector3 origin;
@@ -14,23 +15,26 @@ public class DoorController : Interactable
 
     private void Update()
     {
-        if (startOpening && transform.localPosition != target)
+        if (isUnlocked)
         {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, Time.deltaTime * speed);
-            canBeInteractedWith = false;
-        }
-        if (transform.localPosition == target)
-        {
-            StartCoroutine(AutoClose());
-        }
-        if (startClosing && transform.localPosition != origin)
-        {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, origin, Time.deltaTime * speed);
-            startClosing = false;
-        }
-        if (transform.localPosition == origin)
-        {
-            StopAllCoroutines();
+            if (startOpening && transform.localPosition != target)
+            {
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, Time.deltaTime * speed);
+                canBeInteractedWith = false;
+            }
+            if (transform.localPosition == target)
+            {
+                StartCoroutine(AutoClose());
+            }
+            if (startClosing && transform.localPosition != origin)
+            {
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, origin, Time.deltaTime * speed);
+                startClosing = false;
+            }
+            if (transform.localPosition == origin)
+            {
+                StopAllCoroutines();
+            }
         }
     }
 
