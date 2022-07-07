@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8879963495168981679}
   - component: {fileID: 4967687571360575027}
   - component: {fileID: -2783328505606154786}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: ShotgunWallFeedbackSingle
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 15
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
