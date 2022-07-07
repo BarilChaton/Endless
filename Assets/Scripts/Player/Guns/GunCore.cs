@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace Endless.PlayerCore
 {
+    [RequireComponent(typeof(AudioSource))]
     public class GunCore : MonoBehaviour
     {
         [Header("Shooty Stuff")]
@@ -23,11 +24,16 @@ namespace Endless.PlayerCore
         [Header("Art stuff")]
         [SerializeField] public GameObject wallHitImpact;
         [SerializeField] public Animator gunAnim;
+        [Header("Sound stuff")]
+        private AudioSource audioSource;
+        [SerializeField] public AudioClip shootSound;
+
 
         private void Awake()
         {
             CurrentCD = 0;
             CurrentTotalAmmo = MaxAmmo;
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void ShootGun(Camera playerCamera = null)
@@ -78,6 +84,7 @@ namespace Endless.PlayerCore
                     // Removing ammo and doing animations
                     CurrentTotalAmmo--;
                     gunAnim.Play("Shoot");
+                    audioSource.PlayOneShot(shootSound);
                 }
             }
         }

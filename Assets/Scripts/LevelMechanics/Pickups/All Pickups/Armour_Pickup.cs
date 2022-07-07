@@ -3,8 +3,12 @@ using UnityEngine;
 
 namespace Endless.Pickup
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Armour_Pickup : MonoBehaviour
     {
+        private AudioSource audioSource;
+        public AudioClip pickupSound;
+        [SerializeField] private GameObject Player;
         [SerializeField] private bool isPercentageBased;
         [SerializeField] private float amount;
         [SerializeField]
@@ -15,6 +19,7 @@ namespace Endless.Pickup
 
         private void Awake()
         {
+            audioSource = GetComponent<AudioSource>();
             if (!TryGetComponent(out pickup))
                 pickup = gameObject.AddComponent<PickupCore>();
             pickup.GravityLength = gravityEffectTime;
@@ -23,8 +28,10 @@ namespace Endless.Pickup
 
         private void OnTriggerEnter(Collider other)
         {
+            
             if (other.TryGetComponent(out PlayerCombat effectee) && PlayerCombat.maxArmour > effectee.GetComponent<PlayerCombat>().playerCurrArmour)
             {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
                 effectee.PlayerGetArmour(isPercentageBased ? (amount / 100 * PlayerCombat.maxArmour) : amount);
                 Destroy(gameObject);
             }

@@ -15,8 +15,16 @@ namespace Endless.PlayerCore
         public float playerCurrArmour = 0;
         private UiCore uiCoreGetter;
 
+        [Header("Sound during combat.")]
+        private AudioSource audioSource;
+        public AudioClip hurt;
+        public AudioClip die;
+
         void Start()
         {
+            // Audio
+            audioSource = GetComponent<AudioSource>();
+
             // Main getters
             uiCoreGetter = GameObject.Find("UI Canvas").GetComponent<UiCore>();
 
@@ -66,10 +74,12 @@ namespace Endless.PlayerCore
             }
             // Then, health
             playerCurrHp = Mathf.Clamp(playerCurrHp - amount, 0f, maxHp);
+            audioSource.PlayOneShot(hurt);
 
             // Player Dead stuffs!
             if (playerCurrHp <= 0)
             {
+                AudioSource.PlayClipAtPoint(die, transform.position); //Need to play this when dying.
                 Camera.main.transform.parent = null;
                 GetComponent<PlayerController>().gameObject.SetActive(false);
                 foreach (Transform child in GameObject.Find("UI Canvas").transform)
