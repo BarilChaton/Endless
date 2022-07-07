@@ -3,8 +3,11 @@ using Endless.GunSwap;
 
 namespace Endless.Pickup
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Shotgun_Pickup : MonoBehaviour
     {
+        private AudioSource audioSource;
+        public AudioClip pickupSound;
         [SerializeField] private int bulletAmount;
         [SerializeField]
         [Range(0, 25)]
@@ -15,6 +18,7 @@ namespace Endless.Pickup
 
         private void Awake()
         {
+            audioSource = GetComponent<AudioSource>();
             if (!TryGetComponent(out pickup))
                 pickup = gameObject.AddComponent<PickupCore>();
             pickup.GravityLength = gravityEffectTime;
@@ -23,8 +27,10 @@ namespace Endless.Pickup
 
         private void OnTriggerEnter(Collider other)
         {
+            
             if (other.TryGetComponent(out WeaponSwapper effectee))
             {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
                 effectee.AddGunToInventory(gunPrefab.name, bulletAmount);
                 Destroy(gameObject);
             }

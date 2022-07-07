@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace Endless.Pickup
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Health_Pickup : MonoBehaviour
     {
+        private AudioSource audioSource;
+        public AudioClip pickupSound;
         [SerializeField] private bool isPercentageBased;
         [SerializeField] private float amount;
         [SerializeField]
@@ -15,6 +18,7 @@ namespace Endless.Pickup
 
         private void Awake()
         {
+            audioSource = GetComponent<AudioSource>();
             if (!TryGetComponent(out pickup))
                 pickup = gameObject.AddComponent<PickupCore>();
             pickup.GravityLength = gravityEffectTime;
@@ -23,8 +27,10 @@ namespace Endless.Pickup
 
         private void OnTriggerEnter(Collider other)
         {
+            
             if (other.TryGetComponent(out PlayerCombat effectee) && PlayerCombat.maxHp > effectee.GetComponent<PlayerCombat>().playerCurrHp)
             {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
                 effectee.PlayerHealed(isPercentageBased ? (amount / 100 * PlayerCombat.maxHp) : amount);
                 Destroy(gameObject);
             }

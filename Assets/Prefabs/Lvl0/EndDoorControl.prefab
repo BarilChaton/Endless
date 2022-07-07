@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedObject: {fileID: 0}
+  pressSound: {fileID: 8300000, guid: 15628b420185c7c4dbe8757d5eda7220, type: 3}
 --- !u!1 &7931330962142203227
 GameObject:
   m_ObjectHideFlags: 0

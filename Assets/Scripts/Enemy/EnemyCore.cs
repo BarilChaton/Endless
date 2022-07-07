@@ -46,6 +46,9 @@ public class EnemyCore : MonoBehaviour
     public GameObject player;
     public GameObject target;
 
+    // Sound stuff
+    
+
     [HideInInspector] public bool canSeeTarget;
 
 
@@ -54,6 +57,7 @@ public class EnemyCore : MonoBehaviour
 
     private void Awake()
     {
+
         enabled = true;
         spriteAnim = GetComponentInChildren<Animator>();
         enemySpriteLook = GetComponentInChildren<EnemySpriteLook>();
@@ -101,7 +105,11 @@ public class EnemyCore : MonoBehaviour
 
 
         // Death stuff
-        if (enemyHealth <= 0) DeathAction();
+        if (enemyHealth <= 0)
+        {
+            DeathAction();
+        }
+
     }
 
     public void ActDead()
