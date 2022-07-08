@@ -71,7 +71,7 @@ MonoBehaviour:
   player: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
   target: {fileID: 0}
   audioSource: {fileID: 0}
-  growlSound: {fileID: 8300000, guid: 362a8cc9867b1c041949fcc3d84e56d9, type: 3}
+  aggroSound: {fileID: 8300000, guid: 362a8cc9867b1c041949fcc3d84e56d9, type: 3}
   meleeAttackSound: {fileID: 8300000, guid: 59782cf834c09b4468e290451267ac97, type: 3}
   rangedAttackSound: {fileID: 0}
   dieSound: {fileID: 8300000, guid: 3116c0d3c0368e647b77ed4ca37ec01b, type: 3}
