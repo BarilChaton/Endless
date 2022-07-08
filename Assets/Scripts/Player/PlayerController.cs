@@ -79,6 +79,7 @@ namespace Endless.PlayerCore
 
         [Header("Flashlight")]
         [SerializeField] GameObject flashLight;
+        [SerializeField] public GameObject deathScreen;
 
         private Camera playerCamera;
         private CharacterController characterController;

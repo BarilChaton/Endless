@@ -50,6 +50,7 @@ public class MenuMouseHover : MonoBehaviour
                 menuText.color = Color.cyan;
                 SceneManager.LoadScene(1);
             }
+            else if (menuText.text == "Restart") SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {
