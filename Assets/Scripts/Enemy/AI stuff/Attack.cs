@@ -104,7 +104,9 @@ namespace Endless.Attacker
                     }
 
                     // Animation stuff goes here
-                    owner.spriteAnim.Play("AttackRanged");
+                    try { owner.spriteAnim.Play("AttackRanged"); }
+                    catch { }
+                    owner.audioSource.PlayOneShot(owner.rangedAttackSound);
                     owner.shotReady = Time.time + owner.rangedAttackCd;
                 }
             }
@@ -142,6 +144,8 @@ namespace Endless.Attacker
                     else if (target.CompareTag("Enemy")) target.GetComponent<EnemyCore>().TakeDamage(owner.meleeDamage);
 
                     // animation
+                    try { owner.audioSource.PlayOneShot(owner.meleeAttackSound); }
+                    catch { }
                     owner.spriteAnim.Play("MeleeAttack");
                 }
             }
