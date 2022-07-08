@@ -91,6 +91,10 @@ namespace Endless.Control
                 Physics.OverlapSphere(transform.position, core.meleeRange, allyMask);
 
             Collider[] rangeChecks = frontChecks.Concat(meleeChecks).ToArray();
+            foreach (Collider check in rangeChecks)
+            {
+                print(check);
+            }
 
             if (rangeChecks.Length != 0)
             {
@@ -136,7 +140,7 @@ namespace Endless.Control
                 if (sound != null) core.audioSource.PlayOneShot(sound);
                 seentar++;
             }
-            else seentar = 0;
+            else if (!canSeeTarget) seentar = 0;
         }
 
         private void RotationCheck()

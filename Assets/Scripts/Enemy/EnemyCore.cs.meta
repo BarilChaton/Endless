@@ -6,7 +6,13 @@ MonoImporter:
   defaultReferences:
   - hurtImpact: {instanceID: 0}
   - spriteAnim: {instanceID: 0}
-  - player: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
+  - player: {instanceID: 0}
+  - target: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - aggroSound: {instanceID: 0}
+  - meleeAttackSound: {instanceID: 0}
+  - rangedAttackSound: {instanceID: 0}
+  - dieSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

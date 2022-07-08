@@ -66,6 +66,7 @@ public class EnemyCore : MonoBehaviour
 
     private void Awake()
     {
+        player = FindObjectOfType<CharacterController>().gameObject;
         audioSource = GetComponent<AudioSource>();
         enabled = true;
         spriteAnim = GetComponentInChildren<Animator>();

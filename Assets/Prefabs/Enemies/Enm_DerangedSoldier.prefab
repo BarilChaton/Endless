@@ -68,7 +68,7 @@ MonoBehaviour:
   spriteAnim: {fileID: 0}
   radius: 20
   angle: 67
-  player: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
+  player: {fileID: 0}
   target: {fileID: 0}
   audioSource: {fileID: 0}
   aggroSound: {fileID: 8300000, guid: ec345228680dd2a45941f1a7eefffbb3, type: 3}
@@ -76,7 +76,7 @@ MonoBehaviour:
   rangedAttackSound: {fileID: 8300000, guid: cecf95e1d285f174fbea968da7dcf02a, type: 3}
   dieSound: {fileID: 8300000, guid: ae7d7483838b6d94eb5ce3a1e82b8dff, type: 3}
   canSeeTarget: 0
-  showVisionInfo: 0
+  showVisionInfo: 1
   showDebugInfo: 0
   showSoundInfo: 1
 --- !u!136 &7266379066773473675
