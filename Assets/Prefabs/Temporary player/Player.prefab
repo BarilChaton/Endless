@@ -289,6 +289,7 @@ MonoBehaviour:
   GrenadeProjectile: {fileID: 7924677915691847130, guid: 39748b0dbfbf1d940a0dc8cfb7f141b7, type: 3}
   currWeap: {fileID: 0}
   flashLight: {fileID: 5428869607078538817}
+  deathScreen: {fileID: 6561109541965512243, guid: 89342fd43d0e7ac408f11e92df590001, type: 3}
   PlayerDead: 0
   GrenadeCdAmt: 3
 --- !u!114 &2461961031771380933
