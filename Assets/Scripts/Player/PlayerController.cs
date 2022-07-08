@@ -104,6 +104,11 @@ namespace Endless.PlayerCore
             currWeap = GetComponent<WeaponSwapper>().defaultGun.GetComponent<GunCore>();
         }
 
+        private void OnEnable()
+        {
+            Cursor.visible = false;
+        }
+
         void Update()
         {
             currWeap = GetComponent<WeaponSwapper>().currentGun.GetComponent<GunCore>();
@@ -145,6 +150,19 @@ namespace Endless.PlayerCore
 
             // Weapon  stuff
             HandleWeaponSwap();
+
+            // PAUSE
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HandlePause();
+            }
+        }
+
+        private void HandlePause()
+        {
+            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            GetComponent<Pause>().enabled = true;
+            GetComponent<PlayerController>().enabled = false;
         }
 
         private void HandleInteractionCheck()

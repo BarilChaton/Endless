@@ -4,6 +4,7 @@ using Endless.Attacker;
 using Endless.TypeOfEnemies;
 using Endless.Movement;
 
+[RequireComponent(typeof(AudioSource))]
 public class EnemyCore : MonoBehaviour
 {
     // Actual base stuff
@@ -47,17 +48,25 @@ public class EnemyCore : MonoBehaviour
     public GameObject target;
 
     // Sound stuff
-    
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip growlSound;
+    [SerializeField] public AudioClip meleeAttackSound;
+    [SerializeField] public AudioClip rangedAttackSound;
+    [SerializeField] public AudioClip dieSound;
+
+    //to play the sounds use: audioSource.PlayOneShot(growlSound)
+    //to play the sounds on destroyed object use: 
 
     [HideInInspector] public bool canSeeTarget;
 
 
     public bool showVisionInfo;
     public bool showDebugInfo;
+    public bool showSoundInfo;
 
     private void Awake()
     {
-
+        audioSource = GetComponent<AudioSource>();
         enabled = true;
         spriteAnim = GetComponentInChildren<Animator>();
         enemySpriteLook = GetComponentInChildren<EnemySpriteLook>();
@@ -129,6 +138,8 @@ public class EnemyCore : MonoBehaviour
         }
         gameObject.layer = default;
         GetComponentInChildren<Transform>().gameObject.layer = default;
+        try { AudioSource.PlayClipAtPoint(dieSound, transform.position); }
+        catch { }
         ActDead();
         enabled = false;
     }
