@@ -132,8 +132,8 @@ namespace Endless.Control
             // SOUND GOES HERE OKAY
             if (canSeeTarget && seentar == 0)
             {
-                try { core.audioSource.PlayOneShot(core.aggroSound); }
-                catch { }
+                AudioClip sound = core.aggroSound;
+                if (sound != null) core.audioSource.PlayOneShot(sound);
                 seentar++;
             }
             else seentar = 0;

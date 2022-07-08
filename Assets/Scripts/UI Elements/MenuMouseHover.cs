@@ -46,6 +46,7 @@ public class MenuMouseHover : MonoBehaviour
             if (menuText.text == "Quit") Application.Quit();
             else if (menuText.text == "Start")
             {
+
                 menuText.color = Color.cyan;
                 SceneManager.LoadScene(1);
             }
