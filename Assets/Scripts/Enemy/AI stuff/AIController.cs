@@ -26,6 +26,8 @@ namespace Endless.Control
         public bool canSeeTarget = false;
         public bool wasHit = false;
 
+        private int seentar = 0;
+
         private void Awake()
         {
             spriteAnim = GetComponentInChildren<Animator>();
@@ -84,7 +86,7 @@ namespace Endless.Control
                 Physics.OverlapSphere(transform.position, radius, playerMask) :
                 Physics.OverlapSphere(transform.position, radius, allyMask);
             // Area around unit
-            Collider[] meleeChecks = (attack.target == player) ? 
+            Collider[] meleeChecks = (attack.target == player) ?
                 Physics.OverlapSphere(transform.position, core.meleeRange, playerMask) :
                 Physics.OverlapSphere(transform.position, core.meleeRange, allyMask);
 
@@ -126,6 +128,15 @@ namespace Endless.Control
                 canSeeTarget = false;
             }
             else if (canSeeTarget) canSeeTarget = false;
+
+            // SOUND GOES HERE OKAY
+            if (canSeeTarget && seentar == 0)
+            {
+                try { core.audioSource.PlayOneShot(core.growlSound); }
+                catch { }
+                seentar++;
+            }
+            else seentar = 0;
         }
 
         private void RotationCheck()
