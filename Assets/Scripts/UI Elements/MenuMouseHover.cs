@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,33 +5,55 @@ using UnityEngine.SceneManagement;
 public class MenuMouseHover : MonoBehaviour
 {
     private float FontTemp;
+    private TextMeshPro menuText;
+    private TextMeshProUGUI pauseText;
 
     void Start()
     {
-        FontTemp = GetComponent<TextMeshPro>().fontSize;
-        GetComponent<TextMeshPro>().color = Color.white;
+        TryGetComponent(out pauseText);
+        FontTemp = TryGetComponent(out menuText) ? menuText.fontSize : pauseText.fontSize;
+        if (menuText != null) menuText.color = Color.white;
     }
 
     void OnMouseEnter()
     {
-        GetComponent<TextMeshPro>().color = Color.red;
-        GetComponent<TextMeshPro>().fontSize = FontTemp * 1.2f;
-
+        if (menuText != null)
+        {
+            menuText.fontSize = FontTemp * 1.2f;
+            menuText.color = Color.red;
+        }
+        else pauseText.color = Color.red;
     }
 
     void OnMouseExit()
     {
-        GetComponent<TextMeshPro>().color = Color.white;
-        GetComponent<TextMeshPro>().fontSize = FontTemp;
+        if (menuText != null)
+        {
+            menuText.color = Color.white;
+            menuText.fontSize = FontTemp;
+        }
+        else
+        {
+            pauseText.color = Color.white;
+            pauseText.fontSize = FontTemp;
+        }
     }
 
     private void OnMouseUp()
     {
-        if (GetComponent<TextMeshPro>().text == "Quit") Application.Quit();
-        if (GetComponent<TextMeshPro>().text == "Start")
+        if (menuText != null)
         {
-            GetComponent<TextMeshPro>().color = Color.cyan;
-            SceneManager.LoadScene(1);
+            if (menuText.text == "Quit") Application.Quit();
+            else if (menuText.text == "Start")
+            {
+                menuText.color = Color.cyan;
+                SceneManager.LoadScene(1);
+            }
+        }
+        else
+        {
+            if (pauseText.text == "resume") GameObject.Find("Player").GetComponent<Pause>().HandleUnPause();
+            else if (pauseText.text == "quit") SceneManager.LoadScene(0);
         }
     }
 }

@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
 using Endless.PlayerCore;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI pauseText;
+    [SerializeField] GameObject pauseScreen;
 
     private void Awake()
     {
@@ -13,7 +14,7 @@ public class Pause : MonoBehaviour
 
     private void OnEnable()
     {
-        Instantiate(pauseText, GameObject.Find("UI Canvas").transform);
+        Instantiate(pauseScreen, GameObject.Find("UI Canvas").transform);
         Cursor.visible = true;
     }
 
@@ -22,11 +23,11 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) HandleUnPause();
     }
 
-    private void HandleUnPause()
+    public void HandleUnPause()
     {
         Cursor.visible = false;
         GetComponent<PlayerController>().enabled = true;
-        Destroy(GameObject.Find("PauseText(Clone)"));
+        Destroy(GameObject.Find("PauseScreen(Clone)"));
         Time.timeScale = 1;
         enabled = false;
     }
