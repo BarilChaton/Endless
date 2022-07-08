@@ -132,7 +132,7 @@ namespace Endless.Control
             // SOUND GOES HERE OKAY
             if (canSeeTarget && seentar == 0)
             {
-                try { core.audioSource.PlayOneShot(core.growlSound); }
+                try { core.audioSource.PlayOneShot(core.aggroSound); }
                 catch { }
                 seentar++;
             }

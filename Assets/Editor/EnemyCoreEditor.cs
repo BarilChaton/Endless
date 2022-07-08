@@ -92,7 +92,7 @@ public class EnemyCoreEditor : Editor
         if (enemyCore.showSoundInfo)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("audioSource"));
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("growlSound"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("aggroSound"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("meleeAttackSound"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("rangedAttackSound"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("dieSound"));
