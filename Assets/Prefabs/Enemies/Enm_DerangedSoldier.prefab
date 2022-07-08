@@ -50,9 +50,6 @@ MonoBehaviour:
   enemyType: 2
   aggressionDistance: 20
   hurtImpact: {fileID: 0}
-  roarSound: {fileID: 0}
-  attackSound: {fileID: 0}
-  deathSound: {fileID: 0}
   enemyHealth: 20
   maxHealth: 20
   armour: 0
@@ -73,9 +70,15 @@ MonoBehaviour:
   angle: 67
   player: {fileID: 2461961031771380985, guid: 05505852bacd9b24aa776e2dd8c0d5ab, type: 3}
   target: {fileID: 0}
+  audioSource: {fileID: 0}
+  aggroSound: {fileID: 8300000, guid: ec345228680dd2a45941f1a7eefffbb3, type: 3}
+  meleeAttackSound: {fileID: 0}
+  rangedAttackSound: {fileID: 8300000, guid: cecf95e1d285f174fbea968da7dcf02a, type: 3}
+  dieSound: {fileID: 8300000, guid: ae7d7483838b6d94eb5ce3a1e82b8dff, type: 3}
   canSeeTarget: 0
   showVisionInfo: 0
   showDebugInfo: 0
+  showSoundInfo: 1
 --- !u!136 &7266379066773473675
 CapsuleCollider:
   m_ObjectHideFlags: 0

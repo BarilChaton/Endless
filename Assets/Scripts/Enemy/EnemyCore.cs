@@ -49,7 +49,7 @@ public class EnemyCore : MonoBehaviour
 
     // Sound stuff
     [SerializeField] public AudioSource audioSource;
-    [SerializeField] public AudioClip growlSound;
+    [SerializeField] public AudioClip aggroSound;
     [SerializeField] public AudioClip meleeAttackSound;
     [SerializeField] public AudioClip rangedAttackSound;
     [SerializeField] public AudioClip dieSound;
