@@ -21,6 +21,7 @@ namespace Endless.InterfaceCore
 
         [Header("Armour")]
         [SerializeField] GameObject armourBar;
+        [SerializeField] TextMeshProUGUI AmmoText;
         TextMeshProUGUI ArmourText;
         private GunCore gc;
 
@@ -81,6 +82,7 @@ namespace Endless.InterfaceCore
                 armourBar.SetActive(true);
                 ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
             }
+
             try { AmmoText.text = "Ammo: " + gc.CurrentAmmo.ToString() + " / " + gc.MaxAmmo.ToString(); }
             catch { Debug.Log("Gun not found yet"); }
         }
