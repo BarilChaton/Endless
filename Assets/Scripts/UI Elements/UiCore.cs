@@ -15,6 +15,7 @@ namespace Endless.InterfaceCore
         [Header("Health")]
         [SerializeField] GameObject healthBar;
         TextMeshProUGUI HpText;
+        [SerializeField] TextMeshProUGUI AmmoText;
         [HideInInspector] private TextMeshProUGUI ErrorText;
         [HideInInspector] private string errorText = "Error: Something broke when creating the UI.\nPlease check the Canvas properties!";
 
@@ -36,11 +37,17 @@ namespace Endless.InterfaceCore
                 HpText.fontSize = fontSizeUI;
                 HpText.color = Color.white;
 
+
                 // Creating Armour bars
                 armourBar = Instantiate(armourBar, transform);
                 ArmourText = armourBar.GetComponentInChildren<TextMeshProUGUI>();
                 ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
+
+                // Ammo text
+                AmmoText = Instantiate(AmmoText, transform);
+                AmmoText.fontSize = fontSizeUI;
+                AmmoText.color = Color.gray;
             }
             catch
             {
