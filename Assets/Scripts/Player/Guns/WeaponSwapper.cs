@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Endless.PlayerCore;
+using Endless.InterfaceCore;
 
 namespace Endless.GunSwap
 {
@@ -46,6 +47,7 @@ namespace Endless.GunSwap
                 currentGun = defaultGun;
             }
             ActiveGun();
+            GameObject.Find("UI Canvas").GetComponent<UiCore>().GetStuff();
         }
 
         public void LoadGuns()

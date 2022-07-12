@@ -43,10 +43,11 @@ namespace Endless.InterfaceCore
                 ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
 
-                // Ammo text
+                // Ammo stuff
                 AmmoText = Instantiate(AmmoText, transform);
+                Invoke(nameof(GetStuff), 0.3f);
                 AmmoText.fontSize = fontSizeUI;
-                AmmoText.color = Color.gray;
+                AmmoText.color = Color.cyan;
             }
             catch
             {
@@ -55,10 +56,9 @@ namespace Endless.InterfaceCore
                 ErrorText.text = errorText;
                 ErrorText.color = Color.red;
             }
-            Invoke(nameof(GetStuff), 0.5f);
         }
 
-        private void GetStuff()
+        public void GetStuff()
         {
             WeaponSwapper swapper = player.GetComponent<WeaponSwapper>();
             gc = swapper.gunsInInventory[swapper.weaponChoice].GetComponent<GunCore>();
@@ -80,7 +80,7 @@ namespace Endless.InterfaceCore
                 ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
             }
 
-            try { AmmoText.text = "Ammo: " + gc.CurrentTotalAmmo.ToString() + " / " + gc.MaxAmmo.ToString(); }
+            try { AmmoText.text = "Ammo: " + gc.CurrentAmmo.ToString() + " / " + gc.MaxAmmo.ToString(); }
             catch { Debug.Log("Gun not found yet"); }
         }
     }
