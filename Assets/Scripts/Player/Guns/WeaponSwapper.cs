@@ -47,7 +47,7 @@ namespace Endless.GunSwap
                 currentGun = defaultGun;
             }
             ActiveGun();
-            GameObject.Find("UI core").GetComponent<UiCore>().GetStuff();
+            GameObject.Find("UI Canvas").GetComponent<UiCore>().GetStuff();
         }
 
         public void LoadGuns()
