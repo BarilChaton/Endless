@@ -45,9 +45,9 @@ namespace Endless.InterfaceCore
 
                 // Ammo stuff
                 AmmoText = Instantiate(AmmoText, transform);
-                Invoke(nameof(GetStuff), 0.3f);
                 AmmoText.fontSize = fontSizeUI;
                 AmmoText.color = Color.cyan;
+                Invoke(nameof(GetStuff), 0.3f);
             }
             catch
             {
@@ -80,7 +80,7 @@ namespace Endless.InterfaceCore
                 ArmourText.text = System.Math.Round(player.SetArmourBar(), 0) + " / 100";
             }
 
-            try { AmmoText.text = "Ammo: " + gc.CurrentAmmo.ToString() + " / " + gc.MaxAmmo.ToString(); }
+            try { AmmoText.text = "Ammo: " + gc.CurrentTotalAmmo.ToString() + " / " + gc.MaxAmmo.ToString(); }
             catch { Debug.Log("Gun not found yet"); }
         }
     }
