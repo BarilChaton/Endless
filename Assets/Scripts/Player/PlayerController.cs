@@ -10,6 +10,7 @@ namespace Endless.PlayerCore
 
     public class PlayerController : MonoBehaviour
     {
+
         // For the Billboard Script..
         public static PlayerController instance;
 
@@ -37,6 +38,17 @@ namespace Endless.PlayerCore
         [SerializeField] private float runSpeed = 3.0f;
         [SerializeField] private float sprintSpeed = 6.0f;
         [SerializeField] private float crouchSpeed = 3.0f;
+        private Rigidbody rb;
+
+        // For the tilting of the camera when moving left or right.
+        [SerializeField] private float tiltAngle = 5f;
+
+        private float curAngle;
+        private float targetAngle;
+        private float angle;
+
+        private float maxRot = -45.0f;
+        private float rate = 5.0f;
 
         [Header("Look Parameters")] // Using header to organize stuff in the Unity inspector.
         [SerializeField, Range(1, 10)] private float lookSpeedX = 2.0f;
@@ -118,6 +130,7 @@ namespace Endless.PlayerCore
             {
                 HandleMovementInput();
                 HandleMouseLook();
+                HandleTilt(Input.GetAxis("Horizontal"));
 
                 if (canJump)
                     HandleJump();
@@ -220,6 +233,17 @@ namespace Endless.PlayerCore
             float moveDirectionY = moveDirection.y;
             moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
             moveDirection.y = moveDirectionY;
+        }
+
+        private void HandleTilt(float axis)
+        {
+            curAngle = playerCamera.transform.localEulerAngles.z;
+            targetAngle = tiltAngle - axis;
+
+            if (axis == 0.0f)
+                targetAngle = 0.0f;
+
+            playerCamera.transform.localRotation = Quaternion.Lerp(playerCamera.transform.localRotation, Quaternion.Euler(playerCamera.transform.localRotation.x, playerCamera.transform.localRotation.y, axis * maxRot), Time.deltaTime * rate);
         }
 
         private void HandleMouseLook()
