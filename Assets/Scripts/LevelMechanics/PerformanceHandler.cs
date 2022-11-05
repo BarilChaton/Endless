@@ -11,6 +11,7 @@ public class PerformanceHandler : MonoBehaviour
 
     [Header("Use if needed!")]
     public GameObject levelPart3;
+    public GameObject levelPart4;
 
     private void OnTriggerEnter(Collider player)
     {
@@ -19,12 +20,14 @@ public class PerformanceHandler : MonoBehaviour
             levelPart1.SetActive(false);
             levelPart2.SetActive(true);
             levelPart3.SetActive(true);
+            levelPart4.SetActive(true);
         }
         else if (!levelPart1.activeInHierarchy)
         {
             levelPart1.SetActive(true);
             levelPart2.SetActive(false);
             levelPart3.SetActive(false);
+            levelPart4.SetActive(false);
         }
         
         

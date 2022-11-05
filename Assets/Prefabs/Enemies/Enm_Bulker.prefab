@@ -60,7 +60,7 @@ MonoBehaviour:
   rangedAimTime: 0.1
   rangedAttackCd: 0
   shotReady: 0
-  meleeDamage: 20
+  meleeDamage: 10
   meleeRange: 2
   meleeAttackSpeed: 2
   meleeAttackCd: 0
