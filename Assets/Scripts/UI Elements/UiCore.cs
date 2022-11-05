@@ -43,10 +43,11 @@ namespace Endless.InterfaceCore
                 ArmourText.fontSize = fontSizeUI;
                 ArmourText.color = Color.blue;
 
-                // Ammo text
+                // Ammo stuff
                 AmmoText = Instantiate(AmmoText, transform);
                 AmmoText.fontSize = fontSizeUI;
-                AmmoText.color = Color.gray;
+                AmmoText.color = Color.cyan;
+                Invoke(nameof(GetStuff), 0.3f);
             }
             catch
             {
@@ -55,10 +56,9 @@ namespace Endless.InterfaceCore
                 ErrorText.text = errorText;
                 ErrorText.color = Color.red;
             }
-            Invoke(nameof(GetStuff), 0.5f);
         }
 
-        private void GetStuff()
+        public void GetStuff()
         {
             WeaponSwapper swapper = player.GetComponent<WeaponSwapper>();
             gc = swapper.gunsInInventory[swapper.weaponChoice].GetComponent<GunCore>();
